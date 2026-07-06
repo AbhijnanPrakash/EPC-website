@@ -1914,3 +1914,480 @@ h3 { font-weight: 600; }
   .instrument { padding: 20px; }
   .field .row2 { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   EPC LIVE-SITE UPGRADE
+   Preserves the existing public site's recognizable green,
+   dark header, logo, and electrical-work photography, while
+   keeping the cleaner upgraded information architecture.
+   ============================================================ */
+
+:root {
+  --epc-green: #356823;
+  --epc-green-dark: #173414;
+  --epc-green-soft: #eef5ea;
+  --epc-charcoal: #242424;
+  --epc-gold: #b89446;
+  --epc-cream: #f6f4ee;
+  --live: var(--epc-green);
+  --accent-warm: var(--epc-gold);
+}
+
+body {
+  background: #ffffff;
+}
+
+body::before {
+  background-image: linear-gradient(rgba(53, 104, 35, 0.035) 1px, transparent 1px);
+  background-size: 100% 18px;
+  mask-image: linear-gradient(180deg, black 0, transparent 500px);
+  -webkit-mask-image: linear-gradient(180deg, black 0, transparent 500px);
+}
+
+.hdr {
+  background: var(--epc-charcoal);
+  border-bottom: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.hdr.is-scrolled {
+  background: rgba(36, 36, 36, 0.98);
+}
+
+.hdr-topbar {
+  background: #1b1b1b;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hdr-main {
+  height: 72px;
+}
+
+.hdr.is-scrolled .hdr-main {
+  height: 66px;
+}
+
+.brand {
+  align-self: stretch;
+  background: #ffffff;
+  min-width: 286px;
+  padding: 0 22px;
+  margin-left: calc(var(--gutter) * -1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.28);
+}
+
+.brand-mark {
+  width: 78px;
+  height: 42px;
+  border: 0;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: none;
+  position: relative;
+}
+
+.brand-mark svg {
+  display: none;
+}
+
+.brand-mark::before {
+  content: "EPC";
+  position: absolute;
+  inset: 7px 5px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--epc-green);
+  border-radius: 50%;
+  color: var(--epc-green);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-style: italic;
+  letter-spacing: 0.06em;
+}
+
+.brand-word .top {
+  color: var(--epc-green);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  max-width: 150px;
+  line-height: 1.1;
+}
+
+.brand-word .sub {
+  display: block;
+  color: var(--epc-green);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.nav a {
+  background: var(--epc-green);
+  color: #ffffff;
+  border-radius: 0;
+  padding: 16px 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  box-shadow: inset -5px 0 0 rgba(0,0,0,0.22);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--epc-green);
+  background: #ffffff;
+}
+
+.hdr-cta .icon-btn,
+.hdr-cta .btn {
+  border-radius: 0;
+}
+
+.hdr-cta .icon-btn {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.22);
+}
+
+.hdr-cta .icon-btn:hover {
+  background: #ffffff;
+  color: var(--epc-green);
+}
+
+.hdr-cta .btn-primary {
+  background: #ffffff;
+  color: var(--epc-green);
+  border-color: #ffffff;
+}
+
+@media (min-width: 901px) {
+  .hdr-cta {
+    display: none;
+  }
+}
+
+.rail {
+  background: var(--epc-green-dark);
+  border-block: 0;
+}
+
+.rail-inner {
+  color: rgba(255,255,255,0.7);
+}
+
+.rail-item strong {
+  color: #ffffff;
+}
+
+.rail-item .dot {
+  background: var(--epc-gold);
+}
+
+.hero {
+  min-height: calc(100svh - 112px);
+  padding: clamp(82px, 11vh, 136px) 0 clamp(78px, 10vh, 120px);
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.42) 46%, rgba(0,0,0,0.12) 100%),
+    url("../img/electrical-panel-hero.jpg") center / cover no-repeat;
+}
+
+.hero::before {
+  display: none;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 0.96fr) minmax(300px, 0.62fr);
+}
+
+.hero .eyebrow {
+  color: #ffffff;
+}
+
+.hero .eyebrow::before {
+  background: var(--epc-gold);
+}
+
+.hero h1 {
+  max-width: 13.5ch;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+  font-size: clamp(42px, 6.2vw, 78px);
+  text-shadow: 0 3px 20px rgba(0,0,0,0.42);
+}
+
+.hero h1 .em {
+  display: inline;
+  color: #ffffff;
+  font-family: var(--f-display);
+  font-style: normal;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.hero .lede {
+  max-width: 58ch;
+  color: rgba(255,255,255,0.88);
+  text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+}
+
+.hero .btn-primary {
+  background: var(--epc-green);
+  color: #ffffff;
+  border-color: var(--epc-green);
+}
+
+.hero .btn-primary:hover {
+  background: #2b551d;
+}
+
+.hero .btn-ghost {
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.42);
+}
+
+.hero .btn-ghost:hover {
+  background: #ffffff;
+  color: var(--epc-green);
+}
+
+.hero-marks {
+  border-top-color: rgba(255,255,255,0.28);
+}
+
+.hero-mark {
+  border-right-color: rgba(255,255,255,0.2);
+}
+
+.hero-mark .num,
+.hero-mark .num .unit,
+.hero-mark .label {
+  color: #ffffff;
+}
+
+.instrument {
+  align-self: end;
+  background: rgba(255,255,255,0.94);
+  color: var(--fg);
+  border-left: 8px solid var(--epc-green);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+}
+
+.instrument::before {
+  background: linear-gradient(90deg, rgba(53,104,35,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.instrument-head,
+.instrument-row .k {
+  color: var(--epc-green);
+  font-weight: 700;
+}
+
+.instrument-head .status,
+.instrument-row .v.live {
+  color: var(--epc-green);
+}
+
+.instrument-head .status::before,
+.instrument-bars .bar {
+  background: var(--epc-green);
+}
+
+.instrument-row {
+  border-color: rgba(53,104,35,0.16);
+}
+
+.instrument-row .v,
+.instrument-row .v .u {
+  color: var(--fg);
+}
+
+.section,
+.clients {
+  background: #ffffff;
+}
+
+.page-hero {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.62), rgba(0,0,0,0.34)),
+    url("../img/electrical-panel-hero.jpg") center / cover no-repeat;
+}
+
+.page-hero h1,
+.page-hero .lede,
+.page-hero .crumbs,
+.page-hero .crumbs .now,
+.page-hero .eyebrow {
+  color: #ffffff;
+}
+
+.page-hero .crumbs a:hover {
+  color: #d8e8d0;
+}
+
+.page-hero::before {
+  display: none;
+}
+
+.bento-card,
+.ind-card,
+.trio-card,
+.proj-card,
+.tstm-card,
+.aside-card,
+.contact-card,
+.related-card,
+.enquiry {
+  border-radius: 0;
+  border-top: 4px solid var(--epc-green);
+}
+
+.bento-card .b-eyebrow,
+.contact-card .k,
+.field label,
+.spec-grid .k,
+.spec-strip .k {
+  color: var(--epc-green);
+}
+
+.numbers,
+.cta,
+.ftr {
+  background: var(--epc-charcoal);
+}
+
+.cta .btn-primary {
+  background: var(--epc-green);
+  border-color: var(--epc-green);
+  color: #ffffff;
+}
+
+.cta .btn-primary:hover {
+  background: #2b551d;
+}
+
+.mbar a.primary {
+  background: var(--epc-green);
+  border-color: var(--epc-green);
+}
+
+.drawer {
+  background: var(--epc-charcoal);
+}
+
+.drawer .brand {
+  margin-left: 0;
+  min-width: 0;
+  align-self: auto;
+}
+
+.drawer nav a {
+  color: #ffffff;
+  border-bottom-color: rgba(255,255,255,0.16);
+}
+
+.drawer nav a::after,
+.drawer-close {
+  color: #ffffff;
+}
+
+@media (max-width: 1180px) {
+  .nav a {
+    padding-inline: 18px;
+  }
+
+  .brand {
+    min-width: 250px;
+  }
+
+  .hdr-cta .icon-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .hdr {
+    background: #ffffff;
+  }
+
+  .hdr-main {
+    height: 74px;
+  }
+
+  .brand {
+    margin-left: 0;
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .brand-word .top {
+    color: var(--epc-green);
+    max-width: 180px;
+  }
+
+  .mobile-toggle {
+    border-radius: 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 74px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1,
+  .hero .lede {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-mark {
+    width: 58px;
+    height: 32px;
+  }
+
+  .brand-word .top {
+    font-size: 12px;
+    max-width: 122px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10vw, 46px);
+    letter-spacing: 0.02em;
+  }
+
+  .hero {
+    background-position: 58% center;
+  }
+
+  .instrument {
+    display: none;
+  }
+
+  .editorial-cite {
+    flex-wrap: wrap;
+  }
+}
