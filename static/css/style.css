@@ -1,5 +1,5 @@
 /* ============================================================
-   ETERNAL POWER , LIVE NOC AESTHETIC
+   ETERNAL POWER, LIVE NOC AESTHETIC
    Design system: original generated layer, superseded by corporate brand layers below
    ============================================================ */
 
@@ -17,11 +17,11 @@
   --fg-mute: #A1A9BB;
   --fg-dim: #6B7488;
 
-  --live: #3DE1CB;            /* signature , muted teal, "power flowing" LED */
+  --live: #3DE1CB;            /* signature, muted teal, "power flowing" LED */
   --live-soft: rgba(61,225,203,0.14);
   --live-glow: rgba(61,225,203,0.35);
 
-  --phase-r: #FF6B5B;         /* Indian 3-phase vernacular , R/Y/B */
+  --phase-r: #FF6B5B;         /* Indian 3-phase vernacular, R/Y/B */
   --phase-y: #FFC547;
   --phase-b: #4A9EFF;
 
@@ -271,7 +271,7 @@ p + p { margin-top: 1.1em; }
 }
 .icon-btn:hover { color: var(--live); border-color: var(--live-soft); background: rgba(61,225,203,0.06); }
 
-/* Uptime rail , the signature ---------------------------------- */
+/* Uptime rail, the signature ---------------------------------- */
 .rail {
   border-block: 1px solid var(--line);
   background: linear-gradient(180deg, transparent, rgba(61,225,203,0.03));
@@ -3376,5 +3376,361 @@ li,
 @media (max-width: 900px) {
   .hero-grid {
     gap: 28px;
+  }
+}
+
+/* ============================================================
+   CORPORATE MODERN LAYER
+   Adds executive polish without changing the single-font,
+   restrained EPC brand direction.
+   ============================================================ */
+
+:root {
+  --premium-green: #245d24;
+  --premium-green-900: #143b19;
+  --premium-green-100: #eef6ec;
+  --premium-ink: #17201c;
+  --premium-text: #46524d;
+  --premium-muted: #7a857f;
+  --premium-line: #dce5d8;
+  --premium-panel: #ffffff;
+  --premium-bg: #f7faf5;
+  --premium-gold: #b2934f;
+}
+
+body {
+  background:
+    linear-gradient(180deg, #ffffff 0, #ffffff 580px, var(--premium-bg) 580px, #ffffff 1400px);
+}
+
+.hdr {
+  border-bottom-color: rgba(20, 59, 25, 0.1);
+  box-shadow: 0 12px 32px rgba(23, 32, 28, 0.065);
+}
+
+.hdr-topbar {
+  background: linear-gradient(90deg, var(--premium-green-900), #1d4c20);
+}
+
+.brand {
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 58px;
+}
+
+.brand-mark::before {
+  border-width: 1.25px;
+}
+
+.nav {
+  gap: 24px;
+}
+
+.nav a {
+  color: #25302b;
+  font-size: 12px;
+}
+
+.nav a.active,
+.nav a:hover {
+  color: var(--premium-green);
+}
+
+.hdr-cta .btn-primary,
+.btn-primary {
+  background: var(--premium-green);
+  border-color: var(--premium-green);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(58px, 7vw, 88px) 0 clamp(54px, 7vw, 86px);
+  background:
+    radial-gradient(circle at 85% 12%, rgba(36, 93, 36, 0.08), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #f8fbf6 58%, #edf5ea 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(36, 93, 36, 0.28), transparent);
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(440px, 0.86fr);
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 12.5ch;
+  font-size: clamp(42px, 4.8vw, 62px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.hero .lede {
+  max-width: 62ch;
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.65;
+}
+
+.hero-grid > div:last-child {
+  position: relative;
+  min-height: clamp(390px, 39vw, 500px);
+  border: 0;
+  border-radius: 2px;
+  box-shadow:
+    0 28px 90px rgba(20, 59, 25, 0.18),
+    0 0 0 1px rgba(20, 59, 25, 0.08);
+  overflow: visible;
+}
+
+.hero-grid > div:last-child::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255,255,255,0.45);
+  pointer-events: none;
+}
+
+.hero-grid > div:last-child::after {
+  content: "Authorized OEM partner\A Since 2012\A UPS range 1 kVA to 4000 kVA";
+  white-space: pre-line;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 270px;
+  padding: 22px 24px;
+  background: rgba(255,255,255,0.96);
+  color: var(--premium-ink);
+  border: 1px solid rgba(20, 59, 25, 0.12);
+  border-top: 4px solid var(--premium-green);
+  box-shadow: 0 18px 50px rgba(23, 32, 28, 0.14);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.hero-marks {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 34px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.hero-mark {
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(36, 93, 36, 0.14);
+  border-radius: 2px;
+  background: rgba(255,255,255,0.74);
+  box-shadow: 0 14px 34px rgba(23, 32, 28, 0.055);
+}
+
+.hero-mark .num {
+  color: var(--premium-green-900);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.hero-mark .num .unit {
+  color: var(--premium-muted);
+}
+
+.hero-mark .label {
+  margin-top: 8px;
+  color: var(--premium-muted);
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.section {
+  padding: clamp(76px, 9vw, 120px) 0;
+}
+
+.section:nth-of-type(odd) {
+  background: var(--premium-bg);
+}
+
+.section-head {
+  border-top: 1px solid var(--premium-line);
+  padding-top: 30px;
+}
+
+.section-head h2 {
+  max-width: 12ch;
+  font-size: clamp(34px, 4.4vw, 58px);
+}
+
+.section-head .lede {
+  max-width: 62ch;
+}
+
+.bento {
+  gap: 20px;
+}
+
+.bento-card,
+.bento-card.hero-card,
+.bento-card.wide {
+  position: relative;
+  min-height: 285px;
+  padding: 30px;
+  background:
+    linear-gradient(180deg, #ffffff, #fbfdf9);
+  border-color: rgba(36, 93, 36, 0.13);
+  border-top: 0;
+  box-shadow: 0 18px 50px rgba(23, 32, 28, 0.07);
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 52px;
+  height: 3px;
+  background: var(--premium-green);
+}
+
+.bento-card h3 {
+  margin-top: 18px;
+  color: var(--premium-ink);
+}
+
+.bento-card p {
+  color: var(--premium-text);
+}
+
+.bento-card .b-spec {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  border: 1px solid rgba(36, 93, 36, 0.14);
+  background: var(--premium-green-100);
+  color: var(--premium-green-900);
+  padding: 9px 12px;
+  margin-top: auto;
+}
+
+.bento-card .b-spec .arrow {
+  display: none;
+}
+
+.numbers {
+  background:
+    linear-gradient(135deg, var(--premium-green-900), #214d22);
+  padding: clamp(54px, 7vw, 78px) 0;
+}
+
+.number {
+  border-left-color: rgba(255,255,255,0.16);
+}
+
+.svc-row {
+  background: transparent;
+  padding: 26px 0;
+}
+
+.svc-row h3 {
+  font-size: clamp(20px, 2.2vw, 28px);
+}
+
+.ind-card {
+  min-height: 220px;
+  background: #ffffff;
+}
+
+.ind-card .glyph {
+  background: var(--premium-green-100);
+  color: var(--premium-green);
+}
+
+.cta {
+  background:
+    linear-gradient(135deg, #17201c, #244326);
+}
+
+.cta-inner {
+  align-items: center;
+}
+
+.page-hero {
+  background:
+    radial-gradient(circle at 88% 22%, rgba(36, 93, 36, 0.08), transparent 30%),
+    linear-gradient(180deg, #ffffff, var(--premium-bg));
+}
+
+.page-hero h1 {
+  max-width: 15ch;
+}
+
+@media (max-width: 1040px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid > div:last-child {
+    min-height: 380px;
+  }
+
+  .hero-grid > div:last-child::after {
+    left: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 48px 0 72px;
+  }
+
+  .hero-grid {
+    gap: 36px;
+  }
+
+  .hero-grid > div:last-child {
+    order: -1;
+    min-height: 280px;
+  }
+
+  .hero-grid > div:last-child::after {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 54px);
+  }
+
+  .hero-marks {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-grid > div:last-child {
+    min-height: 220px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10vw, 44px);
+    max-width: 12ch;
+  }
+
+  .hero-marks {
+    gap: 10px;
+  }
+
+  .hero-mark {
+    padding: 14px;
+  }
+
+  .section-head {
+    padding-top: 22px;
   }
 }
