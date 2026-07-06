@@ -1,10 +1,10 @@
 /* ============================================================
-   ETERNAL POWER — main.js
+   ETERNAL POWER , main.js
    Simple, no libraries. Live clock, drawer, scroll header,
    reveals, project filter, form handler.
    ============================================================ */
 
-// Configurable — swap these to change where forms send
+// Configurable , swap these to change where forms send
 const WHATSAPP_NUMBER = "919841888332";
 const ENQUIRY_EMAIL = "siva@eternalpower.co.in";
 
@@ -106,7 +106,7 @@ if (filterWrap) {
 }
 
 // ------------------------------------------------------------
-// Enquiry form → WhatsApp or email
+// Enquiry form › WhatsApp or email
 // ------------------------------------------------------------
 document.querySelectorAll('form.enquiry').forEach(form => {
   form.addEventListener('submit', (e) => {
@@ -133,7 +133,7 @@ document.querySelectorAll('form.enquiry').forEach(form => {
     ].filter(Boolean).join('\n');
 
     if (method === 'email') {
-      const subject = `Website enquiry — ${context}`;
+      const subject = `Website enquiry , ${context}`;
       window.location.href = `mailto:${ENQUIRY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     } else {
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(body)}`, '_blank');
