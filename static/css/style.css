@@ -2688,3 +2688,465 @@ body::before {
     font-size: clamp(32px, 10vw, 44px);
   }
 }
+
+/* ============================================================
+   CORPORATE CLEANUP PASS
+   Removes dashboard/ticker/decorative artifacts and settles the
+   site into a smoother B2B corporate presentation.
+   ============================================================ */
+
+:root {
+  --corp-green: #2f6528;
+  --corp-green-2: #21491d;
+  --corp-ink: #20252b;
+  --corp-text: #3f4852;
+  --corp-muted: #6b747d;
+  --corp-line: #dfe4dc;
+  --corp-soft: #f6f8f4;
+  --corp-panel: #ffffff;
+}
+
+body {
+  background: #ffffff;
+  color: var(--corp-ink);
+}
+
+body::before,
+.rail,
+.instrument,
+.hero-marks,
+.instrument-svg,
+.marquee,
+.mbar {
+  display: none !important;
+}
+
+.hdr {
+  background: #ffffff;
+  border-bottom: 1px solid var(--corp-line);
+  box-shadow: 0 4px 18px rgba(25, 35, 28, 0.07);
+}
+
+.hdr.is-scrolled {
+  background: rgba(255,255,255,0.98);
+  border-bottom-color: #d6ddd3;
+}
+
+.hdr-topbar {
+  background: var(--corp-green-2);
+  color: rgba(255,255,255,0.78);
+}
+
+.hdr-topbar .live-clock,
+.hdr-topbar a {
+  color: rgba(255,255,255,0.92);
+}
+
+.hdr-main,
+.hdr.is-scrolled .hdr-main {
+  height: 78px;
+}
+
+.brand {
+  background: transparent;
+  box-shadow: none;
+  min-width: 270px;
+  margin-left: 0;
+  padding: 0;
+}
+
+.brand-mark {
+  width: 64px;
+  height: 38px;
+}
+
+.brand-mark::before {
+  inset: 6px 4px;
+  font-size: 15px;
+}
+
+.brand-word .top {
+  color: var(--corp-green);
+  font-size: 15px;
+  max-width: 155px;
+  line-height: 1.08;
+}
+
+.brand-word .sub {
+  color: var(--corp-green);
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+.nav {
+  border: 0;
+  gap: 26px;
+  margin-left: auto;
+}
+
+.nav a {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--corp-text);
+  padding: 8px 0;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--corp-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--corp-green);
+  background: transparent;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  transform: scaleX(1);
+}
+
+@media (min-width: 901px) {
+  .hdr-cta {
+    display: flex;
+    margin-left: 24px;
+  }
+
+  .hdr-cta .icon-btn {
+    display: none;
+  }
+
+  .hdr-cta .btn-primary {
+    display: inline-flex;
+    background: var(--corp-green);
+    color: #ffffff;
+    border-color: var(--corp-green);
+    border-radius: 3px;
+  }
+}
+
+.hero {
+  min-height: auto;
+  padding: clamp(64px, 9vh, 104px) 0;
+  background: var(--corp-soft);
+}
+
+.hero::before {
+  display: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.78fr);
+  gap: clamp(42px, 6vw, 88px);
+  align-items: center;
+}
+
+.hero-grid > div:last-child {
+  display: block;
+  min-height: clamp(360px, 44vw, 520px);
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.16)),
+    url("../img/electrical-panel-hero.jpg") center / cover no-repeat;
+  border: 1px solid var(--corp-line);
+}
+
+.hero .eyebrow,
+.page-hero .eyebrow {
+  color: var(--corp-green);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.hero .eyebrow::before,
+.page-hero .eyebrow::before {
+  background: var(--corp-green);
+  width: 28px;
+}
+
+.hero h1 {
+  color: var(--corp-ink);
+  max-width: 11.5ch;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  text-transform: none;
+  text-shadow: none;
+}
+
+.hero h1 .em,
+.serif-italic,
+.page-hero h1 .serif-italic {
+  color: inherit;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.hero .lede {
+  color: var(--corp-text);
+  text-shadow: none;
+  max-width: 58ch;
+  font-size: 18px;
+}
+
+.hero .btn-primary,
+.btn-primary,
+.cta .btn-primary {
+  background: var(--corp-green);
+  border-color: var(--corp-green);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.hero .btn-primary:hover,
+.btn-primary:hover,
+.cta .btn-primary:hover {
+  background: var(--corp-green-2);
+  border-color: var(--corp-green-2);
+}
+
+.hero .btn-ghost,
+.btn-ghost {
+  color: var(--corp-ink);
+  background: #ffffff;
+  border-color: #cbd4c6;
+}
+
+.hero .btn-ghost:hover,
+.btn-ghost:hover {
+  color: var(--corp-green);
+  border-color: var(--corp-green);
+}
+
+.section,
+.clients,
+.related {
+  background: #ffffff;
+}
+
+.section-head {
+  align-items: end;
+}
+
+.section-head h2,
+.page-hero h1,
+.cta h2 {
+  letter-spacing: -0.025em;
+  text-transform: none;
+}
+
+.bento {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.bento-card,
+.bento-card.hero-card,
+.bento-card.wide,
+.ind-card,
+.trio-card,
+.proj-card,
+.tstm-card,
+.aside-card,
+.contact-card,
+.related-card,
+.enquiry {
+  background: var(--corp-panel);
+  border: 1px solid var(--corp-line);
+  border-top: 3px solid var(--corp-green);
+  border-radius: 2px;
+  box-shadow: 0 10px 28px rgba(32, 37, 43, 0.05);
+}
+
+.bento-card,
+.bento-card.hero-card,
+.bento-card.wide {
+  min-height: 245px;
+  padding: 26px;
+}
+
+.bento-card .b-eyebrow,
+.contact-card .k,
+.field label,
+.spec-grid .k,
+.spec-strip .k,
+.proj-card .meta {
+  color: var(--corp-green);
+}
+
+.bento-card p,
+.ind-card p,
+.trio-card p,
+.proj-card .desc,
+.related-card p,
+.prose p,
+.prose li,
+.faq-a,
+.body,
+.lede {
+  color: var(--corp-text);
+}
+
+.bento-card .b-spec {
+  color: var(--corp-muted);
+}
+
+.numbers {
+  background: var(--corp-green-2);
+}
+
+.editorial {
+  background: var(--corp-soft);
+  border-color: var(--corp-line);
+}
+
+.clients {
+  display: none;
+}
+
+.cta,
+.ftr {
+  background: var(--corp-ink);
+}
+
+.page-hero {
+  background: var(--corp-soft);
+  border-bottom: 1px solid var(--corp-line);
+  padding: clamp(54px, 8vh, 88px) 0 clamp(44px, 6vh, 68px);
+}
+
+.page-hero h1,
+.page-hero .lede,
+.page-hero .crumbs,
+.page-hero .crumbs .now {
+  color: var(--corp-ink);
+  text-shadow: none;
+}
+
+.page-hero .lede {
+  color: var(--corp-text);
+}
+
+.crumbs a:hover {
+  color: var(--corp-green);
+}
+
+.spec-strip > span {
+  background: #ffffff;
+  border-color: var(--corp-line);
+}
+
+.svc-row {
+  border-top-color: var(--corp-line);
+}
+
+.svc-row:last-child {
+  border-bottom-color: var(--corp-line);
+}
+
+.svc-row::before {
+  background: var(--corp-green);
+}
+
+.map-wrap iframe {
+  filter: none;
+}
+
+@media (max-width: 1100px) {
+  .nav {
+    gap: 18px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+
+  .brand {
+    min-width: 230px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hdr-main,
+  .hdr.is-scrolled .hdr-main {
+    height: 72px;
+  }
+
+  .hero {
+    padding: 48px 0 60px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-grid > div:last-child {
+    min-height: 260px;
+    order: -1;
+  }
+
+  .hero h1 {
+    max-width: 12ch;
+    font-size: clamp(36px, 9vw, 52px);
+  }
+
+  .bento {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hdr-topbar-links {
+    display: none;
+  }
+
+  .brand-mark {
+    width: 54px;
+  }
+
+  .brand-word .top {
+    font-size: 12px;
+    max-width: 120px;
+  }
+
+  .hero-grid > div:last-child {
+    min-height: 210px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9vw, 40px);
+    max-width: 12ch;
+  }
+
+  .hero .lede {
+    font-size: 15.5px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}
