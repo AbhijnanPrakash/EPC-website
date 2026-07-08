@@ -1152,6 +1152,16 @@ body { background: #f4f6f2; }
 
 /* Homepage hero moved to static/css/hero.css */
 
+/* Legacy hero layouts — never show even if cached index.html loads */
+.hero,
+.hero-v2,
+.hero-grid,
+.hero-marks,
+.hero-v2__layout,
+.hero-v2__stats {
+  display: none !important;
+}
+
 /* Site-wide glass cards */
 .bento-card,
 .ind-card,
