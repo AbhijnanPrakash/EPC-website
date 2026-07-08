@@ -18,8 +18,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/css/style.css?v=4">
-<link rel="stylesheet" href="static/css/hero.css?v=20260708-v5b">
+<meta name="epc-build" content="20260708-v6">
+<link rel="stylesheet" href="static/css/style.css?v=5">
+<link rel="stylesheet" href="static/css/hero.css?v=20260708-v6">
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var hasNew = document.getElementById('epc-hero');
+  var hasOld = document.querySelector('.hero, .hero-marks, .hero-v2, .hero-grid');
+  if (!hasNew || hasOld) {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'alert');
+    bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#7f1d1d;color:#fff;padding:14px 20px;font:14px/1.5 system-ui,sans-serif;text-align:center';
+    bar.innerHTML = '<strong>Stale files detected.</strong> This folder has an old index.html. Run <code style="background:rgba(0,0,0,.2);padding:2px 6px;border-radius:4px">git pull origin main</code> in the project folder, then restart your server.';
+    document.body.appendChild(bar);
+  }
+});
+</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://www.eternalpower.co.in/#organization", "name": "Eternal Power And Cooling Services", "url": "https://www.eternalpower.co.in", "foundingDate": "2012", "email": "siva@eternalpower.co.in", "telephone": "+919841888332", "address": {"@type": "PostalAddress", "streetAddress": "Ground Floor, Site No. 161, NRI Layout Double Road, Kalkere", "addressLocality": "Bangalore", "addressRegion": "Karnataka", "postalCode": "560043", "addressCountry": "IN"}, "areaServed": "Bangalore, Karnataka, India", "description": "Authorized sales partner for major UPS OEMs. UPS systems 1 kVA to 4000 kVA, batteries, data center infrastructure, building management systems, AMC and power quality services since 2012."}</script>
 </head><body class="page-home">
 
@@ -80,7 +94,7 @@
 </div>
 <main id="main">
 
-<!-- EPC BUILD 20260708-v5b — mockup hero. View-source must show epc-hero__stats-bar -->
+<!-- EPC BUILD 20260708-v6 — mockup hero. Must contain epc-hero__stats-bar -->
 <section class="epc-hero" id="epc-hero">
   <div class="epc-hero__shell">
     <div class="epc-hero__left">
