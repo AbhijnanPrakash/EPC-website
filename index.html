@@ -19,9 +19,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="static/css/style.css?v=3">
-<link rel="stylesheet" href="static/css/hero.css?v=20260708">
+<link rel="stylesheet" href="static/css/hero.css?v=20260708-v5b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://www.eternalpower.co.in/#organization", "name": "Eternal Power And Cooling Services", "url": "https://www.eternalpower.co.in", "foundingDate": "2012", "email": "siva@eternalpower.co.in", "telephone": "+919841888332", "address": {"@type": "PostalAddress", "streetAddress": "Ground Floor, Site No. 161, NRI Layout Double Road, Kalkere", "addressLocality": "Bangalore", "addressRegion": "Karnataka", "postalCode": "560043", "addressCountry": "IN"}, "areaServed": "Bangalore, Karnataka, India", "description": "Authorized sales partner for major UPS OEMs. UPS systems 1 kVA to 4000 kVA, batteries, data center infrastructure, building management systems, AMC and power quality services since 2012."}</script>
-</head><body>
+</head><body class="page-home">
+
+<!-- SVG clip path for curved photo edge (mockup) -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <clipPath id="epc-hero-curve" clipPathUnits="objectBoundingBox">
+      <path d="M 0.16 0 C 0.08 0.22 0.03 0.48 0 0.72 L 0 1 L 1 1 L 1 0 Z"/>
+    </clipPath>
+  </defs>
+</svg>
 
 <header class="hdr" id="hdr">
   <div class="hdr-topbar">
@@ -71,25 +80,33 @@
 </div>
 <main id="main">
 
-<!-- EPC HERO BUILD 20260708-v3 — glassmorphism + full-bleed panel photo -->
+<!-- EPC HERO — mockup match v4 -->
 <section class="epc-hero" id="epc-hero">
-  <div class="epc-hero__bg" aria-hidden="true"></div>
-  <div class="epc-hero__inner">
-    <div class="epc-hero__copy">
-      <span class="epc-hero__pill">Powering critical infrastructure</span>
-      <h1>Critical power infrastructure for <em>serious</em> operations.</h1>
-      <p class="lede">EPC designs, supplies and supports UPS systems, batteries, data center infrastructure, IBMS and maintenance programs for facilities across Bangalore. Authorized sales partner for major UPS OEMs since 2012.</p>
-      <div class="epc-hero__ctas">
-        <a class="btn btn-primary btn-lg" href="contact.html#enquiry">Get a Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="products/index.html">Explore Products <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+  <div class="epc-hero__shell">
+    <div class="epc-hero__left">
+      <svg class="epc-hero__waves" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M-20 120 Q 180 80 380 140 T 620 100"/>
+        <path d="M-40 280 Q 160 240 360 300 T 640 260"/>
+        <path d="M-10 440 Q 200 400 400 460 T 650 420"/>
+        <path d="M-30 600 Q 170 560 370 620 T 630 580"/>
+        <path d="M0 720 Q 220 680 420 740 T 680 700"/>
+      </svg>
+      <div class="epc-hero__copy">
+        <span class="epc-hero__pill">Powering critical infrastructure</span>
+        <h1>Critical power infrastructure for <em>serious</em> operations.</h1>
+        <p class="lede">EPC designs, supplies and supports UPS systems, batteries, data center infrastructure, IBMS and maintenance programs for facilities across Bangalore. Authorized sales partner for major UPS OEMs since 2012.</p>
+        <div class="epc-hero__ctas">
+          <a class="btn btn-primary btn-lg" href="contact.html#enquiry">Get a Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+          <a class="btn btn-ghost btn-lg" href="products/index.html">Explore Products <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg></a>
+        </div>
       </div>
     </div>
-    <div class="epc-hero__photo-wrap">
-      <img class="epc-hero__photo" src="static/img/electrical-panel-hero.jpg?v=20260708" alt="Technician working on electrical control panel wiring" width="2530" height="1440" fetchpriority="high" decoding="async">
+    <div class="epc-hero__right">
+      <img class="epc-hero__photo" src="static/img/electrical-panel-hero.jpg?v=4" alt="Technician working on electrical control panel wiring" width="2530" height="1440" fetchpriority="high" decoding="async">
       <aside class="epc-hero__glass">
         <div class="epc-hero__glass-top">
           <div class="epc-hero__glass-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
           <div>
             <div class="epc-hero__glass-kicker">Authorized OEM partner</div>
@@ -98,25 +115,27 @@
         </div>
         <h3>UPS range 1 kVA to 4000 kVA</h3>
         <ul>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Trusted by leading enterprises across industries</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Reliable solutions for mission-critical systems</li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> End-to-end support you can count on</li>
+          <li><span class="li-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> Trusted by leading enterprises across industries</li>
+          <li><span class="li-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span> Reliable solutions for mission-critical systems</li>
+          <li><span class="li-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span> End-to-end support you can count on</li>
         </ul>
       </aside>
     </div>
   </div>
-  <div class="epc-hero__stats">
-    <div class="epc-hero__stat">
-      <div class="epc-hero__stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-      <div><div class="epc-hero__stat-val">4.8 MW</div><div class="epc-hero__stat-lbl">Managed capacity</div></div>
-    </div>
-    <div class="epc-hero__stat">
-      <div class="epc-hero__stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div><div class="epc-hero__stat-val">99.99%</div><div class="epc-hero__stat-lbl">Design uptime</div></div>
-    </div>
-    <div class="epc-hero__stat">
-      <div class="epc-hero__stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-8"/></svg></div>
-      <div><div class="epc-hero__stat-val">24×7</div><div class="epc-hero__stat-lbl">Monitoring support</div></div>
+  <div class="epc-hero__stats-wrap">
+    <div class="epc-hero__stats-bar">
+      <div class="epc-hero__stat">
+        <div class="epc-hero__stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><div class="epc-hero__stat-val">4.8 MW</div><div class="epc-hero__stat-lbl">Managed capacity</div></div>
+      </div>
+      <div class="epc-hero__stat">
+        <div class="epc-hero__stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="epc-hero__stat-val">99.99%</div><div class="epc-hero__stat-lbl">Design uptime</div></div>
+      </div>
+      <div class="epc-hero__stat">
+        <div class="epc-hero__stat-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 3 5-8"/></svg></div>
+        <div><div class="epc-hero__stat-val">24×7</div><div class="epc-hero__stat-lbl">Monitoring support</div></div>
+      </div>
     </div>
   </div>
 </section>
