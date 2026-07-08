@@ -9,14 +9,20 @@ const WHATSAPP_NUMBER = "919841888332";
 const ENQUIRY_EMAIL = "siva@eternalpower.co.in";
 
 // ------------------------------------------------------------
-// Header top bar — static location label
+// Live IST clock in header top bar
 // ------------------------------------------------------------
 function updateClock() {
-  const el = document.getElementById('liveClock');
+  const el = document.getElementById('clockTime');
   if (!el) return;
-  el.textContent = 'Bangalore · Est. 2012';
+  const now = new Date();
+  const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+  const ist = new Date(utc + (5.5 * 60 * 60 * 1000));
+  const hh = String(ist.getHours()).padStart(2, '0');
+  const mm = String(ist.getMinutes()).padStart(2, '0');
+  el.textContent = `${hh}:${mm}`;
 }
 updateClock();
+setInterval(updateClock, 30000);
 
 // ------------------------------------------------------------
 // Footer year
