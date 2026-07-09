@@ -1,3 +1,0 @@
-EPC-website build 20260708-v7
-hero=mockup
-marker=epc-hero__stats-bar
