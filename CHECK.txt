@@ -1,2 +1,0 @@
-NEW DESIGN LOADED — build 10
-If you see this file at http://localhost:8000/CHECK.txt you have the correct folder.
