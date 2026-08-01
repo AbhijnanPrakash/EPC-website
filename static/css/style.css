@@ -1200,7 +1200,7 @@ body { background: #f4f6f2; }
   position: fixed;
   inset: 0;
   background: rgba(23, 61, 25, 0.18);
-  z-index: 90;
+  z-index: 110;
   opacity: 0;
   pointer-events: none;
   transition: opacity 220ms var(--chat-ease);
@@ -1214,7 +1214,7 @@ body { background: #f4f6f2; }
   position: fixed;
   right: max(20px, env(safe-area-inset-right));
   bottom: max(24px, env(safe-area-inset-bottom));
-  z-index: 95;
+  z-index: 115;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -1266,7 +1266,7 @@ body { background: #f4f6f2; }
   right: 0;
   bottom: 0;
   width: var(--chat-w);
-  z-index: 96;
+  z-index: 116;
   display: flex;
   flex-direction: column;
   background: #f7f9f5;
