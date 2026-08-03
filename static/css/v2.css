@@ -1394,7 +1394,9 @@ body.v2 { overflow-x: hidden; }
 /* -------------------------------------------------------------------------
    20. Responsive
    ------------------------------------------------------------------------- */
-@media (max-width: 1180px) {
+/* Eight primary links plus the header CTA need the full container, so the
+   header phone number steps aside well before the nav collapses. */
+@media (max-width: 1400px) {
   .v2 .v2-nav { gap: 0; }
   .v2 .v2-nav a { padding-inline: 10px; font-size: 14px; }
   .v2 .v2-hdr-tel { display: none; }
