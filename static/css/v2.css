@@ -527,8 +527,8 @@ body.v2 { overflow-x: hidden; }
 }
 .v2 .v2-nav a:hover { color: var(--v2-ink); }
 .v2 .v2-nav a:hover::after { transform: scaleX(1); }
-.v2 .v2-nav a[aria-current="page"] { color: var(--v2-green); font-weight: 600; }
-.v2 .v2-nav a[aria-current="page"]::after { transform: scaleX(1); }
+.v2 .v2-nav a[aria-current] { color: var(--v2-green); font-weight: 600; }
+.v2 .v2-nav a[aria-current]::after { transform: scaleX(1); }
 
 .v2 .v2-hdr-cta { display: flex; align-items: center; gap: 12px; flex: none; }
 .v2 .v2-hdr-tel {

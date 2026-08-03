@@ -1,0 +1,322 @@
+/* ==========================================================================
+   ETERNAL POWER — Service detail page sections
+   Requires v2.css (design system) and services.css, which already provide the
+   breadcrumb, split hero, framed media, trust card, rule and card shell.
+   This file adds only what the detail page introduces.
+   ========================================================================== */
+
+.v2 {
+  --sd-warn: #9a6b1f;
+  --sd-warn-wash: #fdfaf3;
+  --sd-warn-line: rgba(154, 107, 31, 0.22);
+  --sd-deny: #a3341f;
+  --sd-deny-wash: rgba(163, 52, 31, 0.05);
+  --sd-deny-line: rgba(163, 52, 31, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   Hero meta tags
+   -------------------------------------------------------------------------- */
+.v2 .sd-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.v2 .sd-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 15px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.v2 .sd-tag--phase { background: var(--v2-green); color: #fff; }
+.v2 .sd-tag--meta {
+  background: var(--v2-green-wash);
+  color: var(--v2-green);
+  border: 1px solid rgba(40, 95, 36, 0.16);
+}
+
+/* --------------------------------------------------------------------------
+   Section headings
+   -------------------------------------------------------------------------- */
+.v2 .sd-head { margin-bottom: 30px; }
+.v2 .sd-head h2 { margin: 0; }
+.v2 .sd-head .sv-rule { margin-top: 16px; }
+
+/* --------------------------------------------------------------------------
+   Included / Not included panel
+   -------------------------------------------------------------------------- */
+.v2 .sd-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-r-lg);
+  background: #fff;
+  box-shadow: var(--v2-sh-2);
+  overflow: hidden;
+}
+.v2 .sd-panel-col { padding: clamp(26px, 3vw, 40px); }
+.v2 .sd-panel-col + .sd-panel-col { border-left: 1px solid var(--v2-line); }
+
+.v2 .sd-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.v2 .sd-panel-head h2 {
+  margin: 0;
+  font-size: clamp(20px, 1.9vw, 25px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--v2-ink);
+}
+.v2 .sd-panel-head .v2-ico--deny { background: var(--sd-deny-wash); color: var(--sd-deny); }
+.v2 .sd-panel .sv-rule { margin: 0 0 22px 59px; }
+.v2 .sd-panel .sv-rule--deny { background: var(--sd-deny); }
+.v2 .sd-deny-text { color: var(--sd-deny); }
+
+/* Variant with the rule above the heading */
+.v2 .sd-head--rule-top .sv-rule { margin: 0 0 18px; }
+
+/* Included checklist */
+.v2 .sd-list { list-style: none; margin: 0; padding: 0; }
+.v2 .sd-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--v2-line);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--v2-body);
+}
+.v2 .sd-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+.v2 .sd-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--v2-green-wash);
+  color: var(--v2-green);
+}
+.v2 .sd-mark svg { width: 15px; height: 15px; stroke-width: 2; }
+
+/* Exclusions */
+.v2 .sd-deny { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.v2 .sd-deny li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 18px;
+  border: 1px solid var(--sd-deny-line);
+  border-radius: var(--v2-r);
+  background: var(--sd-deny-wash);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--v2-body);
+}
+.v2 .sd-mark--deny { background: #fff; color: var(--sd-deny); }
+
+/* Scope note */
+.v2 .sd-note {
+  display: flex;
+  gap: 15px;
+  margin-top: 22px;
+  padding: 20px 22px;
+  border: 1px solid rgba(40, 95, 36, 0.16);
+  border-left: 3px solid var(--v2-green);
+  border-radius: var(--v2-r);
+  background: var(--v2-green-wash);
+}
+.v2 .sd-note p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--v2-body); }
+.v2 .sd-note .sd-mark { background: var(--v2-green); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   Emergency banner
+   -------------------------------------------------------------------------- */
+.v2 .sd-emerg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap;
+  padding: clamp(22px, 2.6vw, 30px) clamp(24px, 3vw, 36px);
+  border: 1px solid var(--sd-warn-line);
+  border-radius: var(--v2-r-lg);
+  background: var(--sd-warn-wash);
+}
+.v2 .sd-emerg-copy { display: flex; align-items: center; gap: 18px; }
+.v2 .sd-emerg .v2-ico {
+  background: rgba(154, 107, 31, 0.12);
+  color: var(--sd-warn);
+}
+.v2 .sd-emerg h2 {
+  margin: 0;
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  color: var(--v2-ink);
+}
+.v2 .sd-emerg p { margin: 5px 0 0; font-size: 14px; color: var(--v2-body); }
+.v2 .sd-emerg-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* --------------------------------------------------------------------------
+   Who it's for — chips
+   -------------------------------------------------------------------------- */
+.v2 .sd-chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.v2 .sd-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  border: 1px solid var(--v2-green);
+  border-radius: 999px;
+  background: var(--v2-green);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--v2-fast) var(--v2-ease),
+              color var(--v2-fast) var(--v2-ease),
+              transform var(--v2-fast) var(--v2-ease);
+}
+.v2 .sd-chip:hover {
+  background: var(--v2-green-dark);
+  border-color: var(--v2-green-dark);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Service process grid — reuses the .sv-card shell
+   -------------------------------------------------------------------------- */
+.v2 .sd-proc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.v2 .sd-proc-body { padding: clamp(22px, 2.4vw, 28px); }
+.v2 .sd-proc-body h3 { margin: 20px 0 0; }
+.v2 .sd-proc-body .sv-rule { margin: 14px 0 14px; }
+.v2 .sd-proc-body p { margin: 0; }
+.v2 .sd-proc .v2-ico { transition: background var(--v2-med) var(--v2-ease), color var(--v2-med) var(--v2-ease); }
+.v2 .sd-proc:hover .v2-ico { background: var(--v2-green); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   Often paired with
+   -------------------------------------------------------------------------- */
+.v2 .sd-paired {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.v2 .sd-paired-list { display: grid; gap: 14px; align-content: start; }
+
+.v2 .sd-paired-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-r-lg);
+  background: #fff;
+  box-shadow: var(--v2-sh-1);
+  text-decoration: none;
+  transition: border-color var(--v2-med) var(--v2-ease),
+              box-shadow var(--v2-med) var(--v2-ease),
+              transform var(--v2-med) var(--v2-ease);
+}
+.v2 .sd-paired-item:hover {
+  border-color: rgba(40, 95, 36, 0.34);
+  box-shadow: var(--v2-sh-2);
+  transform: translateY(-2px);
+}
+.v2 .sd-paired-item:hover .v2-ico { background: var(--v2-green); color: #fff; }
+/* The service most often bought alongside this one */
+.v2 .sd-paired-item--lead {
+  border-color: rgba(40, 95, 36, 0.38);
+  background: var(--v2-green-wash);
+}
+.v2 .sd-paired-item--lead .v2-ico { background: #fff; }
+.v2 .sd-paired-text { flex: 1; min-width: 0; }
+.v2 .sd-paired-text h3 { margin: 0 0 5px; font-size: 15.5px; }
+.v2 .sd-paired-text p { margin: 0; font-size: 13.5px; line-height: 1.55; color: var(--v2-muted); }
+.v2 .sd-paired-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--v2-green);
+}
+.v2 .sd-paired-item:hover .sd-paired-view svg { transform: translateX(3px); }
+.v2 .sd-paired-view svg { transition: transform var(--v2-med) var(--v2-ease); }
+
+/* Planning CTA card */
+.v2 .sd-plan {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(28px, 3.2vw, 42px);
+  border-radius: var(--v2-r-lg);
+  background: var(--v2-green);
+  color: rgba(255, 255, 255, 0.84);
+}
+.v2 .sd-plan h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(21px, 2vw, 27px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.v2 .sd-plan p {
+  margin: 18px 0 0;
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+.v2 .sd-plan .v2-btn { margin-top: 30px; align-self: stretch; }
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1040px) {
+  .v2 .sd-proc-grid { grid-template-columns: repeat(2, 1fr); }
+  .v2 .sd-paired { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 820px) {
+  .v2 .sd-panel { grid-template-columns: 1fr; }
+  .v2 .sd-panel-col + .sd-panel-col {
+    border-left: 0;
+    border-top: 1px solid var(--v2-line);
+  }
+}
+
+@media (max-width: 720px) {
+  .v2 .sd-proc-grid { grid-template-columns: 1fr; }
+  .v2 .sd-panel .sv-rule { margin-left: 0; }
+
+  .v2 .sd-emerg { align-items: flex-start; }
+  .v2 .sd-emerg-copy { align-items: flex-start; }
+  .v2 .sd-emerg-actions { width: 100%; }
+  .v2 .sd-emerg-actions .v2-btn { flex: 1 1 100%; }
+
+  .v2 .sd-paired-item { flex-wrap: wrap; gap: 14px; }
+  .v2 .sd-paired-text { flex: 1 1 100%; order: 2; }
+  .v2 .sd-paired-view { order: 3; margin-left: auto; }
+}
+
+@media (max-width: 420px) {
+  .v2 .sd-chip { flex: 1 1 100%; justify-content: center; }
+}
