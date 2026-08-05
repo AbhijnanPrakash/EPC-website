@@ -19,7 +19,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="static/img/electrical-panel-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
+      imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="static/css/v2.css">
 <script>document.documentElement.classList.add('js');</script>
@@ -147,9 +149,16 @@
 <!-- ===================== 2. HERO ===================== -->
 <section class="v2-hero" aria-labelledby="hero-title">
   <div class="v2-hero-media">
-    <img src="static/img/electrical-panel-hero.jpg"
-         alt="EPC engineer terminating control wiring inside an electrical distribution panel"
-         width="1400" height="800" fetchpriority="high" decoding="async">
+    <picture>
+      <source type="image/webp"
+              srcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
+              sizes="100vw">
+      <img src="static/img/electrical-panel-hero.jpg"
+           srcset="static/img/electrical-panel-hero-480.jpg 480w, static/img/electrical-panel-hero-800.jpg 800w, static/img/electrical-panel-hero.jpg 1400w"
+           sizes="100vw"
+           alt="EPC engineer terminating control wiring inside an electrical distribution panel"
+           width="1400" height="797" fetchpriority="high" decoding="async">
+    </picture>
   </div>
   <div class="v2-wrap v2-hero-inner">
     <div class="v2-hero-copy">
@@ -260,9 +269,16 @@
 <section class="v2-band v2-band--cream" aria-labelledby="about-title">
   <div class="v2-wrap v2-about-grid">
     <div class="v2-about-media v2-rv">
-      <img src="static/img/electrical-panel-hero.jpg"
-           alt="EPC engineers reviewing panel wiring and load distribution on site"
-           width="1400" height="800" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp"
+                srcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
+                sizes="(max-width: 1040px) 92vw, 600px">
+        <img src="static/img/electrical-panel-hero.jpg"
+             srcset="static/img/electrical-panel-hero-480.jpg 480w, static/img/electrical-panel-hero-800.jpg 800w, static/img/electrical-panel-hero.jpg 1400w"
+             sizes="(max-width: 1040px) 92vw, 600px"
+             alt="EPC engineers reviewing panel wiring and load distribution on site"
+             width="1400" height="797" loading="lazy" decoding="async">
+      </picture>
       <div class="v2-about-badge">
         <span class="v2-ico" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
         <div>

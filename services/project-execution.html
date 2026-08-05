@@ -19,7 +19,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="../static/img/electrical-panel-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="../static/img/electrical-panel-hero-480.webp 480w, ../static/img/electrical-panel-hero-800.webp 800w, ../static/img/electrical-panel-hero-1400.webp 1400w"
+      imagesizes="(max-width: 1040px) 92vw, 560px">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/css/v2.css">
 <link rel="stylesheet" href="../static/css/services.css">
@@ -163,9 +165,16 @@
 
     <div class="sv-hero-media v2-rv v2-rv-d1">
       <figure class="sv-hero-figure">
-        <img src="../static/img/electrical-panel-hero.jpg"
-             alt="Eternal Power engineers terminating control wiring during a generator installation"
-             width="1400" height="1050" fetchpriority="high" decoding="async">
+        <picture>
+          <source type="image/webp"
+                  srcset="../static/img/electrical-panel-hero-480.webp 480w, ../static/img/electrical-panel-hero-800.webp 800w, ../static/img/electrical-panel-hero-1400.webp 1400w"
+                  sizes="(max-width: 1040px) 92vw, 560px">
+          <img src="../static/img/electrical-panel-hero.jpg"
+               srcset="../static/img/electrical-panel-hero-480.jpg 480w, ../static/img/electrical-panel-hero-800.jpg 800w, ../static/img/electrical-panel-hero.jpg 1400w"
+               sizes="(max-width: 1040px) 92vw, 560px"
+               alt="Eternal Power engineers terminating control wiring during a generator installation"
+               width="1400" height="797" fetchpriority="high" decoding="async">
+        </picture>
       </figure>
       <div class="sv-trust">
         <span class="v2-ico v2-ico--round" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
