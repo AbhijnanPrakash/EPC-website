@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ETERNAL POWER — Homepage V2 behaviour
+   ETERNAL POWER — V2 shared behaviour
    No dependencies. Everything degrades gracefully without JS:
    the FAQ uses native <details>, the process panels render expanded,
    the project rail is a native scroll-snap container, and the form

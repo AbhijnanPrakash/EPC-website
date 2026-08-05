@@ -19,9 +19,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="static/img/electrical-panel-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
+      imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/css/home.css">
+<link rel="stylesheet" href="static/css/v2.css">
 <link rel="stylesheet" href="static/css/chat.css">
 <script>document.documentElement.classList.add('js');</script>
 
@@ -29,7 +31,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What UPS capacity range does Eternal Power supply?","acceptedAnswer":{"@type":"Answer","text":"Online UPS from 1 kVA standalone units through to 4000 kVA parallel-redundant systems, covering a 350 VA to 4.8 MW system range. Sizing is driven by a measured load study rather than a catalogue guess."}},{"@type":"Question","name":"Do you service UPS systems you did not sell?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our comprehensive and non-comprehensive annual maintenance contracts cover UPS of any make, alongside BMS, fire alarm panels and electrical distribution equipment."}},{"@type":"Question","name":"How quickly can you respond to a breakdown?","acceptedAnswer":{"@type":"Answer","text":"AMC customers get round-the-clock emergency breakdown support. Response times are written into the contract rather than left to a call centre script, and sites under remote monitoring are often diagnosed before the customer calls."}},{"@type":"Question","name":"Which battery types and brands do you work with?","acceptedAnswer":{"@type":"Answer","text":"SMF, VRLA and Li-Ion batteries from 7 AH to 400 AH, including Panasonic, Exide, Quanta and EnerRocket. Bank health is verified with HIOKI internal-resistance testing before any replacement is recommended."}},{"@type":"Question","name":"Do you work outside Bangalore?","acceptedAnswer":{"@type":"Answer","text":"Bangalore and the wider Karnataka region are our core service area. Multi-site customers are supported from our command centre over GPRS/IP, so monitoring and analytics extend beyond the sites our engineers reach on the same day."}}]}</script>
 </head>
 
-<body class="page-home">
+<body class="v2">
 
 <!-- Icon sprite: one family, one stroke weight, referenced with <use> ------- -->
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
@@ -96,6 +98,7 @@
       <a href="about.html">About</a>
       <a href="products/index.html">Products</a>
       <a href="services/index.html">Services</a>
+      <a href="services/amc.html">AMC</a>
       <a href="solutions/index.html">Solutions</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
@@ -131,6 +134,7 @@
     <a href="about.html">About</a>
     <a href="products/index.html">Products</a>
     <a href="services/index.html">Services</a>
+    <a href="services/amc.html">AMC</a>
     <a href="solutions/index.html">Solutions</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
@@ -146,9 +150,16 @@
 <!-- ===================== 2. HERO ===================== -->
 <section class="v2-hero" aria-labelledby="hero-title">
   <div class="v2-hero-media">
-    <img src="static/img/electrical-panel-hero.jpg"
-         alt="EPC engineer terminating control wiring inside an electrical distribution panel"
-         width="1400" height="800" fetchpriority="high" decoding="async">
+    <picture>
+      <source type="image/webp"
+              srcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
+              sizes="100vw">
+      <img src="static/img/electrical-panel-hero.jpg"
+           srcset="static/img/electrical-panel-hero-480.jpg 480w, static/img/electrical-panel-hero-800.jpg 800w, static/img/electrical-panel-hero.jpg 1400w"
+           sizes="100vw"
+           alt="EPC engineer terminating control wiring inside an electrical distribution panel"
+           width="1400" height="797" fetchpriority="high" decoding="async">
+    </picture>
   </div>
   <div class="v2-wrap v2-hero-inner">
     <div class="v2-hero-copy">
@@ -259,9 +270,16 @@
 <section class="v2-band v2-band--cream" aria-labelledby="about-title">
   <div class="v2-wrap v2-about-grid">
     <div class="v2-about-media v2-rv">
-      <img src="static/img/electrical-panel-hero.jpg"
-           alt="EPC engineers reviewing panel wiring and load distribution on site"
-           width="1400" height="800" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp"
+                srcset="static/img/schematic-480.webp 480w, static/img/schematic-800.webp 800w, static/img/schematic-1400.webp 1400w"
+                sizes="(max-width: 1040px) 92vw, 600px">
+        <img src="static/img/schematic.jpg"
+             srcset="static/img/schematic-480.jpg 480w, static/img/schematic-800.jpg 800w, static/img/schematic.jpg 1400w"
+             sizes="(max-width: 1040px) 92vw, 600px"
+             alt="Single-line schematic illustration showing grid supply through ATS and UPS to the protected load, with battery bank"
+             width="1400" height="797" loading="lazy" decoding="async">
+      </picture>
       <div class="v2-about-badge">
         <span class="v2-ico" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
         <div>
@@ -1023,6 +1041,6 @@
 </div>
 
 <script src="static/js/main.js" defer></script>
-<script src="static/js/home.js" defer></script>
+<script src="static/js/v2.js" defer></script>
 </body>
 </html>

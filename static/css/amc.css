@@ -1,0 +1,214 @@
+/* ==========================================================================
+   ETERNAL POWER — AMC page sections
+   Requires v2.css (design system, full-bleed hero, nav, footer) and
+   services.css (breadcrumb, section rule, card shell). This file adds only
+   the assurance bar, benefit bodies, plan comparison and consultation CTA.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero — reuses .v2-hero, tightened for a shorter inner page
+   -------------------------------------------------------------------------- */
+.v2 .amc-hero .v2-hero-inner {
+  padding-block: 22px clamp(38px, 4vw, 52px);
+}
+.v2 .amc-hero .v2-hero-copy { max-width: 600px; }
+.v2 .amc-hero .v2-hero-pill { margin-top: 30px; margin-bottom: 20px; }
+.v2 .amc-hero h1 { font-size: clamp(30px, 3.6vw, 46px); }
+.v2 .amc-hero .v2-lede { margin-top: 18px; max-width: 50ch; }
+.v2 .amc-hero .v2-lede strong { color: #fff; font-weight: 600; }
+
+/* Breadcrumb sitting on the hero image */
+.v2 .sv-crumbs--on-dark { color: rgba(255, 255, 255, 0.62); }
+.v2 .sv-crumbs--on-dark a { color: rgba(255, 255, 255, 0.78); }
+.v2 .sv-crumbs--on-dark a:hover { color: #fff; }
+.v2 .sv-crumbs--on-dark [aria-current="page"] { color: var(--v2-lime); }
+.v2 .sv-crumbs--on-dark svg { opacity: 0.45; }
+
+/* Assurance bar */
+.v2 .amc-assure {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 34px 0 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--v2-r);
+  background: var(--v2-glass-dark);
+  backdrop-filter: var(--v2-glass);
+  -webkit-backdrop-filter: var(--v2-glass);
+  box-shadow: var(--v2-glass-dark-edge);
+}
+.v2 .amc-assure li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.32;
+  color: rgba(255, 255, 255, 0.92);
+}
+.v2 .amc-assure li + li { border-left: 1px solid rgba(255, 255, 255, 0.14); }
+.v2 .amc-assure .v2-ico {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(116, 194, 87, 0.16);
+  color: var(--v2-lime);
+}
+.v2 .amc-assure .v2-ico svg { width: 15px; height: 15px; }
+
+/* --------------------------------------------------------------------------
+   Centred section heading with the rule above
+   -------------------------------------------------------------------------- */
+.v2 .amc-head { text-align: center; max-width: 660px; margin-inline: auto; }
+.v2 .amc-head .sv-rule { margin: 0 auto 22px; }
+.v2 .amc-head .v2-lede { margin: 16px auto 0; }
+
+/* --------------------------------------------------------------------------
+   Benefits — four cards, reusing the .sv-card shell
+   -------------------------------------------------------------------------- */
+.v2 .amc-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: clamp(38px, 4vw, 54px);
+}
+.v2 .amc-benefit-body { padding: clamp(22px, 2.2vw, 26px); }
+.v2 .amc-benefit-body .sv-rule { margin: 22px 0 14px; }
+.v2 .amc-benefit-body h3 { margin: 0 0 10px; }
+.v2 .amc-benefit-body p { margin: 0; }
+.v2 .amc-benefit .v2-ico {
+  transition: background var(--v2-med) var(--v2-ease), color var(--v2-med) var(--v2-ease);
+}
+.v2 .amc-benefit:hover .v2-ico { background: var(--v2-green); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   Plans
+   -------------------------------------------------------------------------- */
+.v2 .amc-plans {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 940px;
+  margin: clamp(38px, 4vw, 54px) auto 0;
+  align-items: stretch;
+}
+
+.v2 .amc-plan {
+  position: relative;
+  overflow: hidden; /* keeps the corner flag inside the card radius */
+  display: flex;
+  flex-direction: column;
+  padding: clamp(26px, 2.8vw, 34px);
+  border: 1px solid var(--v2-line);
+  border-radius: var(--v2-r-lg);
+  background: #fff;
+  box-shadow: var(--v2-sh-1);
+  transition: border-color var(--v2-med) var(--v2-ease),
+              box-shadow var(--v2-med) var(--v2-ease);
+}
+.v2 .amc-plan:hover { box-shadow: var(--v2-sh-2); }
+.v2 .amc-plan--featured {
+  border-color: rgba(40, 95, 36, 0.34);
+  background: linear-gradient(180deg, var(--v2-green-wash), #fff 62%);
+  box-shadow: var(--v2-sh-2);
+}
+.v2 .amc-plan--featured:hover { box-shadow: var(--v2-sh-3); }
+
+/* "Most complete" flag, tucked into the card corner */
+.v2 .amc-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  border-radius: 0 var(--v2-r-lg) 0 var(--v2-r);
+  background: var(--v2-green-dark);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.v2 .amc-plan h3 { font-size: clamp(19px, 1.7vw, 22px); }
+.v2 .amc-plan-sub { margin: 10px 0 0; }
+.v2 .amc-plan .sv-rule { margin: 18px 0 0; }
+
+.v2 .amc-features {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+.v2 .amc-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--v2-body);
+}
+.v2 .amc-feat svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--v2-green); }
+/* Excluded line — struck through and greyed, with its own icon so the
+   distinction never rests on colour alone. The rule sits on the text span so
+   the strike does not run through the icon. */
+.v2 .amc-feat--off { color: var(--v2-muted); }
+.v2 .amc-feat--off > span { text-decoration: line-through; }
+.v2 .amc-feat--off svg { color: var(--v2-muted); }
+
+.v2 .amc-plan-action { margin-top: auto; padding-top: 28px; }
+.v2 .amc-plan-action .v2-btn { width: 100%; }
+
+/* --------------------------------------------------------------------------
+   Consultation CTA
+   -------------------------------------------------------------------------- */
+.v2 .amc-consult {
+  text-align: center;
+  padding: clamp(38px, 4.6vw, 62px) clamp(26px, 4vw, 56px);
+  border-radius: var(--v2-r-lg);
+  background: var(--v2-green);
+  color: rgba(255, 255, 255, 0.85);
+}
+.v2 .amc-consult h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 2.4vw, 31px);
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  font-weight: 600;
+}
+.v2 .amc-consult p {
+  margin: 16px auto 0;
+  max-width: 60ch;
+  font-size: 15px;
+  line-height: 1.62;
+}
+.v2 .amc-consult .v2-btn { margin-top: 32px; }
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1040px) {
+  .v2 .amc-benefits { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 820px) {
+  .v2 .amc-plans { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .v2 .amc-benefits { grid-template-columns: 1fr; }
+  .v2 .amc-hero .v2-hero-ctas .v2-btn { flex: 1 1 100%; }
+
+  /* Stack the assurance bar so the labels stay readable */
+  .v2 .amc-assure { display: grid; width: 100%; gap: 0; }
+  .v2 .amc-assure li + li {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .v2 .amc-consult .v2-btn { width: 100%; }
+}
