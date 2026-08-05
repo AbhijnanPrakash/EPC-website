@@ -608,9 +608,12 @@ body.v2 { overflow-x: hidden; }
 .v2 .v2-hero {
   position: relative;
   isolation: isolate;
-  background: var(--v2-green-deep);
+  background: #04100a;
   color: #fff;
   overflow: hidden;
+  min-height: min(92vh, 860px);
+  display: flex;
+  align-items: flex-end;
 }
 .v2 .v2-hero-media {
   position: absolute;
@@ -621,20 +624,36 @@ body.v2 { overflow-x: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 60% 45%;
+  /* Bias right so panel wiring stays readable where the scrim opens up */
+  object-position: 72% 45%;
+  filter: brightness(0.92) saturate(1.1) contrast(1.06);
 }
 .v2 .v2-hero-media::after {
-  /* Layered scrim: keeps AA contrast on the copy at every viewport width */
+  /* Mockup contrast: heavy forest/black on left + bottom; photo opens on the right */
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(96deg, rgba(9, 26, 12, 0.95) 0%, rgba(9, 26, 12, 0.86) 38%, rgba(13, 36, 16, 0.58) 68%, rgba(13, 36, 16, 0.46) 100%),
-    linear-gradient(to top, rgba(9, 26, 12, 0.9) 0%, transparent 42%);
+    linear-gradient(
+      100deg,
+      rgba(3, 12, 8, 0.94) 0%,
+      rgba(4, 14, 9, 0.88) 18%,
+      rgba(4, 16, 10, 0.62) 38%,
+      rgba(5, 18, 11, 0.28) 58%,
+      rgba(5, 18, 11, 0.10) 78%,
+      rgba(5, 18, 11, 0.20) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(3, 10, 7, 0.78) 0%,
+      rgba(3, 10, 7, 0.42) 24%,
+      transparent 52%
+    );
 }
 .v2 .v2-hero-inner {
   position: relative;
-  padding-block: clamp(64px, 8vw, 104px) clamp(96px, 10vw, 132px);
+  width: 100%;
+  padding-block: clamp(72px, 9vw, 112px) clamp(36px, 4.5vw, 52px);
 }
 .v2 .v2-hero-copy { max-width: 640px; }
 .v2 .v2-hero-pill {
@@ -643,26 +662,56 @@ body.v2 { overflow-x: hidden; }
   gap: 9px;
   margin-bottom: 24px;
   padding: 7px 15px 7px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
-  background: var(--v2-glass-dark);
-  backdrop-filter: var(--v2-glass);
-  -webkit-backdrop-filter: var(--v2-glass);
-  box-shadow: var(--v2-glass-dark-edge);
+  background: rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: none;
   font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.92);
 }
 .v2 .v2-hero h1 { color: #fff; text-wrap: balance; }
+.v2 .v2-hero h1 .v2-accent {
+  /* Match mockup: accent the full “mission-critical operations” phrase */
+  color: #4ade80;
+}
 .v2 .v2-hero .v2-lede {
   margin-top: 22px;
   max-width: 54ch;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.78);
   font-size: clamp(15.5px, 1.2vw, 17.5px);
 }
-.v2 .v2-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.v2 .v2-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+/* Hero CTAs — solid leaf-green primary + white ghost secondary */
+.v2 .v2-hero-ctas .v2-btn--primary {
+  background: #22c55e;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(34, 197, 94, 0.28);
+}
+.v2 .v2-hero-ctas .v2-btn--primary:hover {
+  background: #16a34a;
+  color: #fff;
+}
+.v2 .v2-hero-ctas .v2-btn--ghost-dark {
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+}
+.v2 .v2-hero-ctas .v2-btn--ghost-dark:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: #fff;
+}
 .v2 .v2-hero-note {
   display: flex;
   align-items: center;
@@ -670,6 +719,64 @@ body.v2 { overflow-x: hidden; }
   margin-top: 26px;
   font-size: 13.5px;
   color: rgba(255, 255, 255, 0.66);
+}
+
+/* In-hero KPI cards — dark frosted glass (mockup) */
+.v2 .v2-hero-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: clamp(40px, 5vw, 64px);
+  max-width: 920px;
+}
+.v2 .v2-hero-kpi {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(8, 18, 12, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  transition: background var(--v2-fast) var(--v2-ease),
+              border-color var(--v2-fast) var(--v2-ease),
+              transform var(--v2-fast) var(--v2-ease);
+}
+.v2 .v2-hero-kpi:hover {
+  background: rgba(8, 18, 12, 0.64);
+  border-color: rgba(255, 255, 255, 0.26);
+  transform: translateY(-2px);
+}
+.v2 .v2-hero-kpi-ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+  color: #4ade80;
+}
+.v2 .v2-hero-kpi-ico svg {
+  width: 22px;
+  height: 22px;
+}
+.v2 .v2-hero-kpi-val {
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.v2 .v2-hero-kpi-lbl {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.68);
 }
 
 /* --------------------------------------------------------------------------
@@ -1445,9 +1552,11 @@ body.v2 { overflow-x: hidden; }
 @media (max-width: 720px) {
   .v2 .v2-topbar-meta { display: none; }
   .v2 .v2-topbar-links { gap: 16px; margin-inline: auto; }
-  .v2 .v2-hero-inner { padding-bottom: clamp(72px, 12vw, 96px); }
-  .v2 .v2-hero-media img { object-position: 64% 45%; }
+  .v2 .v2-hero { min-height: 0; }
+  .v2 .v2-hero-inner { padding-bottom: clamp(28px, 6vw, 40px); }
+  .v2 .v2-hero-media img { object-position: 68% 45%; }
   .v2 .v2-hero-ctas .v2-btn { flex: 1 1 100%; }
+  .v2 .v2-hero-kpis { grid-template-columns: 1fr; max-width: 420px; }
   .v2 .v2-stats-grid { grid-template-columns: 1fr; }
   .v2 .v2-stat + .v2-stat { border-left: 0; border-top: 1px solid var(--v2-line); }
   .v2 .v2-svc-grid,
@@ -1510,4 +1619,5 @@ body.v2 { overflow-x: hidden; }
   .v2 .v2-mbar,
   .v2 .v2-about-badge { background: var(--v2-glass-solid); }
   .v2 .v2-hero-pill { background: rgba(13, 36, 16, 0.72); }
+  .v2 .v2-hero-kpi { background: rgba(8, 18, 12, 0.88); }
 }
