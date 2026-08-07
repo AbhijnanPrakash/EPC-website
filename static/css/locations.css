@@ -1,0 +1,278 @@
+/* Locations hub — list + map layout */
+.v2 .loc-hero {
+  padding: clamp(36px, 5vw, 56px) 0 0;
+  background: #fff;
+}
+.v2 .loc-hero .crumbs {
+  color: var(--v2-muted);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.v2 .loc-hero .crumbs a { color: var(--v2-body); text-decoration: none; }
+.v2 .loc-hero .crumbs a:hover { color: var(--v2-green); }
+.v2 .loc-hero .crumbs .sep { margin: 0 8px; opacity: 0.45; }
+
+.v2 .loc-map-band {
+  padding: 28px 0 clamp(56px, 7vw, 88px);
+  background: #fff;
+}
+.v2 .loc-split {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.55fr);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: stretch;
+  min-height: min(72vh, 720px);
+}
+
+.v2 .loc-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.v2 .loc-panel .v2-eyebrow { margin-bottom: 14px; }
+.v2 .loc-panel .v2-h1,
+.v2 .loc-panel h1 {
+  margin: 0;
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--v2-ink);
+}
+.v2 .loc-panel .v2-lede {
+  margin-top: 14px;
+  max-width: 36ch;
+}
+
+.v2 .loc-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--v2-cream);
+  border: 1px solid var(--v2-line);
+  color: var(--v2-body);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.v2 .loc-callout-ico {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--v2-green-wash);
+  color: var(--v2-green);
+}
+.v2 .loc-callout-ico svg { width: 18px; height: 18px; }
+
+.v2 .loc-list {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--v2-line);
+  overflow: auto;
+  max-height: min(52vh, 520px);
+}
+.v2 .loc-list a {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) 18px;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--v2-line);
+  text-decoration: none;
+  color: inherit;
+  transition: background 160ms var(--v2-ease), padding-left 160ms var(--v2-ease);
+}
+.v2 .loc-list a:hover,
+.v2 .loc-list a.is-active {
+  background: linear-gradient(90deg, var(--v2-green-wash), transparent);
+  padding-left: 8px;
+}
+.v2 .loc-num {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--v2-green);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 650;
+}
+.v2 .loc-list a.is-active .loc-num,
+.v2 .loc-list a:hover .loc-num {
+  background: var(--v2-green-dark);
+}
+.v2 .loc-name {
+  display: block;
+  font-size: 15.5px;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--v2-ink);
+}
+.v2 .loc-zone {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--v2-muted);
+}
+.v2 .loc-chevron {
+  color: var(--v2-muted);
+  transition: transform 160ms var(--v2-ease), color 160ms var(--v2-ease);
+}
+.v2 .loc-list a:hover .loc-chevron {
+  color: var(--v2-green);
+  transform: translateX(3px);
+}
+.v2 .loc-chevron svg { display: block; width: 16px; height: 16px; }
+
+.v2 .loc-map-shell {
+  position: relative;
+  min-height: 520px;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--v2-line);
+  background: #eef1ee;
+  box-shadow: var(--v2-sh-2);
+}
+.v2 .loc-map {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  background: #e8ece8;
+}
+.v2 .loc-map .leaflet-container {
+  font: inherit;
+  background: #e8ece8;
+}
+.v2 .loc-map .leaflet-control-zoom a {
+  color: var(--v2-green-dark) !important;
+  border-color: var(--v2-line) !important;
+  width: 34px !important;
+  height: 34px !important;
+  line-height: 34px !important;
+  border-radius: 8px !important;
+}
+.v2 .loc-map .leaflet-bar {
+  border: 0 !important;
+  box-shadow: var(--v2-sh-2) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.v2 .loc-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px 7px 7px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(22, 28, 25, 0.12);
+  box-shadow: 0 8px 22px -12px rgba(13, 36, 16, 0.35);
+  color: var(--v2-ink);
+  white-space: nowrap;
+  transform: translate(-12px, -50%);
+  transition: transform 160ms var(--v2-ease), box-shadow 160ms var(--v2-ease);
+}
+.v2 .loc-marker.is-active,
+.v2 .loc-marker:hover {
+  transform: translate(-12px, -50%) scale(1.04);
+  box-shadow: 0 12px 28px -10px rgba(13, 36, 16, 0.4);
+  z-index: 10;
+}
+.v2 .loc-marker-num {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--v2-green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.v2 .loc-marker-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.v2 .loc-marker-text strong {
+  font-size: 12.5px;
+  font-weight: 650;
+}
+.v2 .loc-marker-text span {
+  font-size: 10.5px;
+  color: var(--v2-muted);
+}
+.v2 .loc-marker--hq {
+  padding: 8px;
+  border-radius: 12px;
+}
+.v2 .loc-marker--hq .loc-marker-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--v2-green);
+}
+.v2 .loc-marker--hq .loc-marker-num svg {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+
+.v2 .loc-services {
+  padding-block: clamp(56px, 7vw, 88px);
+  background: var(--v2-cream);
+}
+.v2 .loc-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.v2 .loc-svc-card {
+  display: block;
+  padding: 22px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--v2-line);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 160ms var(--v2-ease), transform 160ms var(--v2-ease);
+}
+.v2 .loc-svc-card:hover {
+  border-color: rgba(40, 95, 36, 0.35);
+  transform: translateY(-2px);
+}
+.v2 .loc-svc-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+.v2 .loc-svc-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--v2-body);
+  line-height: 1.45;
+}
+
+@media (max-width: 1040px) {
+  .v2 .loc-split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .v2 .loc-map-shell,
+  .v2 .loc-map { min-height: 420px; height: 420px; }
+  .v2 .loc-list { max-height: none; overflow: visible; }
+  .v2 .loc-services-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .v2 .loc-marker-text span { display: none; }
+}

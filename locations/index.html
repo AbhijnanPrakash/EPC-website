@@ -18,9 +18,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../static/css/v2.css?v=20260807f">
+<link rel="stylesheet" href="../static/css/v2.css?v=20260807h">
 <link rel="stylesheet" href="../static/css/style.css?v=20260807b">
 <link rel="stylesheet" href="../static/css/chat.css?v=20260807b">
+<link rel="stylesheet" href="../static/css/locations.css?v=20260807h">
+<link rel="stylesheet" href="../static/vendor/leaflet/leaflet.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eternalpower.co.in/"}, {"@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.eternalpower.co.in/locations/index.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Bangalore service areas", "url": "https://www.eternalpower.co.in/locations/index.html", "about": {"@type": "Place", "name": "Bangalore", "address": {"@type": "PostalAddress", "addressLocality": "Bangalore", "addressRegion": "Karnataka", "addressCountry": "IN"}}, "isPartOf": {"@type": "WebSite", "name": "Eternal Power & Cooling Services", "url": "https://www.eternalpower.co.in"}}</script>
 </head><body class="v2">
@@ -100,108 +102,104 @@
 
 <main id="main">
 
-<section class="page-hero">
-  <div class="wrap">
+<section class="loc-hero">
+  <div class="v2-wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span class="now">Locations</span></nav>
-    <p class="eyebrow" style="margin-top:24px">Bangalore</p>
-    <h1 style="margin-top:20px">Areas we serve</h1>
-    <p class="lede">Neighbourhood and corridor pages for UPS, batteries and AMC — written for local search and clear service coverage.</p>
   </div>
 </section>
 
+<section class="loc-map-band" aria-labelledby="loc-title">
+  <div class="v2-wrap loc-split">
+    <div class="loc-panel">
+      <p class="v2-eyebrow">Location authority</p>
+      <h1 class="v2-h1" id="loc-title">Bangalore service areas</h1>
+      <p class="v2-lede">Eternal Power is based in Horamavu and supports UPS, battery and AMC work across Bangalore’s major commercial and industrial corridors.</p>
 
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Location authority</p>
-      <h2>Bangalore service areas</h2>
-      <p class="lede">Eternal Power is based in Horamavu and supports UPS, battery and AMC work across Bangalore. These pages describe how we serve major commercial and industrial corridors.</p>
+      <div class="loc-callout">
+        <span class="loc-callout-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>
+        </span>
+        <p>Serving major commercial and industrial corridors across Bangalore.</p>
+      </div>
+
+      <ul class="loc-list" id="loc-list">
+        <li><a href="whitefield.html" data-loc-id="whitefield">
+          <span class="loc-num">1</span>
+          <span><span class="loc-name">Whitefield</span><span class="loc-zone">East Bangalore</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="electronic-city.html" data-loc-id="electronic-city">
+          <span class="loc-num">2</span>
+          <span><span class="loc-name">Electronic City</span><span class="loc-zone">South Bangalore</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="peenya.html" data-loc-id="peenya">
+          <span class="loc-num">3</span>
+          <span><span class="loc-name">Peenya</span><span class="loc-zone">North-West Bangalore</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="hsr-layout.html" data-loc-id="hsr-layout">
+          <span class="loc-num">4</span>
+          <span><span class="loc-name">HSR Layout</span><span class="loc-zone">South-East Bangalore</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="koramangala.html" data-loc-id="koramangala">
+          <span class="loc-num">5</span>
+          <span><span class="loc-name">Koramangala</span><span class="loc-zone">Central-South Bangalore</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="marathahalli.html" data-loc-id="marathahalli">
+          <span class="loc-num">6</span>
+          <span><span class="loc-name">Marathahalli</span><span class="loc-zone">East Bangalore / ORR</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="manyata-tech-park.html" data-loc-id="manyata-tech-park">
+          <span class="loc-num">7</span>
+          <span><span class="loc-name">Manyata Tech Park</span><span class="loc-zone">North Bangalore</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+        <li><a href="horamavu.html" data-loc-id="horamavu">
+          <span class="loc-num">8</span>
+          <span><span class="loc-name">Horamavu &amp; Kalkere</span><span class="loc-zone">East Bangalore · Head office</span></span>
+          <span class="loc-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M5 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a></li>
+      </ul>
     </div>
-    <div class="related-grid" style="margin-top:32px">
-      <a class="related-card" href="whitefield.html">
-  <p class="eyebrow">East Bangalore</p>
-  <h3>Whitefield</h3>
-  <p>Whitefield concentrates large IT campuses, captive server rooms, BPO floors and commercial buildings that need continuous power through BESC…</p>
-</a><a class="related-card" href="electronic-city.html">
-  <p class="eyebrow">South Bangalore</p>
-  <h3>Electronic City</h3>
-  <p>Electronic City mixes manufacturing lines, electronics plants and IT campuses. Sites here often need UPS for process control, IT rooms and p…</p>
-</a><a class="related-card" href="peenya.html">
-  <p class="eyebrow">North-West Bangalore</p>
-  <h3>Peenya</h3>
-  <p>Peenya is one of Bangalore’s densest industrial clusters. Typical sites need stable power for CNC, packaging lines, compressors’ control cir…</p>
-</a><a class="related-card" href="hsr-layout.html">
-  <p class="eyebrow">South-East Bangalore</p>
-  <h3>HSR Layout</h3>
-  <p>HSR Layout has dense commercial streets, clinics, co-working spaces and apartment amenities. Power gaps are short but frequent enough to jus…</p>
-</a><a class="related-card" href="koramangala.html">
-  <p class="eyebrow">Central-South Bangalore</p>
-  <h3>Koramangala</h3>
-  <p>Koramangala hosts startups, creative studios, clinics and mid-size offices. Many sites outgrow consumer inverters and need proper online UPS…</p>
-</a><a class="related-card" href="marathahalli.html">
-  <p class="eyebrow">East Bangalore / ORR</p>
-  <h3>Marathahalli</h3>
-  <p>Marathahalli and the ORR belt hold large commercial offices and tech parks with concentrated IT loads. UPS rooms here often support floors o…</p>
-</a><a class="related-card" href="manyata-tech-park.html">
-  <p class="eyebrow">North Bangalore</p>
-  <h3>Manyata Tech Park</h3>
-  <p>Manyata and nearby north Bangalore campuses run large office populations with strict uptime expectations for IT, collaboration systems and b…</p>
-</a><a class="related-card" href="horamavu.html">
-  <p class="eyebrow">East Bangalore · Head office</p>
-  <h3>Horamavu &amp; Kalkere</h3>
-  <p>Our head office is in Horamavu (Kalkere / NRI Layout). East Bangalore businesses get fast site visits for surveys, battery work and AMC atte…</p>
-</a>
-    </div>
-  </div>
-</section>
-<section class="section" style="background:var(--v2-sand,#f2f1ea)">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">City-wide services</p>
-      <h2>UPS, AMC and batteries across Bangalore</h2>
-      <p class="lede">Start here if you are searching by service rather than neighbourhood.</p>
-    </div>
-    <div class="related-grid" style="margin-top:32px">
-      <a class="related-card" href="ups-bangalore.html">
-  <h3>UPS in Bangalore</h3>
-  <p>Buy and install UPS systems in Bangalore from 1 kVA to high-capacity configurations. Authorized OEM partner for supply, commissioning, batte…</p>
-</a><a class="related-card" href="amc-bangalore.html">
-  <h3>AMC in Bangalore</h3>
-  <p>UPS AMC in Bangalore for any make: preventive maintenance, breakdown response, battery health checks and spares planning. Eternal Power, Hor…</p>
-</a><a class="related-card" href="battery-services-bangalore.html">
-  <h3>Battery services in Bangalore</h3>
-  <p>UPS battery IR testing, health checks and replacement in Bangalore. SMF/VRLA and Li-Ion banks sized for runtime, installed and maintained by…</p>
-</a>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Also see</p>
-      <h2>Guides and industries</h2>
-    </div>
-    <div class="cta-actions" style="margin-top:24px;justify-content:flex-start">
-      <a class="btn btn-primary" href="../guides/index.html">Browse guides</a>
-      <a class="btn btn-ghost" href="../solutions/index.html">Solutions by industry</a>
-      <a class="btn btn-ghost" href="../contact.html#enquiry">Request a site visit</a>
-    </div>
-  </div>
-</section>
-<section class="cta">
-  <div class="wrap cta-inner">
-    <div>
-      <p class="eyebrow" style="margin-bottom:24px">Bangalore coverage</p>
-      <h2>Tell us your area and load</h2>
-      <p class="lede" style="margin-top:20px">Share the neighbourhood, application and approximate load. We respond with a specific recommendation.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn btn-primary btn-lg" href="../contact.html#enquiry">Get a Quote</a>
-      <a class="btn btn-ghost btn-lg" href="tel:+919841888332">Call +91 98418 88332</a>
+
+    <div class="loc-map-shell">
+      <div id="loc-map" class="loc-map" role="region" aria-label="Map of Eternal Power service areas in Bangalore"></div>
     </div>
   </div>
 </section>
 
+<section class="loc-services" aria-labelledby="loc-svc-title">
+  <div class="v2-wrap">
+    <div class="v2-head">
+      <p class="v2-eyebrow">City-wide services</p>
+      <h2 class="v2-h2" id="loc-svc-title">UPS, AMC and batteries across Bangalore</h2>
+      <p class="v2-lede">Start here if you are searching by service rather than neighbourhood.</p>
+    </div>
+    <div class="loc-services-grid">
+      <a class="loc-svc-card" href="ups-bangalore.html">
+        <h3>UPS in Bangalore</h3>
+        <p>Supply, install and size online UPS systems citywide — from office floors to plant control rooms.</p>
+      </a>
+      <a class="loc-svc-card" href="amc-bangalore.html">
+        <h3>AMC in Bangalore</h3>
+        <p>Any-make preventive maintenance, battery checks and breakdown response across multi-site estates.</p>
+      </a>
+      <a class="loc-svc-card" href="battery-services-bangalore.html">
+        <h3>Battery services in Bangalore</h3>
+        <p>IR testing, health reports and planned bank replacement matched to your UPS and runtime.</p>
+      </a>
+    </div>
+    <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px">
+      <a class="v2-btn v2-btn--primary" href="../contact.html#enquiry">Request a site visit</a>
+      <a class="v2-btn v2-btn--outline" href="../guides/index.html">Browse guides</a>
+      <a class="v2-btn v2-btn--outline" href="../solutions/index.html">Solutions by industry</a>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -282,6 +280,8 @@
 </div>
 
 <script src="../static/js/main.js?v=20260807b" defer></script>
-<script src="../static/js/v2.js?v=20260807f" defer></script>
+<script src="../static/js/v2.js?v=20260807h" defer></script>
+<script src="../static/vendor/leaflet/leaflet.js" defer></script>
+<script src="../static/js/locations-map.js?v=20260807h" defer></script>
 </body>
 </html>
