@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/css/v2.css?v=20260807h">
+<link rel="stylesheet" href="../static/css/canvas.css?v=20260807a">
 <link rel="stylesheet" href="../static/css/style.css?v=20260807b">
 <link rel="stylesheet" href="../static/css/chat.css?v=20260807b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eternalpower.co.in/"}, {"@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.eternalpower.co.in/products/index.html"}]}</script>
@@ -229,173 +230,60 @@
 
 <main id="main">
 
-<section class="page-hero">
-  <div class="wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="sep">/</span><span class="now">Products</span></nav>
-    <p class="eyebrow" style="margin-top:24px">Product Range</p>
-    <h1 style="margin-top:20px">UPS, batteries and power equipment</h1>
-    <p class="lede">Six categories, six dedicated pages. Each carries applications, features and specifications, plus a related-services strip so you know how the system is supported after commissioning.</p>
+<div class="cv-canvas">
+  <div class="container">
+    <nav class="cv-crumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <span>Products</span>
+    </nav>
+    <section class="cv-panel cv-catalog">
+      <div class="cv-catalog__head">
+        <p class="cv-kicker">Products</p>
+        <h1>UPS, batteries and power equipment</h1>
+        <p>Six categories with applications, features and specifications — each linked to the services that keep the system running after commissioning.</p>
+      </div>
+      <div class="cv-catalog__grid">
+      <a class="cv-catalog__card" href="ups-systems.html">
+        <span class="cv-catalog__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+        <h2>UPS Systems</h2>
+        <p>Online UPS from 1 kVA to 4000 kVA parallel systems, sized to your load and runtime.</p>
+        <span class="more">View product →</span>
+      </a>
+      <a class="cv-catalog__card" href="batteries.html">
+        <span class="cv-catalog__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/><path d="M14 11v2"/></svg></span>
+        <h2>Batteries</h2>
+        <p>SMF, VRLA and Li-Ion batteries from 7 AH to 400 AH — Panasonic, Exide, Quanta and EnerRocket.</p>
+        <span class="more">View product →</span>
+      </a>
+      <a class="cv-catalog__card" href="data-center.html">
+        <span class="cv-catalog__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h8"/><path d="M8 17h8"/></svg></span>
+        <h2>Data Center Infrastructure</h2>
+        <p>Racks, rack-based cooling, PDUs, static switches, precision cooling and DCIM software.</p>
+        <span class="more">View product →</span>
+      </a>
+      <a class="cv-catalog__card" href="power-quality.html">
+        <span class="cv-catalog__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14v-4"/><path d="M5.5 19a9 9 0 1 1 13 0"/><path d="m16 10-3 4"/></svg></span>
+        <h2>Power Monitoring & Power Quality</h2>
+        <p>Energy meters, monitoring systems, power factor correction and harmonic filtering.</p>
+        <span class="more">View product →</span>
+      </a>
+      <a class="cv-catalog__card" href="ibms.html">
+        <span class="cv-catalog__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></span>
+        <h2>Building Management</h2>
+        <p>IBMS controlling HVAC, lighting and power, integrated with CCTV, access, fire and PA.</p>
+        <span class="more">View product →</span>
+      </a>
+      <a class="cv-catalog__card" href="command-center.html">
+        <span class="cv-catalog__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>
+        <h2>Command & Monitoring</h2>
+        <p>Multi-site visibility, alerts and remote health for UPS and critical infrastructure.</p>
+        <span class="more">View product →</span>
+      </a>
+      </div>
+    </section>
   </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="bento"><a class="bento-card hero-card" href="ups-systems.html">
-          <span class="b-eyebrow">Product</span>
-          <h3>UPS Systems</h3>
-          <p>Online UPS from 1 kVA standalone units to 4000 kVA parallel systems, sized to your load and runtime.</p>
-          <div class="instrument-svg"><svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<rect x="60" y="30" width="120" height="140" rx="4" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
-<rect x="72" y="46" width="96" height="30" rx="2" fill="rgba(61,143,54,0.08)" stroke="rgba(61,143,54,0.5)" stroke-width="0.75"/>
-<text x="120" y="66" text-anchor="middle" fill="#3d8f36" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">UPS</text>
-<line x1="72" y1="92" x2="168" y2="92" stroke="rgba(255,255,255,0.08)"/>
-<g font-family="Geist Mono, monospace" font-size="8" fill="rgba(255,255,255,0.55)">
-<text x="72" y="108">LOAD</text><text x="168" y="108" text-anchor="end">62%</text>
-<rect x="72" y="112" width="96" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-<rect x="72" y="112" width="60" height="4" rx="2" fill="#3d8f36"/>
-<text x="72" y="130">BATTERY</text><text x="168" y="130" text-anchor="end">100%</text>
-<rect x="72" y="134" width="96" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-<rect x="72" y="134" width="96" height="4" rx="2" fill="#3d8f36" opacity="0.7"/>
-<text x="72" y="152">TEMP</text><text x="168" y="152" text-anchor="end">28°C</text>
-</g>
-<circle cx="120" cy="20" r="3" fill="#3d8f36"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/></circle>
-</svg></div>
-          <div class="b-spec"><span><strong>1 kVA - 4000 kVA · 350 VA - 4.8 MW system range</strong></span><span class="arrow">›</span></div>
-        </a><a class="bento-card" href="batteries.html">
-          <span class="b-eyebrow">Product</span>
-          <h3>Batteries</h3>
-          <p>SMF, VRLA and Li-Ion batteries from 7 AH to 400 AH, Panasonic, Exide, Quanta and EnerRocket.</p>
-          <div class="instrument-svg"><svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<g stroke="rgba(255,255,255,0.14)" stroke-width="1">
-<rect x="20" y="60" width="40" height="80" rx="2"/>
-<rect x="72" y="60" width="40" height="80" rx="2"/>
-<rect x="124" y="60" width="40" height="80" rx="2"/>
-<rect x="176" y="60" width="40" height="80" rx="2"/>
-<rect x="30" y="52" width="20" height="8" rx="1"/>
-<rect x="82" y="52" width="20" height="8" rx="1"/>
-<rect x="134" y="52" width="20" height="8" rx="1"/>
-<rect x="186" y="52" width="20" height="8" rx="1"/>
-</g>
-<g fill="#3d8f36" opacity="0.6">
-<rect x="24" y="120" width="32" height="16" rx="1"/>
-<rect x="76" y="110" width="32" height="26" rx="1"/>
-<rect x="128" y="100" width="32" height="36" rx="1"/>
-<rect x="180" y="90" width="32" height="46" rx="1"/>
-</g>
-<text x="120" y="176" text-anchor="middle" font-family="Geist Mono, monospace" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="1.5">7 AH - 400 AH</text>
-</svg></div>
-          <div class="b-spec"><span><strong>7 AH - 400 AH · Li-Ion & VRLA</strong></span><span class="arrow">›</span></div>
-        </a><a class="bento-card" href="data-center.html">
-          <span class="b-eyebrow">Product</span>
-          <h3>Data Center Infrastructure</h3>
-          <p>Racks, rack-based cooling, PDUs, static switches, precision cooling and DCIM software.</p>
-          <div class="instrument-svg"><svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<g stroke="rgba(255,255,255,0.14)" stroke-width="1">
-<rect x="30" y="30" width="60" height="140" rx="3"/>
-<rect x="100" y="30" width="60" height="140" rx="3"/>
-<rect x="170" y="30" width="60" height="140" rx="3"/>
-</g>
-<g fill="rgba(61,143,54,0.10)" stroke="rgba(61,143,54,0.4)" stroke-width="0.5">
-<rect x="36" y="40" width="48" height="12"/><rect x="36" y="56" width="48" height="12"/><rect x="36" y="72" width="48" height="12"/><rect x="36" y="88" width="48" height="12"/><rect x="36" y="104" width="48" height="12"/><rect x="36" y="120" width="48" height="12"/><rect x="36" y="136" width="48" height="12"/><rect x="36" y="152" width="48" height="12"/>
-<rect x="106" y="40" width="48" height="12"/><rect x="106" y="56" width="48" height="12"/><rect x="106" y="72" width="48" height="12"/><rect x="106" y="88" width="48" height="12"/><rect x="106" y="104" width="48" height="12"/><rect x="106" y="120" width="48" height="12"/><rect x="106" y="136" width="48" height="12"/><rect x="106" y="152" width="48" height="12"/>
-<rect x="176" y="40" width="48" height="12"/><rect x="176" y="56" width="48" height="12"/><rect x="176" y="72" width="48" height="12"/><rect x="176" y="88" width="48" height="12"/><rect x="176" y="104" width="48" height="12"/><rect x="176" y="120" width="48" height="12"/><rect x="176" y="136" width="48" height="12"/><rect x="176" y="152" width="48" height="12"/>
-</g>
-<g fill="#3d8f36">
-<circle cx="80" cy="46" r="1.5"><animate attributeName="opacity" values="1;0.2;1" dur="1.4s" repeatCount="indefinite"/></circle>
-<circle cx="150" cy="78" r="1.5"><animate attributeName="opacity" values="1;0.2;1" dur="1.7s" repeatCount="indefinite"/></circle>
-<circle cx="220" cy="126" r="1.5"><animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite"/></circle>
-</g>
-</svg></div>
-          <div class="b-spec"><span><strong>Racks & containment · Precision cooling</strong></span><span class="arrow">›</span></div>
-        </a><a class="bento-card wide" href="power-quality.html">
-          <span class="b-eyebrow">Product</span>
-          <h3>Power Monitoring & Power Quality</h3>
-          <p>Energy meters, monitoring systems, power factor correction and harmonic filtering.</p>
-          <div class="instrument-svg"><svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<g stroke="rgba(255,255,255,0.14)" stroke-width="1">
-<line x1="20" y1="50" x2="220" y2="50"/><line x1="20" y1="100" x2="220" y2="100"/><line x1="20" y1="150" x2="220" y2="150"/>
-</g>
-<path d="M20 100 Q45 55 70 100 T120 100 T170 100 T220 100" stroke="#FF6B5B" stroke-width="1.5" fill="none" opacity="0.7"/>
-<path d="M20 100 Q45 60 70 100 T120 100 T170 100 T220 100" stroke="#FFC547" stroke-width="1.5" fill="none" opacity="0.7" transform="translate(0,4)"/>
-<path d="M20 100 Q45 65 70 100 T120 100 T170 100 T220 100" stroke="#4A9EFF" stroke-width="1.5" fill="none" opacity="0.7" transform="translate(0,8)"/>
-<g font-family="Geist Mono, monospace" font-size="9" fill="rgba(255,255,255,0.55)" letter-spacing="1">
-<text x="20" y="180">R</text><text x="35" y="180">Y</text><text x="50" y="180">B</text>
-<text x="220" y="180" text-anchor="end">50 HZ · 415 V</text>
-</g>
-</svg></div>
-          <div class="b-spec"><span><strong>Energy monitoring · PF correction</strong></span><span class="arrow">›</span></div>
-        </a><a class="bento-card wide" href="ibms.html">
-          <span class="b-eyebrow">Product</span>
-          <h3>Building Management Systems</h3>
-          <p>Integrated BMS controlling HVAC, chillers, lighting and power, extendable to CCTV, access, fire and PA.</p>
-          <div class="instrument-svg"><svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<g stroke="rgba(255,255,255,0.14)" stroke-width="1">
-<rect x="30" y="30" width="180" height="140" rx="3"/>
-<line x1="120" y1="30" x2="120" y2="170"/>
-<line x1="30" y1="100" x2="210" y2="100"/>
-</g>
-<g stroke="rgba(61,143,54,0.5)" stroke-width="0.75" fill="rgba(61,143,54,0.05)">
-<rect x="42" y="42" width="66" height="46" rx="2"/>
-<rect x="132" y="42" width="66" height="46" rx="2"/>
-<rect x="42" y="112" width="66" height="46" rx="2"/>
-<rect x="132" y="112" width="66" height="46" rx="2"/>
-</g>
-<g font-family="Geist Mono, monospace" font-size="8" fill="rgba(255,255,255,0.65)" letter-spacing="1">
-<text x="48" y="56">HVAC</text><text x="102" y="87" text-anchor="end" fill="#3d8f36">ON</text>
-<text x="138" y="56">LIGHTING</text><text x="192" y="87" text-anchor="end" fill="#3d8f36">76%</text>
-<text x="48" y="126">FIRE</text><text x="102" y="157" text-anchor="end" fill="#3d8f36">OK</text>
-<text x="138" y="126">ACCESS</text><text x="192" y="157" text-anchor="end" fill="#3d8f36">14</text>
-</g>
-</svg></div>
-          <div class="b-spec"><span><strong>HVAC · Chillers · Lighting · CCTV · Access · Fire</strong></span><span class="arrow">›</span></div>
-        </a><a class="bento-card" href="command-center.html">
-          <span class="b-eyebrow">Product</span>
-          <h3>Command & Monitoring Center</h3>
-          <p>Round-the-clock, multi-site monitoring of power and building infrastructure with predictive analysis.</p>
-          <div class="instrument-svg"><svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<g stroke="rgba(255,255,255,0.14)" stroke-width="1">
-<rect x="20" y="30" width="200" height="120" rx="3"/>
-<line x1="20" y1="46" x2="220" y2="46"/>
-</g>
-<g fill="rgba(61,143,54,0.10)" stroke="rgba(61,143,54,0.4)" stroke-width="0.5">
-<rect x="30" y="56" width="60" height="30" rx="2"/>
-<rect x="96" y="56" width="60" height="30" rx="2"/>
-<rect x="162" y="56" width="48" height="30" rx="2"/>
-<rect x="30" y="94" width="180" height="46" rx="2"/>
-</g>
-<g fill="#3d8f36" font-family="Geist Mono, monospace" font-size="8" letter-spacing="1">
-<text x="34" y="70">SITES</text><text x="86" y="82" text-anchor="end" font-size="14">24</text>
-<text x="100" y="70">WATCH</text><text x="152" y="82" text-anchor="end" font-size="14">24×7</text>
-<text x="166" y="70">ALERTS</text><text x="206" y="82" text-anchor="end" font-size="14">0</text>
-</g>
-<g stroke="#3d8f36" stroke-width="1" fill="none">
-<polyline points="40,124 60,110 80,118 100,102 120,116 140,105 160,120 180,108 200,115"/>
-</g>
-<g font-family="Geist Mono, monospace" font-size="7" fill="rgba(255,255,255,0.4)" letter-spacing="1">
-<text x="30" y="40">EPC · MONITORING CENTER</text>
-<text x="210" y="40" text-anchor="end" fill="#3d8f36">● LIVE</text>
-</g>
-</svg></div>
-          <div class="b-spec"><span><strong>Multi-site · 24×7 monitoring</strong></span><span class="arrow">›</span></div>
-        </a></div>
-  </div>
-</section>
-
-
-<section class="cta">
-  <div class="wrap cta-inner">
-    <div>
-      <p class="eyebrow" style="margin-bottom:24px">Talk to an engineer</p>
-      <h2>Request a quote</h2>
-      <p class="lede" style="margin-top:20px">Share the application, capacity and location. We respond with a specific recommendation and quote.</p>
-    </div>
-    <div class="cta-actions">
-      <a class="btn btn-primary btn-lg" href="../contact.html#enquiry">Get a Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></a>
-      <a class="btn btn-ghost btn-lg" href="https://wa.me/919841888332?text=Hello%20Eternal%20Power%2C%20I%20would%20like%20an%20enquiry." target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg> WhatsApp us</a>
-      <p class="cta-tel">Or call directly: <a href="tel:+919841888332">+91 98418 88332</a></p>
-    </div>
-  </div>
-</section>
+</div>
 
 </main>
 
