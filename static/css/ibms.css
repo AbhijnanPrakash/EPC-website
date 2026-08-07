@@ -1,0 +1,1097 @@
+/* =========================================================
+   IBMS product canvas — integrated BMS architecture diagram
+   ========================================================= */
+
+.ibms-canvas {
+  --ibms-green: #2f6b4f;
+  --ibms-green-soft: #e8f2ec;
+  --ibms-green-line: rgba(47, 107, 79, 0.28);
+  --ibms-ink: #1a1f1c;
+  --ibms-muted: #5c6660;
+  --ibms-line: #e4e8e5;
+  --ibms-surface: #ffffff;
+  --ibms-canvas: #f4f6f5;
+  --ibms-radius: 20px;
+  --ibms-radius-sm: 14px;
+  --ibms-shadow: 0 1px 2px rgba(26, 31, 28, 0.04), 0 8px 24px rgba(26, 31, 28, 0.05);
+  background: var(--ibms-canvas);
+  color: var(--ibms-ink);
+  padding: 1.25rem 0 4rem;
+}
+
+.ibms-canvas a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ibms-canvas .container {
+  width: min(1180px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+/* Breadcrumb */
+.ibms-crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--ibms-muted);
+  margin-bottom: 1.25rem;
+}
+
+.ibms-crumb a:hover {
+  color: var(--ibms-green);
+}
+
+.ibms-crumb span[aria-hidden="true"] {
+  opacity: 0.45;
+}
+
+/* Shared panel */
+.ibms-panel {
+  background: var(--ibms-surface);
+  border: 1px solid var(--ibms-line);
+  border-radius: var(--ibms-radius);
+  box-shadow: var(--ibms-shadow);
+}
+
+.ibms-kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ibms-green);
+}
+
+.ibms-title {
+  margin: 0;
+  font-family: "Geist", system-ui, sans-serif;
+  font-style: normal;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--ibms-ink);
+}
+
+.ibms-lead {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--ibms-muted);
+}
+
+/* ========== Stage: overview | viz | enquire ========== */
+.ibms-stage {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.95fr) minmax(280px, 1.35fr) minmax(240px, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+  position: relative;
+}
+
+.ibms-overview,
+.ibms-enquire {
+  padding: 1.35rem 1.3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.ibms-specs {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
+}
+
+.ibms-spec {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0.7rem;
+  align-items: start;
+  padding: 0.65rem 0;
+  border: none;
+  border-bottom: 1px solid var(--ibms-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.ibms-spec:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ibms-spec__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ibms-green);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.ibms-spec__icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.ibms-spec strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.15rem;
+}
+
+.ibms-spec span {
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--ibms-muted);
+}
+
+/* Central viz */
+.ibms-viz {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem 1.25rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 48%, rgba(232, 242, 236, 0.65) 0%, transparent 70%),
+    var(--ibms-surface);
+}
+
+.ibms-viz__field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ibms-viz__field svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ibms-viz__core {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+}
+
+.ibms-viz__core svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(26, 31, 28, 0.1));
+}
+
+/* Orbit nodes */
+.ibms-orbit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ibms-node {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--ibms-surface);
+  border: 1px solid var(--ibms-line);
+  box-shadow: 0 2px 10px rgba(26, 31, 28, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  pointer-events: auto;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ibms-node:hover {
+  border-color: rgba(47, 107, 79, 0.45);
+  box-shadow: 0 4px 16px rgba(47, 107, 79, 0.12);
+  transform: scale(1.05);
+}
+
+.ibms-node svg {
+  width: 18px;
+  height: 18px;
+  color: var(--ibms-green);
+}
+
+.ibms-node span {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ibms-muted);
+  line-height: 1;
+}
+
+.ibms-node--1 { top: 8%; left: 50%; transform: translateX(-50%); }
+.ibms-node--2 { top: 22%; right: 6%; }
+.ibms-node--3 { bottom: 28%; right: 8%; }
+.ibms-node--4 { bottom: 10%; left: 50%; transform: translateX(-50%); }
+.ibms-node--5 { bottom: 28%; left: 8%; }
+.ibms-node--6 { top: 22%; left: 6%; }
+
+.ibms-node--1:hover,
+.ibms-node--4:hover { transform: translateX(-50%) scale(1.05); }
+
+.ibms-tagline {
+  position: relative;
+  z-index: 2;
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--ibms-line);
+  background: var(--ibms-surface);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ibms-muted);
+  box-shadow: 0 1px 4px rgba(26, 31, 28, 0.04);
+}
+
+.ibms-tagline i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ibms-green);
+}
+
+/* Enquire panel */
+.ibms-enquire__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.ibms-enquire__head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.ibms-enquire__badge {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--ibms-green-soft);
+  color: var(--ibms-green);
+  display: grid;
+  place-items: center;
+}
+
+.ibms-enquire__badge svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ibms-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.ibms-contact-list li a {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0.7rem;
+  align-items: center;
+  padding: 0.55rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.ibms-contact-list li a:hover {
+  background: #fafbfa;
+  border-color: var(--ibms-line);
+}
+
+.ibms-contact-list__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--ibms-green-soft);
+  color: var(--ibms-green);
+  display: grid !important;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ibms-contact-list__icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.ibms-contact-list__text {
+  display: block;
+  min-width: 0;
+}
+
+.ibms-contact-list__text strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--ibms-ink);
+  font-style: normal;
+}
+
+.ibms-contact-list__text small {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ibms-muted);
+  margin-top: 0.15rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.ibms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--ibms-green);
+  color: #fff !important;
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  box-shadow: 0 1px 2px rgba(26, 31, 28, 0.08);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.ibms-btn:hover {
+  background: #265a42;
+  transform: translateY(-1px);
+}
+
+.ibms-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ibms-btn--ghost {
+  background: transparent;
+  color: var(--ibms-green) !important;
+  border: 1px solid rgba(47, 107, 79, 0.35);
+  box-shadow: none;
+}
+
+.ibms-btn--ghost:hover {
+  background: var(--ibms-green-soft);
+  border-color: var(--ibms-green);
+  transform: none;
+}
+
+/* Connector strip under stage */
+.ibms-rail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 0.35rem 0 0.15rem;
+  height: 28px;
+  position: relative;
+}
+
+.ibms-rail::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 50%;
+  height: 1px;
+  background: var(--ibms-green-line);
+}
+
+.ibms-rail i {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ibms-green);
+  border: 2px solid var(--ibms-canvas);
+  z-index: 1;
+  margin: 0 18%;
+}
+
+/* ========== Applications — open row, no item cards ========== */
+.ibms-panel.ibms-apps {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 1.75rem 0.35rem 0.5rem;
+}
+
+.ibms-apps__head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.ibms-apps__head h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.ibms-apps__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1rem;
+  align-items: start;
+}
+
+.ibms-app {
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ibms-app:hover {
+  border: none;
+  background: transparent;
+}
+
+.ibms-app__icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.75rem;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ibms-green);
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+.ibms-app__icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  stroke-width: 1.5;
+}
+
+.ibms-app h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.ibms-app p {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ibms-muted);
+  font-style: normal;
+}
+
+
+.ibms-mid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: stretch;
+}
+
+.ibms-features {
+  padding: 1.35rem 1.25rem 1.4rem;
+}
+
+.ibms-features__head {
+  margin-bottom: 1rem;
+}
+
+.ibms-features__head h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.ibms-feat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.ibms-feat {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.85rem 0.75rem;
+  border: 1px solid var(--ibms-line);
+  border-radius: 14px;
+  background: transparent;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ibms-feat:hover {
+  border-color: rgba(47, 107, 79, 0.3);
+  background: #fafbfa;
+}
+
+.ibms-feat__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid rgba(47, 107, 79, 0.22);
+  color: var(--ibms-green);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ibms-feat__icon svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: 0;
+}
+
+.ibms-feat h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.86rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.ibms-feat p {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--ibms-muted);
+}
+
+.ibms-related {
+  padding: 1.35rem 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ibms-related__head {
+  margin-bottom: 0.85rem;
+}
+
+.ibms-related__head h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.ibms-related__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ibms-related__list li + li {
+  border-top: 1px solid var(--ibms-line);
+}
+
+.ibms-related__list a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 0.15rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  transition: color 0.15s ease;
+}
+
+.ibms-related__list a:hover {
+  border: none;
+  background: transparent;
+  transform: none;
+  color: var(--ibms-green);
+}
+
+.ibms-related__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ibms-green);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.ibms-related__icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.ibms-related__list strong {
+  flex: 1;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ibms-related__list svg.chev {
+  width: 16px;
+  height: 16px;
+  color: var(--ibms-muted);
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+
+/* ========== Specs — open architecture rail ========== */
+.ibms-panel.ibms-arch {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-top: 1.25rem;
+  padding: 1.75rem 0.35rem 0.5rem;
+  position: relative;
+}
+
+.ibms-arch__head {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.ibms-arch__head h2 {
+  margin: 0.2rem 0 0;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.ibms-arch__track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1.25rem;
+  position: relative;
+}
+
+.ibms-arch__track::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 4px;
+  height: 1px;
+  background: var(--ibms-green-line);
+  z-index: 0;
+}
+
+.ibms-arch__col {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.ibms-arch__dot {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 0.85rem;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--ibms-green);
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  position: relative;
+}
+
+.ibms-arch__dot::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ibms-green);
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  box-shadow: 0 0 0 3px var(--ibms-canvas);
+  z-index: 2;
+}
+
+.ibms-arch__dot svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0.55rem 0 0;
+}
+
+.ibms-arch__col h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ibms-ink);
+}
+
+.ibms-arch__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.ibms-arch__col li {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--ibms-muted);
+}
+
+/* ========== FAQ + form on canvas ========== */
+.ibms-lower {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ibms-faq-panel,
+.ibms-form-panel {
+  padding: 1.35rem 1.25rem 1.4rem;
+}
+
+.ibms-faq-panel h2,
+.ibms-form-panel h2 {
+  margin: 0.2rem 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.ibms-faq-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ibms-faq-list details {
+  border: 1px solid var(--ibms-line);
+  border-radius: 14px;
+  background: #fafbfa;
+  padding: 0.85rem 1rem;
+}
+
+.ibms-faq-list summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.ibms-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.ibms-faq-list summary::after {
+  content: "+";
+  color: var(--ibms-green);
+  font-weight: 500;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.ibms-faq-list details[open] summary::after {
+  content: "−";
+}
+
+.ibms-faq-list details p {
+  margin: 0.65rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ibms-muted);
+}
+
+.ibms-form .form-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ibms-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.ibms-form label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ibms-ink);
+}
+
+.ibms-form input,
+.ibms-form select,
+.ibms-form textarea {
+  width: 100%;
+  border: 1px solid var(--ibms-line);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  font-size: 0.86rem;
+  background: #fafbfa;
+  color: var(--ibms-ink);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ibms-form input:focus,
+.ibms-form select:focus,
+.ibms-form textarea:focus {
+  outline: none;
+  border-color: rgba(47, 107, 79, 0.5);
+  background: var(--ibms-surface);
+}
+
+.ibms-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.ibms-form .form-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ibms-form .ibms-btn {
+  margin-top: 0;
+  width: 100%;
+}
+
+.ibms-form .form-note {
+  grid-column: 1 / -1;
+  margin: 0.15rem 0 0;
+  font-size: 0.72rem;
+  color: var(--ibms-muted);
+  text-align: center;
+  font-style: normal;
+}
+
+.ibms-form .form-status {
+  grid-column: 1 / -1;
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--ibms-green);
+  min-height: 1.2em;
+}
+
+/* Mute site footer clash */
+body.v2:has(.ibms-canvas) .site-footer {
+  margin-top: 0;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1100px) {
+  .ibms-stage {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ibms-viz {
+    grid-column: 1 / -1;
+    order: -1;
+    min-height: 380px;
+  }
+
+  .ibms-apps__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 820px) {
+  .ibms-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .ibms-viz {
+    min-height: 340px;
+  }
+
+  .ibms-mid,
+  .ibms-lower {
+    grid-template-columns: 1fr;
+  }
+
+  .ibms-feat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ibms-arch__track {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1rem;
+  }
+
+  .ibms-arch__track::before {
+    display: none;
+  }
+
+  .ibms-form .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ibms-node {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ibms-node span {
+    font-size: 0.48rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .ibms-canvas .container {
+    width: min(100% - 1.5rem, 1180px);
+  }
+
+  .ibms-apps__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ibms-arch__track {
+    grid-template-columns: 1fr;
+  }
+
+  .ibms-node--2,
+  .ibms-node--3 {
+    right: 2%;
+  }
+
+  .ibms-node--5,
+  .ibms-node--6 {
+    left: 2%;
+  }
+}
+
+/* Presence motion — calm, industrial */
+@keyframes ibms-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ibms-orbit-soft {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@keyframes ibms-node-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ibms-overview,
+.ibms-enquire {
+  animation: ibms-fade-up 0.55s ease both;
+}
+
+.ibms-enquire {
+  animation-delay: 0.08s;
+}
+
+.ibms-viz__core {
+  animation: ibms-fade-up 0.65s ease both;
+  animation-delay: 0.05s;
+}
+
+.ibms-viz__field circle:first-child {
+  animation: ibms-orbit-soft 5.5s ease-in-out infinite;
+}
+
+.ibms-node {
+  animation: ibms-node-in 0.45s ease both;
+}
+
+.ibms-node--1 { animation-delay: 0.15s; }
+.ibms-node--2 { animation-delay: 0.22s; }
+.ibms-node--3 { animation-delay: 0.29s; }
+.ibms-node--4 { animation-delay: 0.36s; }
+.ibms-node--5 { animation-delay: 0.43s; }
+.ibms-node--6 { animation-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ibms-node,
+  .ibms-btn,
+  .ibms-related__list a,
+  .ibms-feat,
+  .ibms-overview,
+  .ibms-enquire,
+  .ibms-viz__core,
+  .ibms-viz__field circle:first-child {
+    animation: none !important;
+    transition: none;
+  }
+
+  .ibms-btn:hover,
+  .ibms-related__list a:hover,
+  .ibms-node:hover {
+    transform: none;
+  }
+}

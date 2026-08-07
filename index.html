@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EPC build: 20260807g · commit 0a64c71 · flat nav (About AMC Locations) · About grid fixed · if you see Resources▾ or a broken narrow About column you are on an OLD copy -->
 <title>UPS Systems, Batteries &amp; Backup Power Solutions in Bangalore | Eternal Power</title>
 <meta name="description" content="Eternal Power &amp; Cooling Services: UPS 1 kVA to 4000 kVA, batteries, data center infrastructure, BMS and AMC in Bangalore. Authorized OEM partner since 2012.">
 <link rel="canonical" href="https://www.eternalpower.co.in/index.html">
@@ -23,11 +24,23 @@
       imagesrcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
       imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/css/v2.css">
-<link rel="stylesheet" href="static/css/chat.css">
+<link rel="stylesheet" href="static/css/v2.css?v=20260807h">
+<link rel="stylesheet" href="static/css/chat.css?v=20260807b">
 <script>document.documentElement.classList.add('js');</script>
+<script>
+  /* Guard: refuse to look like the retired glassmorphism homepage */
+  document.addEventListener('DOMContentLoaded', function () {
+    var title = document.getElementById('hero-title');
+    if (!title || /serious/i.test(title.textContent || '')) {
+      console.error('EPC: stale homepage detected. Pull cursor/strip-ai-design-tells-bab9 and hard-refresh.');
+    }
+    if (!document.querySelector('link[href*="v2.css"]')) {
+      console.error('EPC: v2.css missing — serve from repo root, do not open index.html as a file.');
+    }
+  });
+</script>
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://www.eternalpower.co.in/#organization","name":"Eternal Power And Cooling Services","url":"https://www.eternalpower.co.in","foundingDate":"2012","email":"siva@eternalpower.co.in","telephone":"+919841888332","address":{"@type":"PostalAddress","streetAddress":"Ground Floor, Site No. 161, NRI Layout Double Road, Kalkere","addressLocality":"Bangalore","addressRegion":"Karnataka","postalCode":"560043","addressCountry":"IN"},"areaServed":"Bangalore, Karnataka, India","description":"Authorized sales partner for major UPS OEMs. UPS systems 1 kVA to 4000 kVA, batteries, data center infrastructure, building management systems, AMC and power quality services since 2012."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://www.eternalpower.co.in/#organization","name":"Eternal Power And Cooling Services","url":"https://www.eternalpower.co.in","foundingDate":"2012","email":"siva@eternalpower.co.in","telephone":"+919841888332","address":{"@type":"PostalAddress","streetAddress":"Ground Floor, Site No. 161, NRI Layout Double Road, Kalkere","addressLocality":"Bangalore","addressRegion":"Karnataka","postalCode":"560043","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":13.0278,"longitude":77.6612},"hasMap":"https://maps.google.com/?q=Eternal+Power+Horamavu+Bangalore","areaServed":["Bangalore","Whitefield","Electronic City","Peenya","HSR Layout","Koramangala","Marathahalli","Manyata Tech Park","Horamavu"],"description":"Authorized sales partner for major UPS OEMs. UPS systems 1 kVA to 4000 kVA, batteries, data center infrastructure, building management systems, AMC and power quality services since 2012."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What UPS capacity range does Eternal Power supply?","acceptedAnswer":{"@type":"Answer","text":"Online UPS from 1 kVA standalone units through to 4000 kVA parallel-redundant systems, covering a 350 VA to 4.8 MW system range. Sizing is driven by a measured load study rather than a catalogue guess."}},{"@type":"Question","name":"Do you service UPS systems you did not sell?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our comprehensive and non-comprehensive annual maintenance contracts cover UPS of any make, alongside BMS, fire alarm panels and electrical distribution equipment."}},{"@type":"Question","name":"How quickly can you respond to a breakdown?","acceptedAnswer":{"@type":"Answer","text":"AMC customers get round-the-clock emergency breakdown support. Response times are written into the contract rather than left to a call centre script, and sites under remote monitoring are often diagnosed before the customer calls."}},{"@type":"Question","name":"Which battery types and brands do you work with?","acceptedAnswer":{"@type":"Answer","text":"SMF, VRLA and Li-Ion batteries from 7 AH to 400 AH, including Panasonic, Exide, Quanta and EnerRocket. Bank health is verified with HIOKI internal-resistance testing before any replacement is recommended."}},{"@type":"Question","name":"Do you work outside Bangalore?","acceptedAnswer":{"@type":"Answer","text":"Bangalore and the wider Karnataka region are our core service area. Multi-site customers are supported from our command centre over GPRS/IP, so monitoring and analytics extend beyond the sites our engineers reach on the same day."}}]}</script>
 </head>
 
@@ -73,7 +86,7 @@
 <!-- ===================== 1. NAVIGATION ===================== -->
 <div class="v2-topbar">
   <div class="v2-wrap v2-topbar-inner">
-    <span class="v2-topbar-meta"><span class="v2-dot" aria-hidden="true"></span> Authorized OEM partner · Bangalore · Since 2012</span>
+    <span class="v2-topbar-meta">Authorized OEM partner · Bangalore · Since 2012</span>
     <div class="v2-topbar-links">
       <a href="tel:+919841888332">+91 98418 88332</a>
       <a href="mailto:siva@eternalpower.co.in">siva@eternalpower.co.in</a>
@@ -94,14 +107,83 @@
     </a>
 
     <nav class="v2-nav" aria-label="Primary">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="products/index.html">Products</a>
-      <a href="services/index.html">Services</a>
-      <a href="services/amc.html">AMC</a>
-      <a href="solutions/index.html">Solutions</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a class="v2-nav-top" href="index.html" aria-current="page">Home</a>
+      <div class="v2-nav-item">
+        <a class="v2-nav-top" href="products/index.html" aria-haspopup="true" aria-expanded="false">Products<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="v2-dd v2-dd--wide" role="group" aria-label="Products menu">
+          <div class="v2-dd-grid"><a href="products/ups-systems.html"><span class="v2-dd-label">UPS systems</span><span class="v2-dd-desc">Buy / size online UPS for IT and plant loads</span></a>
+<a href="products/batteries.html"><span class="v2-dd-label">Batteries</span><span class="v2-dd-desc">SMF, VRLA and Li-Ion banks for runtime</span></a>
+<a href="products/data-center.html"><span class="v2-dd-label">Data center infrastructure</span><span class="v2-dd-desc">Racks, cooling and critical power rooms</span></a>
+<a href="products/power-quality.html"><span class="v2-dd-label">Power quality</span><span class="v2-dd-desc">Monitoring, harmonics and PQ correction</span></a>
+<a href="products/ibms.html"><span class="v2-dd-label">Building management</span><span class="v2-dd-desc">IBMS for HVAC, lighting, access and fire</span></a>
+<a href="products/command-center.html"><span class="v2-dd-label">Command &amp; monitoring</span><span class="v2-dd-desc">Multi-site visibility and alerts</span></a></div>
+          <a class="v2-dd-foot" href="products/index.html">All products →</a>
+        </div>
+      </div>
+      <div class="v2-nav-item">
+        <a class="v2-nav-top" href="services/index.html" aria-haspopup="true" aria-expanded="false">Services<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="v2-dd v2-dd--wide" role="group" aria-label="Services menu">
+          <div class="v2-dd-grid"><a href="services/amc.html"><span class="v2-dd-label">AMC / annual maintenance</span><span class="v2-dd-desc">Any-make preventive visits and breakdowns</span></a>
+<a href="services/project-execution.html"><span class="v2-dd-label">Install &amp; commission</span><span class="v2-dd-desc">Survey, cabling, install, handover</span></a>
+<a href="services/battery-services.html"><span class="v2-dd-label">Battery testing &amp; replacement</span><span class="v2-dd-desc">IR testing and planned bank swaps</span></a>
+<a href="services/rental.html"><span class="v2-dd-label">UPS rental &amp; buyback</span><span class="v2-dd-desc">Temporary cover and asset take-back</span></a>
+<a href="services/remote-monitoring.html"><span class="v2-dd-label">Remote monitoring</span><span class="v2-dd-desc">Watch UPS health across sites</span></a>
+<a href="services/energy-audits.html"><span class="v2-dd-label">Energy &amp; PQ audits</span><span class="v2-dd-desc">Find dips, harmonics and waste</span></a>
+<a href="services/technical-manpower.html"><span class="v2-dd-label">Resident engineers</span><span class="v2-dd-desc">On-site technical manpower</span></a></div>
+          <a class="v2-dd-foot" href="services/index.html">All services →</a>
+        </div>
+      </div>
+      <div class="v2-nav-item">
+        <a class="v2-nav-top" href="solutions/index.html" aria-haspopup="true" aria-expanded="false">Solutions<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="v2-dd v2-dd--wide" role="group" aria-label="Solutions menu">
+          <div class="v2-dd-grid"><a href="solutions/commercial.html"><span class="v2-dd-label">Commercial &amp; offices</span><span class="v2-dd-desc">Floors, server rooms, BMS loads</span></a>
+<a href="solutions/industrial.html"><span class="v2-dd-label">Industrial &amp; manufacturing</span><span class="v2-dd-desc">Control panels and plant IT</span></a>
+<a href="solutions/healthcare.html"><span class="v2-dd-label">Healthcare</span><span class="v2-dd-desc">Clinics, diagnostics, hospitals</span></a>
+<a href="solutions/education.html"><span class="v2-dd-label">Education</span><span class="v2-dd-desc">Campuses and labs</span></a>
+<a href="solutions/residential.html"><span class="v2-dd-label">Home &amp; small business</span><span class="v2-dd-desc">Compact critical loads</span></a></div>
+          <a class="v2-dd-foot" href="solutions/index.html">All industries →</a>
+        </div>
+      </div>
+      <div class="v2-nav-item">
+        <a class="v2-nav-top" href="locations/index.html" aria-haspopup="true" aria-expanded="false">Locations<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="v2-dd v2-dd--mega" role="group" aria-label="Locations menu">
+          <div class="v2-dd-grid">
+          <div class="v2-dd-col">
+            <p class="v2-dd-heading">By intent</p>
+            <a href="locations/ups-bangalore.html"><span class="v2-dd-label">UPS in Bangalore</span><span class="v2-dd-desc">Supply, install and size citywide</span></a>
+<a href="locations/amc-bangalore.html"><span class="v2-dd-label">AMC in Bangalore</span><span class="v2-dd-desc">Any-make maintenance across the city</span></a>
+<a href="locations/battery-services-bangalore.html"><span class="v2-dd-label">Battery services in Bangalore</span><span class="v2-dd-desc">IR testing and replacement</span></a>
+          </div>
+          <div class="v2-dd-col">
+            <p class="v2-dd-heading">By area</p>
+            <a href="locations/whitefield.html"><span class="v2-dd-label">Whitefield</span><span class="v2-dd-desc">IT parks and east corridor</span></a>
+<a href="locations/electronic-city.html"><span class="v2-dd-label">Electronic City</span><span class="v2-dd-desc">Plant and campus south</span></a>
+<a href="locations/peenya.html"><span class="v2-dd-label">Peenya</span><span class="v2-dd-desc">Industrial north-west</span></a>
+<a href="locations/hsr-layout.html"><span class="v2-dd-label">HSR Layout</span><span class="v2-dd-desc">Clinics and commercial</span></a>
+<a href="locations/koramangala.html"><span class="v2-dd-label">Koramangala</span><span class="v2-dd-desc">Offices and startups</span></a>
+<a href="locations/marathahalli.html"><span class="v2-dd-label">Marathahalli / ORR</span><span class="v2-dd-desc">Tech parks on the ring</span></a>
+<a href="locations/manyata-tech-park.html"><span class="v2-dd-label">Manyata / North</span><span class="v2-dd-desc">Hebbal–Nagavara campuses</span></a>
+<a href="locations/horamavu.html"><span class="v2-dd-label">Horamavu / Kalkere</span><span class="v2-dd-desc">Head office area</span></a>
+          </div>
+        </div>
+          <a class="v2-dd-foot" href="locations/index.html">All service areas →</a>
+        </div>
+      </div>
+      <div class="v2-nav-item">
+        <a class="v2-nav-top" href="guides/index.html" aria-haspopup="true" aria-expanded="false">Resources<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="v2-dd v2-dd--wide" role="group" aria-label="Resources menu">
+          <div class="v2-dd-grid"><a href="guides/index.html"><span class="v2-dd-label">Guides hub</span><span class="v2-dd-desc">Sizing, AMC and battery references</span></a>
+<a href="guides/ups-sizing-guide.html"><span class="v2-dd-label">UPS sizing guide</span><span class="v2-dd-desc">Measure load, set runtime, choose AH</span></a>
+<a href="guides/ups-amc-checklist.html"><span class="v2-dd-label">AMC checklist</span><span class="v2-dd-desc">What good maintenance must include</span></a>
+<a href="guides/battery-replacement-signs.html"><span class="v2-dd-label">Battery replacement signs</span><span class="v2-dd-desc">When banks need testing or swap</span></a>
+<a href="faqs.html"><span class="v2-dd-label">FAQs</span><span class="v2-dd-desc">Products, AMC, install, coverage</span></a>
+<a href="about.html"><span class="v2-dd-label">About Eternal Power</span><span class="v2-dd-desc">OEM partner in Bangalore since 2012</span></a>
+<a href="projects.html"><span class="v2-dd-label">Projects</span><span class="v2-dd-desc">Installations and case notes</span></a>
+<a href="clients.html"><span class="v2-dd-label">Clients</span><span class="v2-dd-desc">Industries we support</span></a></div>
+          <a class="v2-dd-foot" href="guides/index.html">All guides &amp; FAQs →</a>
+        </div>
+      </div>
+      <a class="v2-nav-top" href="contact.html">Contact</a>
     </nav>
 
     <div class="v2-hdr-cta">
@@ -130,13 +212,75 @@
     </button>
   </div>
   <nav aria-label="Mobile">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products/index.html">Products</a>
-    <a href="services/index.html">Services</a>
-    <a href="services/amc.html">AMC</a>
-    <a href="solutions/index.html">Solutions</a>
-    <a href="projects.html">Projects</a>
+    <a href="index.html" aria-current="page">Home</a>
+    <div class="v2-drawer-group">
+      <button class="v2-drawer-toggle" type="button" aria-expanded="false">Products<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="v2-drawer-panel">
+        <a href="products/index.html">Overview</a>
+        <a href="products/ups-systems.html">UPS systems</a>
+<a href="products/batteries.html">Batteries</a>
+<a href="products/data-center.html">Data center infrastructure</a>
+<a href="products/power-quality.html">Power quality</a>
+<a href="products/ibms.html">Building management</a>
+<a href="products/command-center.html">Command &amp; monitoring</a>
+      </div>
+    </div>
+    <div class="v2-drawer-group">
+      <button class="v2-drawer-toggle" type="button" aria-expanded="false">Services<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="v2-drawer-panel">
+        <a href="services/index.html">Overview</a>
+        <a href="services/amc.html">AMC / annual maintenance</a>
+<a href="services/project-execution.html">Install &amp; commission</a>
+<a href="services/battery-services.html">Battery testing &amp; replacement</a>
+<a href="services/rental.html">UPS rental &amp; buyback</a>
+<a href="services/remote-monitoring.html">Remote monitoring</a>
+<a href="services/energy-audits.html">Energy &amp; PQ audits</a>
+<a href="services/technical-manpower.html">Resident engineers</a>
+      </div>
+    </div>
+    <div class="v2-drawer-group">
+      <button class="v2-drawer-toggle" type="button" aria-expanded="false">Solutions<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="v2-drawer-panel">
+        <a href="solutions/index.html">Overview</a>
+        <a href="solutions/commercial.html">Commercial &amp; offices</a>
+<a href="solutions/industrial.html">Industrial &amp; manufacturing</a>
+<a href="solutions/healthcare.html">Healthcare</a>
+<a href="solutions/education.html">Education</a>
+<a href="solutions/residential.html">Home &amp; small business</a>
+      </div>
+    </div>
+    <div class="v2-drawer-group">
+      <button class="v2-drawer-toggle" type="button" aria-expanded="false">Locations<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="v2-drawer-panel">
+        <a href="locations/index.html">Overview</a>
+        <p class="v2-dd-heading">By intent</p>
+        <a href="locations/ups-bangalore.html">UPS in Bangalore</a>
+        <a href="locations/amc-bangalore.html">AMC in Bangalore</a>
+        <a href="locations/battery-services-bangalore.html">Battery services in Bangalore</a>
+        <p class="v2-dd-heading">By area</p>
+        <a href="locations/whitefield.html">Whitefield</a>
+        <a href="locations/electronic-city.html">Electronic City</a>
+        <a href="locations/peenya.html">Peenya</a>
+        <a href="locations/hsr-layout.html">HSR Layout</a>
+        <a href="locations/koramangala.html">Koramangala</a>
+        <a href="locations/marathahalli.html">Marathahalli / ORR</a>
+        <a href="locations/manyata-tech-park.html">Manyata / North</a>
+        <a href="locations/horamavu.html">Horamavu / Kalkere</a>
+      </div>
+    </div>
+    <div class="v2-drawer-group">
+      <button class="v2-drawer-toggle" type="button" aria-expanded="false">Resources<svg class="v2-nav-chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="v2-drawer-panel">
+        <a href="guides/index.html">Guides hub</a>
+<a href="guides/ups-sizing-guide.html">UPS sizing guide</a>
+<a href="guides/ups-amc-checklist.html">AMC checklist</a>
+<a href="guides/battery-replacement-signs.html">Battery replacement signs</a>
+<a href="faqs.html">FAQs</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="clients.html">Clients</a>
+      </div>
+    </div>
     <a href="contact.html">Contact</a>
   </nav>
   <div class="v2-drawer-cta">
@@ -163,66 +307,25 @@
   </div>
   <div class="v2-wrap v2-hero-inner">
     <div class="v2-hero-copy">
-      <span class="v2-hero-pill"><span class="v2-dot" aria-hidden="true"></span> Powering critical infrastructure</span>
-      <h1 class="v2-h1" id="hero-title">Reliable backup power for <span class="v2-accent v2-nb">mission-critical</span> operations</h1>
-      <p class="v2-lede">EPC designs, supplies and supports UPS systems, batteries, data center infrastructure, IBMS and maintenance programs for facilities across Bangalore. Authorized sales partner for major UPS OEMs since 2012.</p>
+      <h1 class="v2-h1" id="hero-title">Reliable backup power for critical operations</h1>
+      <p class="v2-lede"><strong>Eternal Power</strong> designs, supplies and supports UPS systems (1–4000 kVA), batteries, data center infrastructure, IBMS and AMC programs across Bangalore. Authorized OEM partner since 2012.</p>
       <div class="v2-hero-ctas">
         <a class="v2-btn v2-btn--primary v2-btn--lg" href="#consultation">
           Get a Quote <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
         <a class="v2-btn v2-btn--ghost-dark v2-btn--lg" href="products/index.html">Explore products</a>
       </div>
-      <p class="v2-hero-note">
-        <svg width="17" height="17" aria-hidden="true"><use href="#i-shield"/></svg>
-        UPS 1 kVA to 4000 kVA · Batteries 7 AH to 400 AH · AMC for any make
-      </p>
     </div>
   </div>
 </section>
 
-<!-- ===================== 3. STATISTICS ===================== -->
-<section class="v2-stats" aria-label="Company statistics">
-  <div class="v2-wrap">
-    <div class="v2-stats-grid v2-rv">
-      <div class="v2-stat">
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-bolt"/></svg></span>
-        <div>
-          <div class="v2-stat-val"><span data-count="4.8" data-decimals="1">4.8</span><span class="u">MW</span></div>
-          <div class="v2-stat-lbl">Managed capacity</div>
-        </div>
-      </div>
-      <div class="v2-stat">
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-        <div>
-          <div class="v2-stat-val">99.99<span class="u">%</span></div>
-          <div class="v2-stat-lbl">Design uptime</div>
-        </div>
-      </div>
-      <div class="v2-stat">
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
-        <div>
-          <div class="v2-stat-val">24×7</div>
-          <div class="v2-stat-lbl">Monitoring support</div>
-        </div>
-      </div>
-      <div class="v2-stat">
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
-        <div>
-          <div class="v2-stat-val"><span data-count="2012" data-plain>2012</span></div>
-          <div class="v2-stat-lbl">Serving Bangalore since</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===================== 4. CLIENT LOGOS ===================== -->
+<!-- ===================== PARTNERS ===================== -->
 <section class="v2-band v2-band--tight" aria-labelledby="clients-title">
   <div class="v2-wrap">
     <div class="v2-head v2-head--center v2-rv">
-      <p class="v2-eyebrow">Trusted by</p>
-      <h2 class="v2-h2" id="clients-title">Working with the brands you're buying</h2>
-      <p class="v2-lede">Authorized sales partner for major UPS OEMs. We work with battery manufacturers including Panasonic, Exide, Quanta and EnerRocket, and integrate with BMS, fire, access and CCTV systems from established brands.</p>
+      <p class="v2-eyebrow">Partners</p>
+      <h2 class="v2-h2" id="clients-title">Brands we supply and support</h2>
     </div>
 
     <div class="v2-logos-frame v2-rv">
@@ -239,34 +342,10 @@
         <span class="v2-logo" aria-hidden="true">HIOKI<span class="cat">Test equipment</span></span>
       </div>
     </div>
-
-    <!-- ===================== 5. TRUST FEATURES ===================== -->
-    <div class="v2-trustfeat v2-rv">
-      <div>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
-        <h3 class="v2-h4">Authorized OEM partner</h3>
-        <p class="v2-small">Genuine equipment, factory warranty and manufacturer-backed escalation paths.</p>
-      </div>
-      <div>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-users"/></svg></span>
-        <h3 class="v2-h4">Certified engineers</h3>
-        <p class="v2-small">In-house teams who commission the system also maintain it after handover.</p>
-      </div>
-      <div>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-activity"/></svg></span>
-        <h3 class="v2-h4">24×7 remote monitoring</h3>
-        <p class="v2-small">GPRS/IP visibility across sites and any UPS make placed under contract.</p>
-      </div>
-      <div>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-clipboard"/></svg></span>
-        <h3 class="v2-h4">Documented scope</h3>
-        <p class="v2-small">Written response times and deliverables, not a callback script.</p>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- ===================== 6. ABOUT ===================== -->
+<!-- ===================== ABOUT ===================== -->
 <section class="v2-band v2-band--cream" aria-labelledby="about-title">
   <div class="v2-wrap v2-about-grid">
     <div class="v2-about-media v2-rv">
@@ -280,26 +359,19 @@
              alt="Single-line schematic illustration showing grid supply through ATS and UPS to the protected load, with battery bank"
              width="1400" height="797" loading="lazy" decoding="async">
       </picture>
-      <div class="v2-about-badge">
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
-        <div>
-          <div class="n">Since 2012</div>
-          <div class="t">Critical power infrastructure</div>
-        </div>
-      </div>
     </div>
 
     <div class="v2-rv v2-rv-d1">
       <p class="v2-eyebrow">About Eternal Power</p>
       <h2 class="v2-h2" id="about-title">An engineering-led backup power partner</h2>
-      <p class="v2-lede" style="margin-top:16px">The equipment that keeps businesses running is usually sold well and supported poorly. We built the company the other way around — every UPS installation, battery bank, chiller and BMS system EPC touches gets treated as infrastructure, because that's what it is.</p>
+      <p class="v2-lede" style="margin-top:16px">Every UPS installation, battery bank, chiller and BMS system EPC touches is treated as infrastructure — sized, commissioned and supported by the same engineering team.</p>
 
       <ul class="v2-about-list">
         <li>
           <span class="v2-ico" aria-hidden="true"><svg><use href="#i-gauge"/></svg></span>
           <div>
             <h3 class="v2-h4">Sizing from measured load</h3>
-            <p class="v2-small">Recommendations follow a real load study and runtime target, not a catalogue guess.</p>
+            <p class="v2-small">Recommendations follow a measured load study and runtime target.</p>
           </div>
         </li>
         <li>
@@ -327,13 +399,13 @@
   </div>
 </section>
 
-<!-- ===================== 7. SERVICES GRID ===================== -->
+<!-- ===================== SERVICES ===================== -->
 <section class="v2-band v2-band--sand" aria-labelledby="services-title">
   <div class="v2-wrap">
     <div class="v2-head v2-head--center v2-rv">
       <p class="v2-eyebrow">What we do</p>
-      <h2 class="v2-h2" id="services-title">Comprehensive energy solutions</h2>
-      <p class="v2-lede">Products and services that cover the full lifecycle — from sizing and supply through commissioning, maintenance and monitoring.</p>
+      <h2 class="v2-h2" id="services-title">Products and services</h2>
+      <p class="v2-lede">From sizing and supply through commissioning, maintenance and monitoring.</p>
     </div>
 
     <div class="v2-svc-grid">
@@ -403,488 +475,60 @@
   </div>
 </section>
 
-<!-- ===================== 8. OEM PARTNER ADVANTAGE ===================== -->
-<section class="v2-band" aria-labelledby="advantage-title">
-  <div class="v2-wrap">
-    <div class="v2-head-row v2-rv">
-      <div class="v2-head">
-        <p class="v2-eyebrow">The advantage</p>
-        <h2 class="v2-h2" id="advantage-title">The OEM partner advantage</h2>
-        <p class="v2-lede">Buying through an authorized partner changes what happens after the invoice — genuine equipment, factory warranty, and an escalation path that reaches the manufacturer.</p>
-      </div>
-      <a class="v2-btn v2-btn--outline" href="products/index.html">
-        All products <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-    </div>
 
-    <div class="v2-adv-grid">
-      <article class="v2-adv-card v2-rv">
-        <div class="v2-plate">
-          <svg class="v2-plate-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-            <rect class="ln" x="76" y="18" width="88" height="114" rx="4"/>
-            <rect class="ln fl" x="86" y="30" width="68" height="24" rx="2"/>
-            <text class="tx" x="120" y="46" text-anchor="middle">99.99%</text>
-            <line class="ln" x1="86" y1="64" x2="154" y2="64"/>
-            <text class="tx-dim" x="86" y="80">LOAD</text><text class="tx-dim" x="154" y="80" text-anchor="end">62%</text>
-            <rect class="fl" x="86" y="84" width="68" height="3.5" rx="1.75"/>
-            <rect class="ac" x="86" y="84" width="42" height="3.5" rx="1.75"/>
-            <text class="tx-dim" x="86" y="102">BATTERY</text><text class="tx-dim" x="154" y="102" text-anchor="end">100%</text>
-            <rect class="fl" x="86" y="106" width="68" height="3.5" rx="1.75"/>
-            <rect class="ac" x="86" y="106" width="68" height="3.5" rx="1.75" opacity="0.7"/>
-            <text class="tx-dim" x="86" y="124">TEMP</text><text class="tx-dim" x="154" y="124" text-anchor="end">28°C</text>
-            <circle class="ac" cx="120" cy="10" r="2.5"/>
-          </svg>
-        </div>
-        <div class="v2-adv-body">
-          <h3 class="v2-h3">Online UPS systems</h3>
-          <p class="v2-small">True double-conversion topology across the full range, with parallel-redundant configurations for loads that cannot drop.</p>
-          <div class="v2-adv-spec">
-            <span class="v2-chip">1 – 4000 kVA</span>
-            <span class="v2-chip">N+1 redundancy</span>
-            <span class="v2-chip">Factory warranty</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="v2-adv-card v2-rv v2-rv-d1">
-        <div class="v2-plate">
-          <svg class="v2-plate-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-            <g class="ln">
-              <rect x="26" y="42" width="38" height="66" rx="2"/><rect x="35" y="35" width="20" height="7" rx="1"/>
-              <rect x="76" y="42" width="38" height="66" rx="2"/><rect x="85" y="35" width="20" height="7" rx="1"/>
-              <rect x="126" y="42" width="38" height="66" rx="2"/><rect x="135" y="35" width="20" height="7" rx="1"/>
-              <rect x="176" y="42" width="38" height="66" rx="2"/><rect x="185" y="35" width="20" height="7" rx="1"/>
-            </g>
-            <g class="ac" opacity="0.55">
-              <rect x="30" y="90" width="30" height="14" rx="1"/>
-              <rect x="80" y="80" width="30" height="24" rx="1"/>
-              <rect x="130" y="70" width="30" height="34" rx="1"/>
-              <rect x="180" y="60" width="30" height="44" rx="1"/>
-            </g>
-            <text class="tx-dim" x="120" y="128" text-anchor="middle">7 AH — 400 AH</text>
-          </svg>
-        </div>
-        <div class="v2-adv-body">
-          <h3 class="v2-h3">Battery banks</h3>
-          <p class="v2-small">SMF, VRLA and Li-Ion banks matched to the runtime you actually need, verified with HIOKI internal-resistance testing.</p>
-          <div class="v2-adv-spec">
-            <span class="v2-chip">7 – 400 AH</span>
-            <span class="v2-chip">IR tested</span>
-            <span class="v2-chip">Buyback available</span>
-          </div>
-        </div>
-      </article>
-
-      <div class="v2-adv-panel v2-rv v2-rv-d2">
-        <div class="v2-adv-point">
-          <span class="v2-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-          <div>
-            <h3 class="v2-h4">Genuine equipment</h3>
-            <p class="v2-small">Sourced through the manufacturer, never the grey market.</p>
-          </div>
-        </div>
-        <div class="v2-adv-point">
-          <span class="v2-ico" aria-hidden="true"><svg><use href="#i-clipboard"/></svg></span>
-          <div>
-            <h3 class="v2-h4">Warranty honoured</h3>
-            <p class="v2-small">Claims handled by us, with the OEM, on your behalf.</p>
-          </div>
-        </div>
-        <div class="v2-adv-point">
-          <span class="v2-ico" aria-hidden="true"><svg><use href="#i-headset"/></svg></span>
-          <div>
-            <h3 class="v2-h4">Escalation that works</h3>
-            <p class="v2-small">Direct manufacturer support when a site issue needs it.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 9. VERTICAL SOLUTIONS ===================== -->
+<!-- ===================== INDUSTRIES ===================== -->
 <section class="v2-band v2-band--dark" aria-labelledby="verticals-title">
-  <div class="v2-wrap">
-    <div class="v2-head v2-head--center v2-rv">
+  <div class="v2-wrap v2-head-row">
+    <div class="v2-head v2-rv">
       <p class="v2-eyebrow">Industries</p>
-      <h2 class="v2-h2" id="verticals-title" style="color:#fff">Vertical <span class="v2-accent">solutions</span></h2>
-      <p class="v2-lede" style="color:rgba(255,255,255,0.72)">Different sites fail in different ways. Each industry page names the specific vulnerabilities we see and the combination of products and services that solves for them.</p>
+      <h2 class="v2-h2" id="verticals-title" style="color:#fff">Who we serve</h2>
+      <p class="v2-lede" style="color:rgba(255,255,255,0.72)">Data centres, hospitals, plants, offices, campuses and warehouses across Bangalore.</p>
     </div>
-
-    <div class="v2-vert-grid">
-      <a class="v2-vert v2-rv" href="solutions/commercial.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-building"/></svg></span></span>
-        <h3 class="v2-h4">Commercial &amp; Offices</h3>
-        <p>Clean power and comfortable workspaces under one vendor.</p>
-      </a>
-      <a class="v2-vert v2-rv v2-rv-d1" href="solutions/industrial.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-factory"/></svg></span></span>
-        <h3 class="v2-h4">Industrial Plants</h3>
-        <p>Protect process equipment from outages and power quality events.</p>
-      </a>
-      <a class="v2-vert v2-rv v2-rv-d2" href="solutions/industrial.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-settings"/></svg></span></span>
-        <h3 class="v2-h4">Manufacturing</h3>
-        <p>Keep production lines running through grid instability.</p>
-      </a>
-      <a class="v2-vert v2-rv v2-rv-d3" href="products/data-center.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-server"/></svg></span></span>
-        <h3 class="v2-h4">Data Centres</h3>
-        <p>Racks, containment, precision cooling and DCIM visibility.</p>
-      </a>
-      <a class="v2-vert v2-rv" href="solutions/healthcare.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-hospital"/></svg></span></span>
-        <h3 class="v2-h4">Healthcare</h3>
-        <p>Uptime engineering where power failure is not an option.</p>
-      </a>
-      <a class="v2-vert v2-rv v2-rv-d1" href="solutions/commercial.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-hotel"/></svg></span></span>
-        <h3 class="v2-h4">Hospitality</h3>
-        <p>Guest-facing reliability across HVAC, lighting and lifts.</p>
-      </a>
-      <a class="v2-vert v2-rv v2-rv-d2" href="solutions/education.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-cap"/></svg></span></span>
-        <h3 class="v2-h4">Education</h3>
-        <p>Labs, exam halls, servers and campus infrastructure.</p>
-      </a>
-      <a class="v2-vert v2-rv v2-rv-d3" href="solutions/industrial.html">
-        <span class="v2-plate v2-plate--dark"><span class="v2-plate-mark" aria-hidden="true"><svg><use href="#i-warehouse"/></svg></span></span>
-        <h3 class="v2-h4">Warehousing</h3>
-        <p>Cold chain, conveyors and scanning systems kept online.</p>
-      </a>
-    </div>
+    <a class="v2-btn v2-btn--ghost-dark v2-rv" href="solutions/index.html">
+      Industry solutions <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
   </div>
 </section>
 
-<!-- ===================== 10. TRUST METRICS ===================== -->
-<section class="v2-band v2-band--tight" aria-labelledby="metrics-title">
-  <div class="v2-wrap">
-    <h2 class="v2-sr-only" id="metrics-title">Why customers stay with EPC</h2>
-    <div class="v2-metrics">
-      <div class="v2-metric v2-rv">
-        <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
-        <h3 class="v2-h3">Since 2012</h3>
-        <p class="v2-small">Purpose-built to sell power infrastructure and support it properly.</p>
-      </div>
-      <div class="v2-metric v2-rv v2-rv-d1">
-        <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-bolt"/></svg></span>
-        <h3 class="v2-h3">1 – 4000 kVA</h3>
-        <p class="v2-small">From edge UPS units to 4 MW mission-critical parallel systems.</p>
-      </div>
-      <div class="v2-metric v2-rv v2-rv-d2">
-        <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-wrench"/></svg></span>
-        <h3 class="v2-h3">Any make under AMC</h3>
-        <p class="v2-small">Maintenance contracts are not restricted to equipment we supplied.</p>
-      </div>
-      <div class="v2-metric v2-rv v2-rv-d3">
-        <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-activity"/></svg></span>
-        <h3 class="v2-h3">24×7 visibility</h3>
-        <p class="v2-small">GPRS/IP monitoring across sites, with predictive analysis.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===================== 11. PROCESS TIMELINE ===================== -->
-<section class="v2-band v2-band--cream" aria-labelledby="process-title">
-  <div class="v2-wrap">
-    <div class="v2-head v2-head--center v2-rv">
-      <p class="v2-eyebrow">How we work</p>
-      <h2 class="v2-h2" id="process-title">Our collaborative process</h2>
-      <p class="v2-lede">Six stages from first site visit to long-term support. Select a stage to see what happens in it.</p>
-    </div>
 
-    <div class="v2-proc v2-rv">
-      <div class="v2-proc-track" id="procTrack" role="tablist" aria-label="Project stages">
-        <span class="v2-proc-fill" id="procFill" aria-hidden="true"></span>
-        <button class="v2-proc-step" type="button" role="tab" id="step-1" aria-controls="panel-1" aria-selected="true">
-          <span class="v2-proc-num">01</span><span class="v2-proc-lbl">Site study</span>
-        </button>
-        <button class="v2-proc-step" type="button" role="tab" id="step-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">
-          <span class="v2-proc-num">02</span><span class="v2-proc-lbl">Design &amp; sizing</span>
-        </button>
-        <button class="v2-proc-step" type="button" role="tab" id="step-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">
-          <span class="v2-proc-num">03</span><span class="v2-proc-lbl">Proposal</span>
-        </button>
-        <button class="v2-proc-step" type="button" role="tab" id="step-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">
-          <span class="v2-proc-num">04</span><span class="v2-proc-lbl">Installation</span>
-        </button>
-        <button class="v2-proc-step" type="button" role="tab" id="step-5" aria-controls="panel-5" aria-selected="false" tabindex="-1">
-          <span class="v2-proc-num">05</span><span class="v2-proc-lbl">Commissioning</span>
-        </button>
-        <button class="v2-proc-step" type="button" role="tab" id="step-6" aria-controls="panel-6" aria-selected="false" tabindex="-1">
-          <span class="v2-proc-num">06</span><span class="v2-proc-lbl">Support &amp; AMC</span>
-        </button>
-      </div>
-
-      <div class="v2-proc-panel" id="panel-1" role="tabpanel" aria-labelledby="step-1" tabindex="0">
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-search"/></svg></span>
-        <div>
-          <h3 class="v2-h3">Site study</h3>
-          <p class="v2-copy">An engineer visits the facility, measures the actual connected load, reviews the incoming supply and records the failure modes that matter to you — process equipment, medical devices, servers or lifts. Nothing is sized from a phone call.</p>
-        </div>
-      </div>
-      <div class="v2-proc-panel" id="panel-2" role="tabpanel" aria-labelledby="step-2" tabindex="0" hidden>
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-draft"/></svg></span>
-        <div>
-          <h3 class="v2-h3">Design &amp; sizing</h3>
-          <p class="v2-copy">We produce the single-line diagram, UPS capacity and battery bank sizing against your target runtime, plus the power quality corrections the site needs. Redundancy is decided deliberately, not defaulted to.</p>
-        </div>
-      </div>
-      <div class="v2-proc-panel" id="panel-3" role="tabpanel" aria-labelledby="step-3" tabindex="0" hidden>
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-clipboard"/></svg></span>
-        <div>
-          <h3 class="v2-h3">Proposal</h3>
-          <p class="v2-copy">A specific recommendation with make, model, configuration, delivery timeline and commercial terms. Where there is a cheaper option that still meets the brief, it is on the same page as the preferred one.</p>
-        </div>
-      </div>
-      <div class="v2-proc-panel" id="panel-4" role="tabpanel" aria-labelledby="step-4" tabindex="0" hidden>
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-truck"/></svg></span>
-        <div>
-          <h3 class="v2-h3">Installation</h3>
-          <p class="v2-copy">Supply, mechanical installation, cabling and integration with existing distribution, scheduled around your operations. Site relocation and recommissioning of existing equipment are handled the same way.</p>
-        </div>
-      </div>
-      <div class="v2-proc-panel" id="panel-5" role="tabpanel" aria-labelledby="step-5" tabindex="0" hidden>
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-settings"/></svg></span>
-        <div>
-          <h3 class="v2-h3">Commissioning</h3>
-          <p class="v2-copy">Load testing, calibration, battery bank verification and handover documentation, followed by operator training so your facility team knows what the alarms mean before they see one.</p>
-        </div>
-      </div>
-      <div class="v2-proc-panel" id="panel-6" role="tabpanel" aria-labelledby="step-6" tabindex="0" hidden>
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-headset"/></svg></span>
-        <div>
-          <h3 class="v2-h3">Support &amp; AMC</h3>
-          <p class="v2-copy">Preventive maintenance on a written schedule, emergency breakdown cover round the clock, and optional 24×7 remote monitoring so degradation is caught from the command center before it becomes an outage.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 12. PROJECTS ===================== -->
-<section class="v2-band" aria-labelledby="projects-title">
-  <div class="v2-wrap">
-    <div class="v2-head-row v2-rv">
-      <div class="v2-head">
-        <p class="v2-eyebrow">Selected work</p>
-        <h2 class="v2-h2" id="projects-title">Engineering success stories</h2>
-        <p class="v2-lede">Sample entries below — real project records replace these before launch, and each is marked so nothing accidentally goes live.</p>
-      </div>
-      <div class="v2-proj-nav">
-        <button class="v2-round-btn" id="projPrev" type="button" aria-label="Previous projects" aria-controls="projRail">
-          <svg width="18" height="18" aria-hidden="true"><use href="#i-chev-l"/></svg>
-        </button>
-        <button class="v2-round-btn" id="projNext" type="button" aria-label="Next projects" aria-controls="projRail">
-          <svg width="18" height="18" aria-hidden="true"><use href="#i-chev-r"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="v2-proj-rail" id="projRail" tabindex="0" role="region" aria-label="Project case studies">
-      <a class="v2-proj" href="projects.html">
-        <div class="v2-plate">
-          <svg class="v2-plate-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-            <rect class="ln" x="84" y="16" width="72" height="118" rx="2"/>
-            <g class="fl">
-              <rect x="94" y="28" width="20" height="13"/><rect x="126" y="28" width="20" height="13"/>
-              <rect x="94" y="49" width="20" height="13"/><rect x="126" y="49" width="20" height="13"/>
-              <rect x="94" y="70" width="20" height="13"/><rect x="126" y="70" width="20" height="13"/>
-              <rect x="94" y="91" width="20" height="13"/><rect x="126" y="91" width="20" height="13"/>
-            </g>
-            <rect class="ac" x="126" y="49" width="20" height="13" opacity="0.5"/>
-            <rect class="ac" x="94" y="91" width="20" height="13" opacity="0.5"/>
-            <line class="ln" x1="60" y1="134" x2="180" y2="134"/>
-            <text class="tx-dim" x="120" y="147" text-anchor="middle">400 kVA · N+1</text>
-          </svg>
-        </div>
-        <div class="v2-proj-body">
-          <span class="v2-proj-tag">Sample · Commercial</span>
-          <h3 class="v2-h3">Multi-tenant office tower</h3>
-          <p class="v2-small">Centralised UPS with N+1 redundancy serving shared services, lifts and the building management system.</p>
-          <div class="v2-proj-meta">
-            <div><div class="k">Capacity</div><div class="v">400 kVA</div></div>
-            <div><div class="k">Scope</div><div class="v">Supply &amp; AMC</div></div>
-          </div>
-        </div>
-      </a>
-
-      <a class="v2-proj" href="projects.html">
-        <div class="v2-plate">
-          <svg class="v2-plate-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-            <rect class="ln" x="52" y="30" width="136" height="76" rx="4"/>
-            <line class="ln" x1="52" y1="46" x2="188" y2="46"/>
-            <path class="ln" d="M64 82 h22 l7-20 9 34 8-22 6 12 h48" stroke-width="1.4"/>
-            <g class="ac" opacity="0.85"><circle cx="60" cy="38" r="2.2"/></g>
-            <text class="tx-dim" x="70" y="41">IMAGING · UPS ISOLATED</text>
-            <rect class="ln fl" x="88" y="116" width="64" height="20" rx="2"/>
-            <text class="tx" x="120" y="130" text-anchor="middle">60 kVA</text>
-          </svg>
-        </div>
-        <div class="v2-proj-body">
-          <span class="v2-proj-tag">Sample · Healthcare</span>
-          <h3 class="v2-h3">Diagnostic centre</h3>
-          <p class="v2-small">Isolated UPS supply for imaging equipment, with battery banks sized for full-procedure runtime.</p>
-          <div class="v2-proj-meta">
-            <div><div class="k">Capacity</div><div class="v">60 kVA</div></div>
-            <div><div class="k">Scope</div><div class="v">Turnkey</div></div>
-          </div>
-        </div>
-      </a>
-
-      <a class="v2-proj" href="projects.html">
-        <div class="v2-plate">
-          <svg class="v2-plate-art" viewBox="0 0 240 150" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-            <g class="ln">
-              <rect x="46" y="20" width="42" height="104" rx="3"/>
-              <rect x="99" y="20" width="42" height="104" rx="3"/>
-              <rect x="152" y="20" width="42" height="104" rx="3"/>
-            </g>
-            <g class="fl">
-              <rect x="52" y="28" width="30" height="9"/><rect x="52" y="41" width="30" height="9"/><rect x="52" y="54" width="30" height="9"/><rect x="52" y="67" width="30" height="9"/><rect x="52" y="80" width="30" height="9"/><rect x="52" y="93" width="30" height="9"/><rect x="52" y="106" width="30" height="9"/>
-              <rect x="105" y="28" width="30" height="9"/><rect x="105" y="41" width="30" height="9"/><rect x="105" y="54" width="30" height="9"/><rect x="105" y="67" width="30" height="9"/><rect x="105" y="80" width="30" height="9"/><rect x="105" y="93" width="30" height="9"/><rect x="105" y="106" width="30" height="9"/>
-              <rect x="158" y="28" width="30" height="9"/><rect x="158" y="41" width="30" height="9"/><rect x="158" y="54" width="30" height="9"/><rect x="158" y="67" width="30" height="9"/><rect x="158" y="80" width="30" height="9"/><rect x="158" y="93" width="30" height="9"/><rect x="158" y="106" width="30" height="9"/>
-            </g>
-            <g class="ac"><circle cx="78" cy="32.5" r="1.6"/><circle cx="131" cy="58.5" r="1.6"/><circle cx="184" cy="97.5" r="1.6"/></g>
-            <text class="tx-dim" x="120" y="140" text-anchor="middle">RACKS · PRECISION COOLING · DCIM</text>
-          </svg>
-        </div>
-        <div class="v2-proj-body">
-          <span class="v2-proj-tag">Sample · Data centre</span>
-          <h3 class="v2-h3">Enterprise server room</h3>
-          <p class="v2-small">Rack infrastructure, precision cooling and DCIM monitoring delivered alongside the UPS upgrade.</p>
-          <div class="v2-proj-meta">
-            <div><div class="k">Capacity</div><div class="v">250 kVA</div></div>
-            <div><div class="k">Scope</div><div class="v">Design &amp; build</div></div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <div style="margin-top:36px" class="v2-rv">
-      <a class="v2-btn v2-btn--outline" href="projects.html">
-        View all projects <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 13. TESTIMONIALS ===================== -->
-<section class="v2-band v2-band--cream" aria-labelledby="tstm-title">
-  <div class="v2-wrap v2-tstm-grid">
-    <div class="v2-rv">
-      <p class="v2-eyebrow">Testimonials</p>
-      <h2 class="v2-h2" id="tstm-title">In their words</h2>
-      <p class="v2-lede" style="margin-top:16px">Sample entries below — real client testimonials replace these before launch. Both are marked so nothing accidentally goes live.</p>
-      <div class="v2-tstm-stat">
-        <div class="n"><span data-count="100">100</span><span aria-hidden="true">+</span></div>
-        <p class="v2-small t">Sites across Bangalore supplied, maintained or monitored since 2012.</p>
-      </div>
-    </div>
-
-    <figure class="v2-quote v2-rv v2-rv-d1">
-      <span class="v2-sample">Sample · replace before launch</span>
-      <div class="v2-stars" aria-label="Rated 5 out of 5">
-        <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-        <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-        <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-        <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-        <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-      </div>
-      <span class="v2-quote-mark" aria-hidden="true">&ldquo;</span>
-      <blockquote>Their engineers found two weak battery banks during IR testing that would have failed in the next outage. Replaced before it mattered.</blockquote>
-      <figcaption>
-        <span class="v2-avatar" aria-hidden="true">FM</span>
-        <div>
-          <div class="name">Facility Manager</div>
-          <div class="role">Healthcare customer, Bangalore</div>
-        </div>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- ===================== 14. FLOATING CTA ===================== -->
-<section class="v2-cta" aria-labelledby="cta-title">
-  <div class="v2-wrap v2-cta-inner">
-    <div>
-      <h2 id="cta-title">Tell us the load. We'll do the rest.</h2>
-      <p>Send the application, capacity and location — you get a specific recommendation and a quote.</p>
-    </div>
-    <div class="v2-cta-actions">
-      <a class="v2-btn v2-btn--light v2-btn--lg" href="#consultation">
-        Get a Quote <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-      </a>
-      <a class="v2-btn v2-btn--ghost-dark v2-btn--lg" href="https://wa.me/919841888332?text=Hello%20Eternal%20Power%2C%20I%20would%20like%20an%20enquiry." target="_blank" rel="noopener">
-        <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp us
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 15. FAQ ===================== -->
+<!-- ===================== FAQ ===================== -->
 <section class="v2-band v2-band--sand" aria-labelledby="faq-title">
-  <div class="v2-wrap">
-    <div class="v2-head v2-head--center v2-rv">
-      <p class="v2-eyebrow">Expert insights</p>
-      <h2 class="v2-h2" id="faq-title">Questions engineers actually ask</h2>
-      <p class="v2-lede">The technical and commercial questions that come up most often before a project starts.</p>
+  <div class="v2-wrap v2-head-row">
+    <div class="v2-head v2-rv">
+      <p class="v2-eyebrow">FAQs</p>
+      <h2 class="v2-h2" id="faq-title">Common questions</h2>
+      <p class="v2-lede">Capacity ranges, multi-make AMC, batteries and coverage — answered on the FAQ hub.</p>
     </div>
-
-    <div class="v2-faq v2-rv" id="faqList">
-      <details open>
-        <summary><span class="v2-faq-q">What UPS capacity range does Eternal Power supply?</span><span class="v2-faq-sign" aria-hidden="true"><svg width="15" height="15"><use href="#i-plus"/></svg></span></summary>
-        <div class="v2-faq-a"><p class="v2-small">Online UPS from 1 kVA standalone units through to 4000 kVA parallel-redundant systems, covering a 350 VA to 4.8 MW system range. Sizing is driven by a measured load study rather than a catalogue guess.</p></div>
-      </details>
-      <details>
-        <summary><span class="v2-faq-q">Do you service UPS systems you did not sell?</span><span class="v2-faq-sign" aria-hidden="true"><svg width="15" height="15"><use href="#i-plus"/></svg></span></summary>
-        <div class="v2-faq-a"><p class="v2-small">Yes. Our comprehensive and non-comprehensive annual maintenance contracts cover UPS of any make, alongside BMS, fire alarm panels and electrical distribution equipment.</p></div>
-      </details>
-      <details>
-        <summary><span class="v2-faq-q">How quickly can you respond to a breakdown?</span><span class="v2-faq-sign" aria-hidden="true"><svg width="15" height="15"><use href="#i-plus"/></svg></span></summary>
-        <div class="v2-faq-a"><p class="v2-small">AMC customers get round-the-clock emergency breakdown support. Response times are written into the contract rather than left to a call centre script, and sites under remote monitoring are often diagnosed before the customer calls.</p></div>
-      </details>
-      <details>
-        <summary><span class="v2-faq-q">Which battery types and brands do you work with?</span><span class="v2-faq-sign" aria-hidden="true"><svg width="15" height="15"><use href="#i-plus"/></svg></span></summary>
-        <div class="v2-faq-a"><p class="v2-small">SMF, VRLA and Li-Ion batteries from 7 AH to 400 AH, including Panasonic, Exide, Quanta and EnerRocket. Bank health is verified with HIOKI internal-resistance testing before any replacement is recommended.</p></div>
-      </details>
-      <details>
-        <summary><span class="v2-faq-q">Do you work outside Bangalore?</span><span class="v2-faq-sign" aria-hidden="true"><svg width="15" height="15"><use href="#i-plus"/></svg></span></summary>
-        <div class="v2-faq-a"><p class="v2-small">Bangalore and the wider Karnataka region are our core service area. Multi-site customers are supported from our command centre over GPRS/IP, so monitoring and analytics extend beyond the sites our engineers reach on the same day.</p></div>
-      </details>
-    </div>
-
-    <p class="v2-small v2-rv" style="text-align:center;margin-top:32px">
-      More questions answered on the <a class="v2-link" href="faqs.html">full FAQ hub <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    </p>
+    <a class="v2-btn v2-btn--outline v2-rv" href="faqs.html">
+      View all FAQs <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
   </div>
 </section>
 
-<!-- ===================== 16. CONSULTATION FORM ===================== -->
+
+<!-- ===================== CONSULTATION ===================== -->
+
+<section class="v2-band" id="service-areas">
+  <div class="v2-wrap">
+    <div class="v2-head v2-rv">
+      <p class="v2-eyebrow">Bangalore</p>
+      <h2>Local coverage across the city</h2>
+      <p class="v2-lede">From our Horamavu office we support UPS, battery and AMC work in Whitefield, Electronic City, Peenya, HSR, Koramangala, Marathahalli, Manyata and more.</p>
+      <div class="v2-hero-ctas" style="margin-top:24px">
+        <a class="v2-btn v2-btn--primary" href="locations/index.html">Service areas</a>
+        <a class="v2-btn v2-btn--outline" href="guides/index.html">Guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="v2-band" id="consultation" aria-labelledby="consult-title">
   <div class="v2-wrap v2-consult-grid">
     <div class="v2-rv">
-      <p class="v2-eyebrow">Send an enquiry</p>
-      <h2 class="v2-h2" id="consult-title">Unlock a power consultation</h2>
-      <p class="v2-lede" style="margin-top:16px">Tell us the load, application and site. You get a sized recommendation on WhatsApp or email within one business day — not a callback script.</p>
-
-      <ul class="v2-consult-points">
-        <li>
-          <span class="v2-ico" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
-          <div>
-            <h3 class="v2-h4">One business day</h3>
-            <p class="v2-small">A named engineer replies with a specific recommendation and indicative pricing.</p>
-          </div>
-        </li>
-        <li>
-          <span class="v2-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-          <div>
-            <h3 class="v2-h4">No obligation</h3>
-            <p class="v2-small">Site studies and load assessments carry no commitment to purchase.</p>
-          </div>
-        </li>
-      </ul>
+      
+      <h2 class="v2-h2" id="consult-title">Request a consultation</h2>
+      <p class="v2-lede" style="margin-top:16px">Tell us the load, application and site. You get a sized recommendation on WhatsApp or email within one business day.</p>
 
       <p class="v2-direct">
         <span class="k">Or reach us directly</span>
@@ -958,7 +602,7 @@
 
 </main>
 
-<!-- ===================== 17. FOOTER ===================== -->
+<!-- ===================== FOOTER ===================== -->
 <footer class="v2-ftr">
   <div class="v2-wrap v2-ftr-grid">
     <div>
@@ -1024,6 +668,8 @@
     <nav aria-label="Legal">
       <a href="privacy.html">Privacy</a>
       <a href="faqs.html">FAQs</a>
+      <a href="locations/index.html">Locations</a>
+      <a href="guides/index.html">Guides</a>
       <a href="contact.html">Contact</a>
       <a href="https://www.linkedin.com/in/siva-chandran-b51b45188" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
@@ -1040,7 +686,7 @@
   <a class="v2-btn v2-btn--primary v2-btn--sm" href="#consultation">Get Quote</a>
 </div>
 
-<script src="static/js/main.js" defer></script>
-<script src="static/js/v2.js" defer></script>
+<script src="static/js/main.js?v=20260807b" defer></script>
+<script src="static/js/v2.js?v=20260807h" defer></script>
 </body>
 </html>

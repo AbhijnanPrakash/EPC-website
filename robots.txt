@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.eternalpower.co.in/sitemap.xml
+
+# AI / assistant index
+# https://www.eternalpower.co.in/llms.txt
