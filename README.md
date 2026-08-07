@@ -51,22 +51,20 @@ PR: https://github.com/AbhijnanPrakash/EPC-website/pull/9
 ## File layout
 
 ```
-index.html              V2 homepage (dark hero)
-about.html              company story
+index.html              V2 homepage (dark hero + hover nav)
+locations/              Bangalore area + city service SEO pages
+guides/                 UPS / AMC / battery guides
 products/               product pages + index
-services/               service pages + index (several on V2)
+services/               service pages + index
 solutions/              industry pages + index
-projects.html           project gallery
-clients.html            clients + testimonials
-faqs.html               FAQ hub
-contact.html            enquiry form + map
-privacy.html            privacy policy
+llms.txt                AI/assistant site map
+about.html … contact.html
 
-static/css/v2.css       homepage / migrated V2 pages
-static/css/style.css    legacy inner pages
+static/css/v2.css       V2 system + dropdown nav
+static/js/v2.js         header, drawer, hover menus
+static/css/style.css    legacy page bodies
 static/css/chat.css     EPC Assist chat
-static/js/v2.js         homepage interactions
-static/js/main.js       shared (clock, drawer, forms, chat)
+static/js/main.js       shared helpers + chat
 static/img/             photos / artwork
 ```
 
