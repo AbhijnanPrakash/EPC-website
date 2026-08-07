@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/css/v2.css?v=20260807h">
-<link rel="stylesheet" href="../static/css/canvas.css?v=20260807a">
+<link rel="stylesheet" href="../static/css/canvas.css?v=20260807c">
 <link rel="stylesheet" href="../static/css/style.css?v=20260807b">
 <link rel="stylesheet" href="../static/css/chat.css?v=20260807b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eternalpower.co.in/"}, {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://www.eternalpower.co.in/solutions/index.html"}, {"@type": "ListItem", "position": 3, "name": "Industrial & Manufacturing", "item": "https://www.eternalpower.co.in/solutions/industrial.html"}]}</script>
@@ -247,9 +247,12 @@
   <aside class="cv-panel cv-enquire">
     <div class="cv-enquire__head"><h2>Talk to us about Industrial &amp; Manufacturing</h2><div class="cv-enquire__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></div></div>
     <ul class="cv-contact-list">
-      <li><a href="tel:+919841888332"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-phone"/></svg></span><span><strong>+91 98418 88332</strong><span>Call for a scoped recommendation</span></span></a></li>
-      <li><a href="https://wa.me/919841888332?text=Enquiry%3A%20Industrial%20%26%20Manufacturing" target="_blank" rel="noopener"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-wa"/></svg></span><span><strong>WhatsApp</strong><span>Share site details</span></span></a></li>
-      <li><a href="mailto:siva@eternalpower.co.in"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-mail"/></svg></span><span><strong>siva@eternalpower.co.in</strong><span>Email requirements</span></span></a></li>
+      <li><a href="tel:+919841888332"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-phone"/></svg></span>
+              <span class="cv-contact-list__text"><strong>+91 98418 88332</strong><small>Call for a scoped recommendation</small></span></a></li>
+      <li><a href="https://wa.me/919841888332?text=Enquiry%3A%20Industrial%20%26%20Manufacturing" target="_blank" rel="noopener"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-wa"/></svg></span>
+              <span class="cv-contact-list__text"><strong>WhatsApp</strong><small>Share site details</small></span></a></li>
+      <li><a href="mailto:siva@eternalpower.co.in"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-mail"/></svg></span>
+              <span class="cv-contact-list__text"><strong>siva@eternalpower.co.in</strong><small>Email requirements</small></span></a></li>
     </ul>
     <a class="cv-btn" href="#enquiry">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
   </aside>
@@ -279,10 +282,17 @@
         <label for="ef-msg">What do you need?<textarea id="ef-msg" name="message" required placeholder="Building type, loads, location…"></textarea></label>
       </div>
       <div class="form-actions">
-        <button type="submit" class="cv-btn" data-send="whatsapp"><svg width="16" height="16"><use href="#i-wa"/></svg> Send on WhatsApp</button>
-        <p class="form-note">Or <button type="submit" data-send="email" style="background:none;border:none;padding:0;color:var(--cv-green);font:inherit;font-weight:650;cursor:pointer;text-decoration:underline">send by email</button>.</p>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </div>
+            <button type="submit" class="cv-btn" data-send="whatsapp">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
+              WhatsApp
+            </button>
+            <button type="submit" class="cv-btn cv-btn--ghost" data-send="email">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-mail"/></svg>
+              Email
+            </button>
+            <p class="form-note">Response within one business day</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
     </form>
   </section>
 </div>

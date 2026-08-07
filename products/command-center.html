@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/css/v2.css?v=20260807h">
-<link rel="stylesheet" href="../static/css/canvas.css?v=20260807a">
+<link rel="stylesheet" href="../static/css/canvas.css?v=20260807c">
 <link rel="stylesheet" href="../static/css/style.css?v=20260807b">
 <link rel="stylesheet" href="../static/css/chat.css?v=20260807b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Command & Monitoring Center", "description": "Control, command and monitoring center solutions: real-time, round-the-clock monitoring of power and building infrastructure across multiple sites, with predictive analytics.", "brand": {"@type": "Organization", "name": "Eternal Power & Cooling Services"}, "url": "https://www.eternalpower.co.in/products/command-center.html"}</script>
@@ -300,19 +300,19 @@
           <li>
             <a href="tel:+919841888332">
               <span class="cv-contact-list__icon" aria-hidden="true"><svg width="15" height="15"><use href="#i-phone"/></svg></span>
-              <span><strong>+91 98418 88332</strong><span>Call for sizing help</span></span>
+              <span class="cv-contact-list__text"><strong>+91 98418 88332</strong><small>Call for sizing help</small></span>
             </a>
           </li>
           <li>
             <a href="https://wa.me/919841888332?text=Enquiry%3A%20Command%20%26%20Monitoring%20Center" target="_blank" rel="noopener">
               <span class="cv-contact-list__icon" aria-hidden="true"><svg width="15" height="15"><use href="#i-wa"/></svg></span>
-              <span><strong>WhatsApp</strong><span>Share load, application and site</span></span>
+              <span class="cv-contact-list__text"><strong>WhatsApp</strong><small>Share load, application and site</small></span>
             </a>
           </li>
           <li>
             <a href="mailto:siva@eternalpower.co.in?subject=Command &amp; Monitoring Center%20enquiry">
               <span class="cv-contact-list__icon" aria-hidden="true"><svg width="15" height="15"><use href="#i-mail"/></svg></span>
-              <span><strong>siva@eternalpower.co.in</strong><span>Email requirements</span></span>
+              <span class="cv-contact-list__text"><strong>siva@eternalpower.co.in</strong><small>Email requirements</small></span>
             </a>
           </li>
         </ul>
@@ -463,6 +463,7 @@
       <section class="cv-panel cv-form-panel" id="enquiry" aria-labelledby="cv-form-title">
         <p class="cv-kicker">Contact</p>
         <h2 id="cv-form-title">Send your requirements</h2>
+        <p class="cv-form-lead">Share load, site and timing — we reply on WhatsApp or email.</p>
         <form class="enquiry cv-form" data-context="Product: Command &amp; Monitoring Center">
           <div class="form-grid">
             <label for="ef-name">Your name
@@ -483,9 +484,13 @@
           <div class="form-actions">
             <button type="submit" class="cv-btn" data-send="whatsapp">
               <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>
-              Send on WhatsApp
+              WhatsApp
             </button>
-            <p class="form-note">Or <button type="submit" data-send="email" style="background:none;border:none;padding:0;color:var(--cv-green);font:inherit;font-weight:650;cursor:pointer;text-decoration:underline">send by email</button> — response within one business day.</p>
+            <button type="submit" class="cv-btn cv-btn--ghost" data-send="email">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-mail"/></svg>
+              Email
+            </button>
+            <p class="form-note">Response within one business day</p>
             <p class="form-status" role="status" aria-live="polite"></p>
           </div>
         </form>

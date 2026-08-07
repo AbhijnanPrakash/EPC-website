@@ -67,12 +67,12 @@
 
 .ibms-title {
   margin: 0;
-  font-family: "Newsreader", Georgia, serif;
-  font-style: italic;
-  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
-  font-weight: 400;
+  font-family: "Geist", system-ui, sans-serif;
+  font-style: normal;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  font-weight: 650;
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--ibms-ink);
 }
 
@@ -315,8 +315,8 @@
 
 .ibms-contact-list li a {
   display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 0.65rem;
+  grid-template-columns: 36px 1fr;
+  gap: 0.7rem;
   align-items: center;
   padding: 0.55rem 0.6rem;
   border-radius: 12px;
@@ -330,31 +330,44 @@
 }
 
 .ibms-contact-list__icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   background: var(--ibms-green-soft);
   color: var(--ibms-green);
-  display: grid;
+  display: grid !important;
   place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .ibms-contact-list__icon svg {
-  width: 15px;
-  height: 15px;
-}
-
-.ibms-contact-list strong {
   display: block;
-  font-size: 0.78rem;
-  font-weight: 650;
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
-.ibms-contact-list span {
+.ibms-contact-list__text {
+  display: block;
+  min-width: 0;
+}
+
+.ibms-contact-list__text strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--ibms-ink);
+  font-style: normal;
+}
+
+.ibms-contact-list__text small {
   display: block;
   font-size: 0.72rem;
   color: var(--ibms-muted);
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .ibms-btn {
@@ -385,6 +398,19 @@
 .ibms-btn svg {
   width: 16px;
   height: 16px;
+}
+
+.ibms-btn--ghost {
+  background: transparent;
+  color: var(--ibms-green) !important;
+  border: 1px solid rgba(47, 107, 79, 0.35);
+  box-shadow: none;
+}
+
+.ibms-btn--ghost:hover {
+  background: var(--ibms-green-soft);
+  border-color: var(--ibms-green);
+  transform: none;
 }
 
 /* Connector strip under stage */
@@ -834,17 +860,29 @@
 }
 
 .ibms-form .form-actions {
-  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ibms-form .ibms-btn {
+  margin-top: 0;
+  width: 100%;
 }
 
 .ibms-form .form-note {
-  margin: 0.65rem 0 0;
+  grid-column: 1 / -1;
+  margin: 0.15rem 0 0;
   font-size: 0.72rem;
   color: var(--ibms-muted);
+  text-align: center;
+  font-style: normal;
 }
 
 .ibms-form .form-status {
-  margin: 0.5rem 0 0;
+  grid-column: 1 / -1;
+  margin: 0.15rem 0 0;
   font-size: 0.8rem;
   color: var(--ibms-green);
   min-height: 1.2em;
