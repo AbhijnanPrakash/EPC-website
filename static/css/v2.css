@@ -221,13 +221,7 @@ body.v2 { overflow-x: clip; }
   text-transform: uppercase;
   color: var(--v2-green);
 }
-.v2 .v2-eyebrow::before {
-  content: "";
-  width: 22px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.55;
-}
+.v2 .v2-eyebrow::before { display: none; }
 .v2 .v2-band--dark .v2-eyebrow { color: var(--v2-lime); }
 
 /* Section heading blocks */
@@ -1296,7 +1290,7 @@ body.v2 {
 .v2 .page-hero h1 { color: #fff; }
 .v2 .page-hero .lede { color: rgba(255, 255, 255, 0.78); }
 .v2 .page-hero .eyebrow { color: var(--v2-lime); }
-.v2 .page-hero .eyebrow::before { background: var(--v2-lime); }
+.v2 .page-hero .eyebrow::before { display: none; }
 .v2 .crumbs { color: rgba(255, 255, 255, 0.55); }
 .v2 .crumbs a { color: rgba(255, 255, 255, 0.78); }
 .v2 .crumbs a:hover { color: #fff; }
