@@ -1364,3 +1364,39 @@ body.v2 {
   border-radius: var(--v2-r-lg);
   padding: 28px;
 }
+
+/* SEO / guide long-form */
+.v2 .prose-seo {
+  max-width: 72ch;
+  color: var(--v2-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+.v2 .prose-seo h2 {
+  color: var(--v2-ink);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+.v2 .prose-seo h2:first-child { margin-top: 0; }
+.v2 .prose-seo p { margin: 0 0 1rem; }
+.v2 .prose-seo ul {
+  margin: 0 0 1.25rem;
+  padding-left: 1.2rem;
+}
+.v2 .prose-seo li { margin: 0.35rem 0; }
+.v2 .prose-seo .btn { margin: 0.35rem 0.5rem 0.35rem 0; }
+.v2 .related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.v2 .sec-head { max-width: 62ch; }
+.v2 .sec-head h2 {
+  margin: 0.5rem 0;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  letter-spacing: -0.02em;
+  color: var(--v2-ink);
+}
+.v2 .sec-head .lede { color: var(--v2-body); }
