@@ -7,16 +7,23 @@ Inner pages still use the legacy stylesheet (`static/css/style.css`) until migra
 
 ## Correct homepage check
 
-You have the **current** site if the hero headline says:
+You have the **current** site if:
 
-> Reliable backup power for critical operations
+1. The hero headline says: **Reliable backup power for critical operations**
+2. The top nav shows **Products ▾ · Services ▾ · Solutions ▾ · Locations ▾ · Resources � says: **Reliable backup power for critical operations**
+2. The top nav shows **Products ▾ · Services ▾ · Solutions ▾ · Locations ▾ · Resources ▾**
+3. Hovering **Products** opens a white dropdown (UPS systems, Batteries, …)
 
 You have an **old / wrong folder** if you see:
 
-> Critical power infrastructure for *serious* operations
+- “Critical power infrastructure for *serious* operations”, or
+- A flat nav with no � an **old / wrong folder** if you see:
 
-That old glassmorphism page is not on `main` or the current PR branch anymore.
-Delete the stale folder and clone fresh (steps below).
+- “Critical power infrastructure for *serious* operations”, or
+- A flat nav with no ▾ dropdowns (Home About Products Services AMC …)
+
+That old UI is not on this PR branch. Delete the stale folder and clone fresh.
+**https://www.eternalpower.co.in** is still the old Wix site — it will not show these menus until you deploy this repo.
 
 ## Preview locally (do this)
 
