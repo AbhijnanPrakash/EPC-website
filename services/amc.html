@@ -24,6 +24,7 @@
       imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/css/v2.css?v=20260807h">
+<link rel="stylesheet" href="../static/css/canvas.css?v=20260807a">
 <link rel="stylesheet" href="../static/css/chat.css">
 <link rel="stylesheet" href="../static/css/services.css">
 <link rel="stylesheet" href="../static/css/amc.css">
@@ -262,173 +263,121 @@
 
 <main id="main">
 
-<!-- ===================== BREADCRUMB + HERO ===================== -->
-<section class="v2-hero amc-hero" aria-labelledby="amc-hero-title">
-  <div class="v2-hero-media">
-    <picture>
-      <source type="image/webp"
-              srcset="../static/img/maintenance-480.webp 480w, ../static/img/maintenance-800.webp 800w, ../static/img/maintenance-1400.webp 1400w"
-              sizes="100vw">
-      <img src="../static/img/maintenance.jpg"
-           srcset="../static/img/maintenance-480.jpg 480w, ../static/img/maintenance-800.jpg 800w, ../static/img/maintenance.jpg 1400w"
-           sizes="100vw"
-           alt="Technical illustration of a planned maintenance schedule with service checkpoints and a condition gauge"
-           width="1400" height="797" fetchpriority="high" decoding="async">
-    </picture>
-  </div>
-
-  <div class="v2-wrap v2-hero-inner">
-    <nav class="sv-crumbs sv-crumbs--on-dark" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
-      <svg aria-hidden="true"><use href="#i-chev-r"/></svg>
-      <a href="index.html">Services</a>
-      <svg aria-hidden="true"><use href="#i-chev-r"/></svg>
-      <span aria-current="page">AMC</span>
+<div class="cv-canvas">
+  <div class="container">
+    <nav class="cv-crumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span aria-hidden="true">›</span>
+      <a href="index.html">Services</a><span aria-hidden="true">›</span>
+      <span>Annual Maintenance Contracts (AMC)</span>
     </nav>
-
-    <div class="v2-hero-copy">
-      <span class="v2-hero-pill">Maintenance contracts</span>
-      <h1 class="v2-h1" id="amc-hero-title">Annual Maintenance Contracts (AMC)</h1>
-      <p class="v2-lede">Customized maintenance protocols with proactive monitoring, genuine parts, and priority technical response for critical power infrastructure.</p>
-      <div class="v2-hero-ctas">
-        <a class="v2-btn v2-btn--primary" href="../contact.html">
-          Request an AMC Quote <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="v2-btn v2-btn--ghost-dark" href="tel:+919841888332">Talk to Service Team</a>
+    <div class="cv-stage">
+      <aside class="cv-panel cv-overview">
+        <p class="cv-kicker">Overview</p>
+        <h1 class="cv-title">Annual Maintenance Contracts (AMC)</h1>
+        <p class="cv-lead">Home Services AMC Maintenance contracts Annual Maintenance Contracts (AMC) Customized maintenance protocols with proactive monitoring, genuine parts, and priority technical response for critical power infrastructure.</p>
+        <div class="cv-specs">          <div class="cv-spec">
+            <div class="cv-spec__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+            <div><strong>Coverage</strong><span>Any-make UPS preventive and breakdown AMC</span></div>
+          </div>
+          <div class="cv-spec">
+            <div class="cv-spec__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+            <div><strong>Visits</strong><span>Scheduled preventive maintenance with reports</span></div>
+          </div>
+          <div class="cv-spec">
+            <div class="cv-spec__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></svg></div>
+            <div><strong>Response</strong><span>Priority breakdown support for AMC sites</span></div>
+          </div></div>
+      </aside>
+      <div class="cv-panel cv-viz" aria-label="Annual Maintenance Contracts (AMC) visualization">
+        <div class="cv-viz__field" aria-hidden="true"><svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="148" fill="none" stroke="rgba(47,107,79,0.12)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="200" cy="200" r="108" fill="none" stroke="rgba(47,107,79,0.08)" stroke-width="1"/></svg></div>
+        <div class="cv-viz__core" aria-hidden="true"><svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <ellipse cx="160" cy="255" rx="110" ry="28" fill="#f3f6f4" stroke="#d7ddd9"/>
+  <rect x="90" y="90" width="140" height="130" rx="14" fill="#e8f2ec" stroke="#6a8f78"/>
+  <circle cx="160" cy="155" r="36" fill="#fff" stroke="#2f6b4f" stroke-width="2"/>
+  <path d="M148 155l8 8 16-18" stroke="#2f6b4f" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="110" y="210" width="100" height="10" rx="3" fill="#8fb39c"/>
+</svg></div>
+        <div class="cv-tagline"><i aria-hidden="true"></i> Prevent. Respond. Document.</div>
       </div>
-    </div>
-
-    <ul class="amc-assure">
-      <li>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-        Priority breakdown<br>response
-      </li>
-      <li>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-settings"/></svg></span>
-        Genuine Parts<br>&amp; Quality Service
-      </li>
-      <li>
-        <span class="v2-ico" aria-hidden="true"><svg><use href="#i-refresh"/></svg></span>
-        Priority Technical<br>Response
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===================== BENEFITS ===================== -->
-<section class="v2-band v2-band--cream" aria-labelledby="amc-why-title">
-  <div class="v2-wrap">
-    <div class="amc-head v2-rv">
-      <hr class="sv-rule">
-      <h2 class="v2-h2" id="amc-why-title">Why an AMC pays for itself</h2>
-      <p class="v2-lede">In the industrial sector, the cost of unplanned downtime far exceeds the cost of preventive care. Our AMC programs are designed to eliminate risks before they become failures.</p>
-    </div>
-
-    <div class="amc-benefits">
-      <article class="sv-card amc-benefit v2-rv">
-        <div class="amc-benefit-body">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-          <hr class="sv-rule">
-          <h3 class="v2-h3">Fewer breakdowns</h3>
-          <p class="v2-small">Preventive diagnostics catch degradation early, before it becomes a breakdown.</p>
-        </div>
-      </article>
-
-      <article class="sv-card amc-benefit v2-rv v2-rv-d1">
-        <div class="amc-benefit-body">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-headset"/></svg></span>
-          <hr class="sv-rule">
-          <h3 class="v2-h3">Priority support</h3>
-          <p class="v2-small">AMC holders skip the queue with guaranteed 4-hour response times during critical emergencies.</p>
-        </div>
-      </article>
-
-      <article class="sv-card amc-benefit v2-rv v2-rv-d2">
-        <div class="amc-benefit-body">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-wallet"/></svg></span>
-          <hr class="sv-rule">
-          <h3 class="v2-h3">Predictable cost</h3>
-          <p class="v2-small">Fixed annual rates help you manage O&amp;M budgets without worrying about fluctuating service fees.</p>
-        </div>
-      </article>
-
-      <article class="sv-card amc-benefit v2-rv v2-rv-d3">
-        <div class="amc-benefit-body">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
-          <hr class="sv-rule">
-          <h3 class="v2-h3">Longer equipment life</h3>
-          <p class="v2-small">Extend the operational life of UPS systems, battery banks and cooling equipment through scheduled care.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== AMC PLANS ===================== -->
-<section class="v2-band v2-band--cream" aria-labelledby="amc-plans-title">
-  <div class="v2-wrap">
-    <div class="amc-head v2-rv">
-      <hr class="sv-rule">
-      <h2 class="v2-h2" id="amc-plans-title">Choose a plan that fits your operation</h2>
-      <p class="v2-lede">Flexible AMC plans designed to deliver reliability, reduce downtime, and keep your operations running at peak performance.</p>
-    </div>
-
-    <div class="amc-plans">
-      <article class="amc-plan v2-rv" aria-labelledby="plan-preventive">
-        <h3 class="v2-h3" id="plan-preventive">Preventive AMC</h3>
-        <p class="v2-small amc-plan-sub">Standard maintenance for essential power continuity.</p>
-        <hr class="sv-rule">
-        <ul class="amc-features">
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> 4 Quarterly preventive visits</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> Detailed health report post-visit</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> Minor adjustments &amp; cleaning</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> Unlimited breakdown calls (Labour only)</li>
-          <li class="amc-feat amc-feat--off">
-            <svg aria-hidden="true"><use href="#i-x-c"/></svg>
-            <span><span class="v2-sr-only">Not included: </span>Cost of spare parts included</span>
-          </li>
+      <aside class="cv-panel cv-enquire">
+        <div class="cv-enquire__head"><h2>Enquire about Annual Maintenance Contracts</h2><div class="cv-enquire__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div></div>
+        <ul class="cv-contact-list">
+          <li><a href="tel:+919841888332"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-phone"/></svg></span><span><strong>+91 98418 88332</strong><span>Call for a scope proposal</span></span></a></li>
+          <li><a href="https://wa.me/919841888332?text=Enquiry%3A%20Annual%20Maintenance%20Contracts" target="_blank" rel="noopener"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-wa"/></svg></span><span><strong>WhatsApp</strong><span>Share equipment and site</span></span></a></li>
+          <li><a href="mailto:siva@eternalpower.co.in"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-mail"/></svg></span><span><strong>siva@eternalpower.co.in</strong><span>Email requirements</span></span></a></li>
         </ul>
-        <div class="amc-plan-action">
-          <a class="v2-btn v2-btn--outline" href="../contact.html">
-            Select Basic Coverage <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="amc-plan amc-plan--featured v2-rv v2-rv-d1" aria-labelledby="plan-comprehensive">
-        <span class="amc-badge">Most complete</span>
-        <h3 class="v2-h3" id="plan-comprehensive">Comprehensive AMC</h3>
-        <p class="v2-small amc-plan-sub">All-inclusive coverage with genuine parts and priority response.</p>
-        <hr class="sv-rule">
-        <ul class="amc-features">
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> Monthly health check-ups</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> 24/7 Remote monitoring support</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> Guaranteed 4-hour response</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> All spare parts &amp; consumables included</li>
-          <li class="amc-feat"><svg aria-hidden="true"><use href="#i-check-c"/></svg> Engine overhaul &amp; filtration services</li>
-        </ul>
-        <div class="amc-plan-action">
-          <a class="v2-btn v2-btn--primary" href="../contact.html">
-            Go Comprehensive <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-        </div>
-      </article>
+        <a class="cv-btn" href="#enquiry">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </aside>
+    </div>
+    <div class="cv-rail" aria-hidden="true"><i></i><i></i><i></i></div>
+    <section class="cv-panel cv-apps"><div class="cv-apps__head"><p class="cv-kicker">Scope</p><h2>What is included</h2></div>
+      <div class="cv-apps__grid">        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+          <h3>Priority breakdown response</h3>
+          <p>Priority breakdown response</p>
+        </article>
+        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+          <h3>Genuine Parts &amp;amp; Quality Service</h3>
+          <p>Genuine Parts &amp;amp; Quality Service</p>
+        </article>
+        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></svg></div>
+          <h3>Priority Technical Response</h3>
+          <p>Priority Technical Response</p>
+        </article></div></section>
+    <div class="cv-mid">
+      <section class="cv-panel cv-features"><div class="cv-features__head"><p class="cv-kicker">Benefits</p><h2>Why teams use this</h2></div>
+        <div class="cv-feat-grid">          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+            <div><h3>Fewer breakdowns</h3><p>Preventive diagnostics catch degradation early, before it becomes a breakdown.</p></div>
+          </article>
+          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><h3>Priority support</h3><p>AMC holders skip the queue with guaranteed 4-hour response times during critical emergencies.</p></div>
+          </article>
+          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div><h3>Predictable cost</h3><p>Fixed annual rates help you manage O&amp;amp;M budgets without worrying about fluctuating service fees.</p></div>
+          </article>
+          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg></div>
+            <div><h3>Longer equipment life</h3><p>Extend the operational life of UPS systems, battery banks and cooling equipment through scheduled care.</p></div>
+          </article></div></section>
+      <aside class="cv-panel cv-related"><div class="cv-related__head"><p class="cv-kicker">Related</p><h2>Continue with</h2></div>
+        <ul class="cv-related__list">          <li><a href="battery-services.html"><span class="cv-related__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><strong>Battery Testing &amp; Replacement</strong><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="remote-monitoring.html"><span class="cv-related__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><strong>Remote Monitoring</strong><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="project-execution.html"><span class="cv-related__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><strong>Installation &amp; Project Execution</strong><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></a></li></ul></aside>
+    </div>
+    <section class="cv-panel cv-arch"><div class="cv-arch__head"><p class="cv-kicker">Process</p><h2>How it works</h2></div>
+      <div class="cv-arch__track">        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div><h3>Scope</h3><ul><li>Customized maintenance protocols with proactive monitoring</li><li>genuine parts</li><li>and priority technical response for critical power infrastructure.</li></ul></div>
+        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><h3>Delivery</h3><ul><li>Bangalore and surrounding corridors</li></ul></div>
+        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></svg></div><h3>Follow-on</h3><ul><li>AMC and monitoring after handover</li></ul></div>
+        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Contact</h3><ul><li>Quote within one business day</li></ul></div></div></section>
+    <div class="cv-lower">
+      <section class="cv-panel cv-faq-panel"><p class="cv-kicker">FAQ</p><h2>Frequently asked</h2>
+        <div class="cv-faq-list">          <details><summary>Do you cover UPS brands you did not supply?</summary><p>Yes. AMC covers any make of UPS, with preventive visits and breakdown support.</p></details>
+          <details><summary>What is included in a visit?</summary><p>Inspection, measurements, cleaning where applicable, and a written report of findings.</p></details></div></section>
+      <section class="cv-panel cv-form-panel" id="enquiry"><p class="cv-kicker">Contact</p><h2>Send your requirements</h2>
+        <form class="enquiry cv-form" data-context="Service: Annual Maintenance Contracts">
+          <div class="form-grid">
+            <label for="ef-name">Your name<input id="ef-name" type="text" name="name" required autocomplete="name" placeholder="e.g. Rakesh Kumar"></label>
+            <div class="form-row">
+              <label for="ef-phone">Phone<input id="ef-phone" type="tel" name="phone" required autocomplete="tel" placeholder="+91 XXXXX XXXXX"></label>
+              <label for="ef-company">Company / site<input id="ef-company" type="text" name="company" autocomplete="organization" placeholder="Company / site"></label>
+            </div>
+            <label for="ef-msg">What do you need?<textarea id="ef-msg" name="message" required placeholder="Equipment, site, urgency…"></textarea></label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="cv-btn" data-send="whatsapp"><svg width="16" height="16"><use href="#i-wa"/></svg> Send on WhatsApp</button>
+            <p class="form-note">Or <button type="submit" data-send="email" style="background:none;border:none;padding:0;color:var(--cv-green);font:inherit;font-weight:650;cursor:pointer;text-decoration:underline">send by email</button> — response within one business day.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
     </div>
   </div>
-</section>
-
-<!-- ===================== CONSULTATION CTA ===================== -->
-<section class="v2-band" aria-labelledby="amc-consult-title">
-  <div class="v2-wrap">
-    <div class="amc-consult v2-rv">
-      <h2 id="amc-consult-title">Already own a UPS or cooling system?</h2>
-      <p>Get a free asset audit by our senior engineers. We'll assess your current equipment condition and recommend the ideal AMC roadmap.</p>
-      <a class="v2-btn v2-btn--light v2-btn--lg" href="../contact.html">
-        Book an AMC Consultation <svg width="16" height="16" aria-hidden="true"><use href="#i-calendar"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
+</div>
 
 </main>
 

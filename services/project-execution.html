@@ -24,6 +24,7 @@
       imagesizes="(max-width: 1040px) 92vw, 560px">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/css/v2.css?v=20260807h">
+<link rel="stylesheet" href="../static/css/canvas.css?v=20260807a">
 <link rel="stylesheet" href="../static/css/chat.css">
 <link rel="stylesheet" href="../static/css/services.css">
 <link rel="stylesheet" href="../static/css/service-detail.css">
@@ -266,253 +267,124 @@
 
 <main id="main">
 
-<!-- ===================== BREADCRUMB + HERO ===================== -->
-<section class="v2-wrap sv-hero" aria-labelledby="sd-hero-title">
-  <nav class="sv-crumbs" aria-label="Breadcrumb">
-    <a href="../index.html">Home</a>
-    <svg aria-hidden="true"><use href="#i-chev-r"/></svg>
-    <a href="index.html">Services</a>
-    <svg aria-hidden="true"><use href="#i-chev-r"/></svg>
-    <span aria-current="page">Installation &amp; Commissioning</span>
-  </nav>
-
-  <div class="sv-hero-grid">
-    <div class="v2-rv">
-      <p class="sd-tags">
-        <span class="sd-tag sd-tag--phase">Deploy phase</span>
-        <span class="sd-tag sd-tag--meta">Timeline: project-dependent</span>
-      </p>
-      <h1 class="v2-h1" id="sd-hero-title">UPS Installation &amp; Project Execution</h1>
-      <hr class="sv-rule">
-      <p class="v2-lede">Supply, mechanical and electrical installation, commissioning and handover documentation for UPS and battery systems.</p>
-      <div class="sv-hero-ctas">
-        <a class="v2-btn v2-btn--primary" href="../contact.html">
-          Request this Service <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </a>
-        <a class="v2-btn v2-btn--outline" href="tel:+919841888332">
-          Speak to an Engineer <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </a>
+<div class="cv-canvas">
+  <div class="container">
+    <nav class="cv-crumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span aria-hidden="true">›</span>
+      <a href="index.html">Services</a><span aria-hidden="true">›</span>
+      <span>UPS Installation &amp;amp; Project Execution</span>
+    </nav>
+    <div class="cv-stage">
+      <aside class="cv-panel cv-overview">
+        <p class="cv-kicker">Overview</p>
+        <h1 class="cv-title">UPS Installation &amp; Project Execution</h1>
+        <p class="cv-lead">Supply, mechanical and electrical installation, commissioning and handover documentation for UPS and battery systems.</p>
+        <div class="cv-specs">          <div class="cv-spec">
+            <div class="cv-spec__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+            <div><strong>Scope</strong><span>Survey, install, commission, handover</span></div>
+          </div>
+          <div class="cv-spec">
+            <div class="cv-spec__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+            <div><strong>Sites</strong><span>Offices, plants, hospitals, data rooms</span></div>
+          </div>
+          <div class="cv-spec">
+            <div class="cv-spec__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></svg></div>
+            <div><strong>Follow-on</strong><span>AMC after go-live</span></div>
+          </div></div>
+      </aside>
+      <div class="cv-panel cv-viz" aria-label="UPS Installation &amp; Project Execution visualization">
+        <div class="cv-viz__field" aria-hidden="true"><svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="148" fill="none" stroke="rgba(47,107,79,0.12)" stroke-width="1" stroke-dasharray="3 6"/><circle cx="200" cy="200" r="108" fill="none" stroke="rgba(47,107,79,0.08)" stroke-width="1"/></svg></div>
+        <div class="cv-viz__core" aria-hidden="true"><svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg"><ellipse cx="160" cy="255" rx="110" ry="28" fill="#f3f6f4" stroke="#d7ddd9"/><path d="M80 210h160L200 90H120z" fill="#e8f2ec" stroke="#6a8f78"/><rect x="140" y="150" width="40" height="60" fill="#2f6b4f" opacity="0.35"/><path d="M100 210V180l20-15 20 15v30" fill="none" stroke="#2f6b4f" stroke-width="2"/></svg></div>
+        <div class="cv-tagline"><i aria-hidden="true"></i> Survey. Install. Handover.</div>
       </div>
-    </div>
-
-    <div class="sv-hero-media v2-rv v2-rv-d1">
-      <figure class="sv-hero-figure">
-        <picture>
-          <source type="image/webp"
-                  srcset="../static/img/installation-480.webp 480w, ../static/img/installation-800.webp 800w, ../static/img/installation-1400.webp 1400w"
-                  sizes="(max-width: 1040px) 92vw, 560px">
-          <img src="../static/img/installation.jpg"
-               srcset="../static/img/installation-480.jpg 480w, ../static/img/installation-800.jpg 800w, ../static/img/installation.jpg 1400w"
-               sizes="(max-width: 1040px) 92vw, 560px"
-               alt="Technical illustration of a distribution panel with breaker banks, conduit runs and earthing"
-               width="1400" height="797" fetchpriority="high" decoding="async">
-        </picture>
-      </figure>
-      <div class="sv-trust">
-        <span class="v2-ico v2-ico--round" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
-        <div>
-          <div class="t">OEM-trained engineers</div>
-          <div class="s">Installations follow OEM specifications and site safety standards.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== WHAT'S INCLUDED / NOT INCLUDED ===================== -->
-<section class="v2-band v2-band--tight v2-band--cream" aria-labelledby="sd-scope-title">
-  <div class="v2-wrap">
-    <h2 class="v2-sr-only" id="sd-scope-title">Scope of this service</h2>
-
-    <div class="sd-panel v2-rv">
-      <div class="sd-panel-col">
-        <div class="sd-panel-head">
-          <span class="v2-ico" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-          <h2>What's included</h2>
-        </div>
-        <hr class="sv-rule">
-        <ul class="sd-list">
-          <li><span class="sd-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span> Mechanical and electrical installation of the UPS and battery bank</li>
-          <li><span class="sd-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span> Cable routing, termination &amp; control connections</li>
-          <li><span class="sd-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span> Earthing &amp; safety checks</li>
-          <li><span class="sd-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span> Functional testing &amp; startup</li>
-          <li><span class="sd-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span> Load / commissioning test &amp; verification</li>
-          <li><span class="sd-mark" aria-hidden="true"><svg><use href="#i-check"/></svg></span> Handover documentation</li>
+      <aside class="cv-panel cv-enquire">
+        <div class="cv-enquire__head"><h2>Enquire about Installation &amp; Project Execution</h2><div class="cv-enquire__badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div></div>
+        <ul class="cv-contact-list">
+          <li><a href="tel:+919841888332"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-phone"/></svg></span><span><strong>+91 98418 88332</strong><span>Call for a scope proposal</span></span></a></li>
+          <li><a href="https://wa.me/919841888332?text=Enquiry%3A%20Installation%20%26%20Project%20Execution" target="_blank" rel="noopener"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-wa"/></svg></span><span><strong>WhatsApp</strong><span>Share equipment and site</span></span></a></li>
+          <li><a href="mailto:siva@eternalpower.co.in"><span class="cv-contact-list__icon"><svg width="15" height="15"><use href="#i-mail"/></svg></span><span><strong>siva@eternalpower.co.in</strong><span>Email requirements</span></span></a></li>
         </ul>
-      </div>
-
-      <div class="sd-panel-col">
-        <div class="sd-panel-head">
-          <span class="v2-ico v2-ico--deny" aria-hidden="true"><svg><use href="#i-x"/></svg></span>
-          <h2>Not <span class="sd-deny-text">included</span></h2>
-        </div>
-        <hr class="sv-rule sv-rule--deny">
-        <ul class="sd-deny">
-          <li><span class="sd-mark sd-mark--deny" aria-hidden="true"><svg><use href="#i-x"/></svg></span> Additional civil works or structural modifications</li>
-          <li><span class="sd-mark sd-mark--deny" aria-hidden="true"><svg><use href="#i-x"/></svg></span> Long-term maintenance — covered by AMC</li>
-        </ul>
-        <div class="sd-note">
-          <span class="sd-mark" aria-hidden="true"><svg><use href="#i-info"/></svg></span>
-          <p>Scope, inputs &amp; exclusions follow the Canonical Service Definition (Section 5). Specific project variations will be detailed in the formal quotation.</p>
-        </div>
-      </div>
+        <a class="cv-btn" href="#enquiry">Get a Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </aside>
+    </div>
+    <div class="cv-rail" aria-hidden="true"><i></i><i></i><i></i></div>
+    <section class="cv-panel cv-apps"><div class="cv-apps__head"><p class="cv-kicker">Scope</p><h2>What is included</h2></div>
+      <div class="cv-apps__grid">        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+          <h3>Mechanical and electrical installation of the UP</h3>
+          <p>Mechanical and electrical installation of the UPS and battery bank</p>
+        </article>
+        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+          <h3>Cable routing</h3>
+          <p>Cable routing, termination &amp;amp; control connections</p>
+        </article>
+        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></svg></div>
+          <h3>Earthing &amp;amp; safety checks</h3>
+          <p>Earthing &amp;amp; safety checks</p>
+        </article>
+        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Functional testing &amp;amp; startup</h3>
+          <p>Functional testing &amp;amp; startup</p>
+        </article>
+        <article class="cv-app">
+          <div class="cv-app__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+          <h3>Load / commissioning test &amp;amp; verification</h3>
+          <p>Load / commissioning test &amp;amp; verification</p>
+        </article></div></section>
+    <div class="cv-mid">
+      <section class="cv-panel cv-features"><div class="cv-features__head"><p class="cv-kicker">Benefits</p><h2>Why teams use this</h2></div>
+        <div class="cv-feat-grid">          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+            <div><h3>Site survey first</h3><p>Load and site survey before equipment is placed.</p></div>
+          </article>
+          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><h3>Install and cable</h3><p>Placement, cabling and interconnection to drawing.</p></div>
+          </article>
+          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div><h3>Commissioning</h3><p>Startup, testing and documented handover.</p></div>
+          </article>
+          <article class="cv-feat">
+            <div class="cv-feat__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-9 4 18 3-9h6"/></svg></div>
+            <div><h3>One accountable team</h3><p>The same engineers who install can maintain under AMC.</p></div>
+          </article></div></section>
+      <aside class="cv-panel cv-related"><div class="cv-related__head"><p class="cv-kicker">Related</p><h2>Continue with</h2></div>
+        <ul class="cv-related__list">          <li><a href="amc.html"><span class="cv-related__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><strong>Annual Maintenance</strong><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="../products/ups-systems.html"><span class="cv-related__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><strong>UPS Systems</strong><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></a></li>
+          <li><a href="rental.html"><span class="cv-related__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><strong>UPS Rental &amp; Buyback</strong><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></a></li></ul></aside>
+    </div>
+    <section class="cv-panel cv-arch"><div class="cv-arch__head"><p class="cv-kicker">Process</p><h2>How it works</h2></div>
+      <div class="cv-arch__track">        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div><h3>Scope</h3><ul><li>Supply</li><li>mechanical and electrical installation</li><li>commissioning and handover documentation for UPS and battery systems.</li></ul></div>
+        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><h3>Delivery</h3><ul><li>Bangalore and surrounding corridors</li></ul></div>
+        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/><path d="M6 11v2"/><path d="M10 11v2"/></svg></div><h3>Follow-on</h3><ul><li>AMC and monitoring after handover</li></ul></div>
+        <div class="cv-arch__col"><div class="cv-arch__dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Contact</h3><ul><li>Quote within one business day</li></ul></div></div></section>
+    <div class="cv-lower">
+      <section class="cv-panel cv-faq-panel"><p class="cv-kicker">FAQ</p><h2>Frequently asked</h2>
+        <div class="cv-faq-list"><p class="cv-lead">Ask us about scope, timing and coverage.</p></div></section>
+      <section class="cv-panel cv-form-panel" id="enquiry"><p class="cv-kicker">Contact</p><h2>Send your requirements</h2>
+        <form class="enquiry cv-form" data-context="Service: Installation &amp; Project Execution">
+          <div class="form-grid">
+            <label for="ef-name">Your name<input id="ef-name" type="text" name="name" required autocomplete="name" placeholder="e.g. Rakesh Kumar"></label>
+            <div class="form-row">
+              <label for="ef-phone">Phone<input id="ef-phone" type="tel" name="phone" required autocomplete="tel" placeholder="+91 XXXXX XXXXX"></label>
+              <label for="ef-company">Company / site<input id="ef-company" type="text" name="company" autocomplete="organization" placeholder="Company / site"></label>
+            </div>
+            <label for="ef-msg">What do you need?<textarea id="ef-msg" name="message" required placeholder="Equipment, site, urgency…"></textarea></label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="cv-btn" data-send="whatsapp"><svg width="16" height="16"><use href="#i-wa"/></svg> Send on WhatsApp</button>
+            <p class="form-note">Or <button type="submit" data-send="email" style="background:none;border:none;padding:0;color:var(--cv-green);font:inherit;font-weight:650;cursor:pointer;text-decoration:underline">send by email</button> — response within one business day.</p>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
     </div>
   </div>
-</section>
-
-<!-- ===================== EMERGENCY CTA ===================== -->
-<section class="v2-band v2-band--tight" aria-labelledby="sd-emerg-title">
-  <div class="v2-wrap">
-    <div class="sd-emerg v2-rv">
-      <div class="sd-emerg-copy">
-        <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-alert"/></svg></span>
-        <div>
-          <h2 id="sd-emerg-title">UPS or battery emergency?</h2>
-          <p>Speak to an on-call service engineer immediately.</p>
-        </div>
-      </div>
-      <div class="sd-emerg-actions">
-        <a class="v2-btn v2-btn--outline" href="tel:+919841888332">
-          <svg width="16" height="16" aria-hidden="true"><use href="#i-phone"/></svg> Call +91 98418 88332
-        </a>
-        <a class="v2-btn v2-btn--primary" href="https://wa.me/919841888332?text=Urgent%3A%20UPS%20or%20battery%20emergency%20-%20need%20an%20on-call%20engineer." target="_blank" rel="noopener">
-          <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp Now
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== WHO IT'S FOR ===================== -->
-<section class="v2-band v2-band--tight" aria-labelledby="sd-for-title">
-  <div class="v2-wrap">
-    <div class="sd-head v2-rv">
-      <h2 class="v2-h2" id="sd-for-title">Who it's for</h2>
-      <hr class="sv-rule">
-    </div>
-    <ul class="sd-chips v2-rv">
-      <li><a class="sd-chip" href="../solutions/commercial.html">Commercial</a></li>
-      <li><a class="sd-chip" href="../solutions/industrial.html">Industrial</a></li>
-      <li><a class="sd-chip" href="../solutions/education.html">Institutional</a></li>
-      <li><a class="sd-chip" href="../solutions/healthcare.html">Hospitals</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===================== SERVICE PROCESS ===================== -->
-<section class="v2-band v2-band--tight" aria-labelledby="sd-proc-title">
-  <div class="v2-wrap">
-    <div class="sd-head v2-rv">
-      <h2 class="v2-h2" id="sd-proc-title">How this service runs</h2>
-      <hr class="sv-rule">
-    </div>
-
-    <div class="sd-proc-grid">
-      <article class="sv-card sd-proc v2-rv">
-        <div class="sd-proc-body">
-          <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-clipboard"/></svg></span>
-          <h3 class="v2-h3">Site readiness check</h3>
-          <hr class="sv-rule">
-          <p class="v2-small">Pre-installation audit to ensure foundation and space meet technical standards.</p>
-        </div>
-      </article>
-
-      <article class="sv-card sd-proc v2-rv v2-rv-d1">
-        <div class="sd-proc-body">
-          <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-wrench"/></svg></span>
-          <h3 class="v2-h3">Installation &amp; termination</h3>
-          <hr class="sv-rule">
-          <p class="v2-small">Physical placement of equipment and precision electrical wiring.</p>
-        </div>
-      </article>
-
-      <article class="sv-card sd-proc v2-rv v2-rv-d2">
-        <div class="sd-proc-body">
-          <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-bolt"/></svg></span>
-          <h3 class="v2-h3">Earthing &amp; safety</h3>
-          <hr class="sv-rule">
-          <p class="v2-small">Grounding verification and safety interlock validation.</p>
-        </div>
-      </article>
-
-      <article class="sv-card sd-proc v2-rv">
-        <div class="sd-proc-body">
-          <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
-          <h3 class="v2-h3">Functional test</h3>
-          <hr class="sv-rule">
-          <p class="v2-small">Initial power-up and sequence testing of control panels.</p>
-        </div>
-      </article>
-
-      <article class="sv-card sd-proc v2-rv v2-rv-d1">
-        <div class="sd-proc-body">
-          <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-gauge"/></svg></span>
-          <h3 class="v2-h3">Commissioning test</h3>
-          <hr class="sv-rule">
-          <p class="v2-small">Full-load testing to verify performance parameters and reliability.</p>
-        </div>
-      </article>
-
-      <article class="sv-card sd-proc v2-rv v2-rv-d2">
-        <div class="sd-proc-body">
-          <span class="v2-ico v2-ico--lg v2-ico--round" aria-hidden="true"><svg><use href="#i-award"/></svg></span>
-          <h3 class="v2-h3">Handover</h3>
-          <hr class="sv-rule">
-          <p class="v2-small">Final certification delivery and operator briefing.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== OFTEN PAIRED WITH + PLANNING CTA ===================== -->
-<section class="v2-band v2-band--cream" aria-labelledby="sd-paired-title">
-  <div class="v2-wrap">
-    <div class="sd-head sd-head--rule-top v2-rv">
-      <hr class="sv-rule">
-      <h2 class="v2-h2" id="sd-paired-title">Often Paired With</h2>
-    </div>
-
-    <div class="sd-paired">
-      <div class="sd-paired-list">
-        <a class="sd-paired-item sd-paired-item--lead v2-rv" href="amc.html">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
-          <span class="sd-paired-text">
-            <h3 class="v2-h4">Annual Maintenance Contract</h3>
-            <p>Comprehensive AMC coverage to keep UPS systems running reliably year-round.</p>
-          </span>
-          <span class="sd-paired-view">View <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </a>
-
-        <a class="sd-paired-item v2-rv v2-rv-d1" href="remote-monitoring.html">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-settings"/></svg></span>
-          <span class="sd-paired-text">
-            <h3 class="v2-h4">Preventive Maintenance</h3>
-            <p>Scheduled inspections and servicing to prevent unexpected breakdowns.</p>
-          </span>
-          <span class="sd-paired-view">View <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </a>
-
-        <a class="sd-paired-item v2-rv v2-rv-d2" href="../products/index.html">
-          <span class="v2-ico v2-ico--lg" aria-hidden="true"><svg><use href="#i-box"/></svg></span>
-          <span class="sd-paired-text">
-            <h3 class="v2-h4">Genuine Spare Parts</h3>
-            <p>Authentic, high-quality parts for optimal performance and longer equipment life.</p>
-          </span>
-          <span class="sd-paired-view">View <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-        </a>
-      </div>
-
-      <div class="sd-plan v2-rv v2-rv-d1">
-        <h2>Planning an installation?</h2>
-        <p>Our technical experts are ready to help you plan your power backup system. Get a comprehensive site assessment and a detailed quotation.</p>
-        <a class="v2-btn v2-btn--light v2-btn--lg" href="../contact.html">
-          Request a Quote <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+</div>
 
 </main>
 
