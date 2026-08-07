@@ -1305,7 +1305,7 @@ body.v2 {
 .v2 .spec-strip strong { color: #fff; }
 
 .v2 .eyebrow { color: var(--v2-green); }
-.v2 .eyebrow::before { background: currentColor; }
+.v2 .eyebrow::before { display: none; }
 
 .v2 .cta {
   background: var(--v2-green-deep);
