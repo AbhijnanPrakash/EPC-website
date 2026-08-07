@@ -52,87 +52,10 @@
   }
   if (burger) burger.addEventListener('click', openDrawer);
   if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-  if (drawer) {
-    drawer.addEventListener('click', function (e) {
-      var link = e.target.closest('a[href]');
-      if (link) closeDrawer();
-    });
-  }
-
-  /* Desktop dropdowns — hover opens; touch uses tap; Escape closes */
-  var navRoot = $('.v2-nav');
-  var hoverFine = window.matchMedia('(hover: hover) and (pointer: fine)');
-  function setNavOpen(item, open) {
-    if (!item) return;
-    item.classList.toggle('is-open', open);
-    var top = $('.v2-nav-top', item);
-    if (top) top.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  function closeNavItems(except) {
-    $$('.v2-nav-item.is-open', navRoot || document).forEach(function (item) {
-      if (item === except) return;
-      setNavOpen(item, false);
-    });
-  }
-  if (navRoot) {
-    $$('.v2-nav-item', navRoot).forEach(function (item) {
-      var top = $('.v2-nav-top', item);
-      var panel = $('.v2-dd', item);
-      var leaveTimer = null;
-      if (!top || !panel) return;
-      top.setAttribute('aria-expanded', 'false');
-
-      item.addEventListener('mouseenter', function () {
-        if (!hoverFine.matches) return;
-        if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
-        closeNavItems(item);
-        setNavOpen(item, true);
-      });
-      item.addEventListener('mouseleave', function () {
-        if (!hoverFine.matches) return;
-        leaveTimer = setTimeout(function () { setNavOpen(item, false); }, 120);
-      });
-
-      top.addEventListener('click', function (e) {
-        /* Touch: first tap opens panel; second tap follows hub link */
-        if (hoverFine.matches) return;
-        if (item.classList.contains('is-open')) return;
-        e.preventDefault();
-        closeNavItems(item);
-        setNavOpen(item, true);
-      });
-    });
-    document.addEventListener('click', function (e) {
-      if (!navRoot.contains(e.target)) closeNavItems();
-    });
-  }
-
-  /* Mobile drawer accordion groups */
-  if (drawer) {
-    $$('.v2-drawer-group', drawer).forEach(function (group) {
-      var toggle = $('.v2-drawer-toggle', group);
-      var panel = $('.v2-drawer-panel', group);
-      if (!toggle || !panel) return;
-      if (!panel.id) panel.id = 'drawer-panel-' + Math.random().toString(36).slice(2, 8);
-      toggle.setAttribute('aria-controls', panel.id);
-      toggle.setAttribute('aria-expanded', group.classList.contains('is-open') ? 'true' : 'false');
-      toggle.addEventListener('click', function () {
-        var open = !group.classList.contains('is-open');
-        $$('.v2-drawer-group.is-open', drawer).forEach(function (other) {
-          if (other === group) return;
-          other.classList.remove('is-open');
-          var ot = $('.v2-drawer-toggle', other);
-          if (ot) ot.setAttribute('aria-expanded', 'false');
-        });
-        group.classList.toggle('is-open', open);
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    });
-  }
+  if (drawer) $$('a', drawer).forEach(function (a) { a.addEventListener('click', closeDrawer); });
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    closeNavItems();
     if (drawer && drawer.classList.contains('open')) closeDrawer();
   });
 
