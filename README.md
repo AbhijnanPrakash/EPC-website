@@ -5,6 +5,25 @@ Static HTML site for Eternal Power & Cooling Services (Bangalore).
 Homepage uses the **V2 dark hero** design (`static/css/v2.css`).
 Inner pages still use the legacy stylesheet (`static/css/style.css`) until migrated.
 
+## Are you on the right copy?
+
+Open the homepage. You must see a **dark green bar** at the very top:
+
+> EPC build 20260807g — flat nav + About grid fix
+
+If that bar is missing, delete your old folder and run:
+
+```bash
+rm -rf EPC-website
+git clone https://github.com/AbhijnanPrakash/EPC-website.git
+cd EPC-website
+git checkout cursor/strip-ai-design-tells-bab9
+git pull origin cursor/strip-ai-design-tells-bab9
+python3 -m http.server 8000
+```
+
+Then open **http://127.0.0.1:8000** (not eternalpower.co.in — that is still Wix).
+
 ## Correct homepage check
 
 You have the **current** site if:
