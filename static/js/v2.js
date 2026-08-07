@@ -59,30 +59,47 @@
     });
   }
 
-  /* Desktop dropdowns — hover/focus CSS; click + Escape for touch/keyboard */
+  /* Desktop dropdowns — hover opens; touch uses tap; Escape closes */
   var navRoot = $('.v2-nav');
+  var hoverFine = window.matchMedia('(hover: hover) and (pointer: fine)');
+  function setNavOpen(item, open) {
+    if (!item) return;
+    item.classList.toggle('is-open', open);
+    var top = $('.v2-nav-top', item);
+    if (top) top.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
   function closeNavItems(except) {
-    $$('.v2-nav-item.is-open', navRoot).forEach(function (item) {
+    $$('.v2-nav-item.is-open', navRoot || document).forEach(function (item) {
       if (item === except) return;
-      item.classList.remove('is-open');
-      var top = $('.v2-nav-top', item);
-      if (top) top.setAttribute('aria-expanded', 'false');
+      setNavOpen(item, false);
     });
   }
   if (navRoot) {
     $$('.v2-nav-item', navRoot).forEach(function (item) {
       var top = $('.v2-nav-top', item);
       var panel = $('.v2-dd', item);
+      var leaveTimer = null;
       if (!top || !panel) return;
       top.setAttribute('aria-expanded', 'false');
+
+      item.addEventListener('mouseenter', function () {
+        if (!hoverFine.matches) return;
+        if (leaveTimer) { clearTimeout(leaveTimer); leaveTimer = null; }
+        closeNavItems(item);
+        setNavOpen(item, true);
+      });
+      item.addEventListener('mouseleave', function () {
+        if (!hoverFine.matches) return;
+        leaveTimer = setTimeout(function () { setNavOpen(item, false); }, 120);
+      });
+
       top.addEventListener('click', function (e) {
         /* Touch: first tap opens panel; second tap follows hub link */
-        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+        if (hoverFine.matches) return;
         if (item.classList.contains('is-open')) return;
         e.preventDefault();
         closeNavItems(item);
-        item.classList.add('is-open');
-        top.setAttribute('aria-expanded', 'true');
+        setNavOpen(item, true);
       });
     });
     document.addEventListener('click', function (e) {

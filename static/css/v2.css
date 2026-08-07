@@ -454,7 +454,8 @@ body.v2 { overflow-x: hidden; }
 .v2 .v2-hdr {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
+  overflow: visible;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: var(--v2-glass);
   -webkit-backdrop-filter: var(--v2-glass);
@@ -464,9 +465,16 @@ body.v2 { overflow-x: hidden; }
 .v2 .v2-hdr.is-scrolled { box-shadow: var(--v2-sh-2); }
 .v2 .v2-hdr-inner {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 32px;
   min-height: 74px;
+  overflow: visible;
+}
+.v2 .v2-hdr-inner > .v2-brand,
+.v2 .v2-hdr-inner > .v2-hdr-cta {
+  display: inline-flex;
+  align-items: center;
+  align-self: stretch;
 }
 
 .v2 .v2-brand {
@@ -506,18 +514,26 @@ body.v2 { overflow-x: hidden; }
 
 .v2 .v2-nav {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 2px;
   margin-inline: auto;
+  overflow: visible;
 }
 .v2 .v2-nav-item {
   position: relative;
+  display: flex;
+  align-items: center;
+}
+.v2 .v2-nav > .v2-nav-top {
+  display: inline-flex;
+  align-items: center;
 }
 .v2 .v2-nav-top {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  height: 100%;
   padding: 9px 12px;
   border: 0;
   border-radius: var(--v2-r-sm);
@@ -562,12 +578,13 @@ body.v2 { overflow-x: hidden; }
 .v2 .v2-nav-item:focus-within .v2-nav-chevron,
 .v2 .v2-nav-item.is-open .v2-nav-chevron { opacity: 1; transform: rotate(180deg); }
 
-/* Desktop dropdown panels */
+/* Desktop dropdowns: open on hover. Nav items stretch to the full header
+   height so there is no dead gap under the label before the panel. */
 .v2 .v2-dd {
   position: absolute;
-  top: calc(100% + 10px);
+  top: 100%;
   left: 0;
-  z-index: 160;
+  z-index: 220;
   min-width: 280px;
   max-width: min(92vw, 640px);
   padding: 12px;
@@ -579,7 +596,15 @@ body.v2 { overflow-x: hidden; }
   visibility: hidden;
   transform: translateY(6px);
   pointer-events: none;
-  transition: opacity var(--v2-fast) var(--v2-ease), transform var(--v2-fast) var(--v2-ease), visibility var(--v2-fast);
+  transition: opacity 120ms var(--v2-ease), transform 120ms var(--v2-ease), visibility 120ms;
+}
+.v2 .v2-dd::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 12px; /* hover bridge just above the panel */
 }
 .v2 .v2-dd--wide { min-width: min(92vw, 560px); }
 .v2 .v2-dd--mega { min-width: min(94vw, 720px); }
