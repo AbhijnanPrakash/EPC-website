@@ -10,19 +10,15 @@ Inner pages still use the legacy stylesheet (`static/css/style.css`) until migra
 You have the **current** site if:
 
 1. The hero headline says: **Reliable backup power for critical operations**
-2. The top nav shows **Products ▾ · Services ▾ · Solutions ▾ · Locations ▾ · Resources � says: **Reliable backup power for critical operations**
 2. The top nav shows **Products ▾ · Services ▾ · Solutions ▾ · Locations ▾ · Resources ▾**
 3. Hovering **Products** opens a white dropdown (UPS systems, Batteries, …)
 
 You have an **old / wrong folder** if you see:
 
 - “Critical power infrastructure for *serious* operations”, or
-- A flat nav with no � an **old / wrong folder** if you see:
-
-- “Critical power infrastructure for *serious* operations”, or
 - A flat nav with no ▾ dropdowns (Home About Products Services AMC …)
 
-That old UI is not on this PR branch. Delete the stale folder and clone fresh.
+That old UI is not on this PR branch. Delete the stale folder and clone fresh.  
 **https://www.eternalpower.co.in** is still the old Wix site — it will not show these menus until you deploy this repo.
 
 ## Preview locally (do this)
@@ -84,9 +80,7 @@ To use Formspree/Basin later, edit the submit handler in `static/js/main.js`.
 
 ## Pre-launch checklist
 
-- [ ] Add real logo at `static/img/logo.svg` and use it in header/footer
-- [ ] Replace sample projects / testimonials / Client A–L placeholders
-- [ ] Confirm OEM partner names on About
-- [ ] Have privacy policy reviewed (DPDP)
-- [ ] Migrate remaining legacy pages to V2 (darker system)
-- [ ] Publish this build to hosting and cut DNS over from Wix
+- [ ] Replace placeholder client / project content where needed
+- [ ] Add real logo file under `static/img/`
+- [ ] Confirm phones and emails
+- [ ] Point DNS / hosting at this build (not Wix)
