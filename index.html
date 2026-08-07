@@ -24,9 +24,21 @@
       imagesrcset="static/img/electrical-panel-hero-480.webp 480w, static/img/electrical-panel-hero-800.webp 800w, static/img/electrical-panel-hero-1400.webp 1400w"
       imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="static/css/v2.css">
-<link rel="stylesheet" href="static/css/chat.css">
+<link rel="stylesheet" href="static/css/v2.css?v=20260807">
+<link rel="stylesheet" href="static/css/chat.css?v=20260807">
 <script>document.documentElement.classList.add('js');</script>
+<script>
+  /* Guard: refuse to look like the retired glassmorphism homepage */
+  document.addEventListener('DOMContentLoaded', function () {
+    var title = document.getElementById('hero-title');
+    if (!title || /serious/i.test(title.textContent || '')) {
+      console.error('EPC: stale homepage detected. Pull cursor/strip-ai-design-tells-bab9 and hard-refresh.');
+    }
+    if (!document.querySelector('link[href*="v2.css"]')) {
+      console.error('EPC: v2.css missing — serve from repo root, do not open index.html as a file.');
+    }
+  });
+</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://www.eternalpower.co.in/#organization","name":"Eternal Power And Cooling Services","url":"https://www.eternalpower.co.in","foundingDate":"2012","email":"siva@eternalpower.co.in","telephone":"+919841888332","address":{"@type":"PostalAddress","streetAddress":"Ground Floor, Site No. 161, NRI Layout Double Road, Kalkere","addressLocality":"Bangalore","addressRegion":"Karnataka","postalCode":"560043","addressCountry":"IN"},"areaServed":"Bangalore, Karnataka, India","description":"Authorized sales partner for major UPS OEMs. UPS systems 1 kVA to 4000 kVA, batteries, data center infrastructure, building management systems, AMC and power quality services since 2012."}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What UPS capacity range does Eternal Power supply?","acceptedAnswer":{"@type":"Answer","text":"Online UPS from 1 kVA standalone units through to 4000 kVA parallel-redundant systems, covering a 350 VA to 4.8 MW system range. Sizing is driven by a measured load study rather than a catalogue guess."}},{"@type":"Question","name":"Do you service UPS systems you did not sell?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our comprehensive and non-comprehensive annual maintenance contracts cover UPS of any make, alongside BMS, fire alarm panels and electrical distribution equipment."}},{"@type":"Question","name":"How quickly can you respond to a breakdown?","acceptedAnswer":{"@type":"Answer","text":"AMC customers get round-the-clock emergency breakdown support. Response times are written into the contract rather than left to a call centre script, and sites under remote monitoring are often diagnosed before the customer calls."}},{"@type":"Question","name":"Which battery types and brands do you work with?","acceptedAnswer":{"@type":"Answer","text":"SMF, VRLA and Li-Ion batteries from 7 AH to 400 AH, including Panasonic, Exide, Quanta and EnerRocket. Bank health is verified with HIOKI internal-resistance testing before any replacement is recommended."}},{"@type":"Question","name":"Do you work outside Bangalore?","acceptedAnswer":{"@type":"Answer","text":"Bangalore and the wider Karnataka region are our core service area. Multi-site customers are supported from our command centre over GPRS/IP, so monitoring and analytics extend beyond the sites our engineers reach on the same day."}}]}</script>
@@ -650,7 +662,7 @@
   <a class="v2-btn v2-btn--primary v2-btn--sm" href="#consultation">Get Quote</a>
 </div>
 
-<script src="static/js/main.js" defer></script>
-<script src="static/js/v2.js" defer></script>
+<script src="static/js/main.js?v=20260807" defer></script>
+<script src="static/js/v2.js?v=20260807" defer></script>
 </body>
 </html>

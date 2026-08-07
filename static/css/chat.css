@@ -332,8 +332,8 @@
   .epc-chat-launcher {
     bottom: calc(66px + max(16px, env(safe-area-inset-bottom)));
   }
-  /* Homepage uses .v2-mbar instead of .mbar */
-  .page-home .epc-chat-launcher {
+  /* Homepage / V2 pages use .v2-mbar instead of legacy .mbar */
+  .v2 .epc-chat-launcher {
     bottom: calc(72px + max(16px, env(safe-area-inset-bottom)));
   }
   .epc-chat-panel {
