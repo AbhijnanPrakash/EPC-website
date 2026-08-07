@@ -106,31 +106,40 @@
   margin-top: 1.15rem;
 }
 
-.ibms-spec {
+\.ibms-spec {
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 0.7rem;
   align-items: start;
-  padding: 0.7rem 0.75rem;
-  border: 1px solid var(--ibms-line);
-  border-radius: var(--ibms-radius-sm);
-  background: #fafbfa;
+  padding: 0.65rem 0;
+  border: none;
+  border-bottom: 1px solid var(--ibms-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.ibms-spec:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .ibms-spec__icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--ibms-green-soft);
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  background: transparent;
   color: var(--ibms-green);
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .ibms-spec__icon svg {
+  display: block;
   width: 18px;
   height: 18px;
+  margin: 0;
 }
 
 .ibms-spec strong {
@@ -445,20 +454,22 @@
   margin: 0 18%;
 }
 
-/* ========== Applications ========== */
-.ibms-apps {
-  margin-top: 0.5rem;
-  padding: 1.35rem 1.25rem 1.4rem;
+/* ========== Applications — open row, no item cards ========== */
+.ibms-panel.ibms-apps {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 1.75rem 0.35rem 0.5rem;
 }
 
 .ibms-apps__head {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .ibms-apps__head h2 {
   margin: 0.2rem 0 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -466,53 +477,59 @@
 .ibms-apps__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  gap: 1.5rem 1rem;
+  align-items: start;
 }
 
 .ibms-app {
   text-align: center;
-  padding: 1rem 0.75rem;
-  border-radius: var(--ibms-radius-sm);
-  border: 1px solid transparent;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
 }
 
 .ibms-app:hover {
-  border-color: var(--ibms-line);
-  background: #fafbfa;
+  border: none;
+  background: transparent;
 }
 
 .ibms-app__icon {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 0.7rem;
-  border-radius: 12px;
-  background: var(--ibms-green-soft);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.75rem;
+  border-radius: 0;
+  background: transparent;
   color: var(--ibms-green);
   display: grid;
   place-items: center;
+  overflow: visible;
 }
 
 .ibms-app__icon svg {
-  width: 22px;
-  height: 22px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  stroke-width: 1.5;
 }
 
 .ibms-app h3 {
   margin: 0 0 0.35rem;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 650;
   letter-spacing: -0.01em;
 }
 
 .ibms-app p {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   line-height: 1.45;
   color: var(--ibms-muted);
+  font-style: normal;
 }
 
-/* ========== Mid: features + related ========== */
+
 .ibms-mid {
   display: grid;
   grid-template-columns: 1.7fr 1fr;
@@ -547,31 +564,36 @@
   grid-template-columns: 40px 1fr;
   gap: 0.75rem;
   align-items: start;
-  padding: 0.95rem 0.9rem;
+  padding: 0.85rem 0.75rem;
   border: 1px solid var(--ibms-line);
-  border-radius: var(--ibms-radius-sm);
-  background: #fafbfa;
+  border-radius: 14px;
+  background: transparent;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .ibms-feat:hover {
-  border-color: rgba(47, 107, 79, 0.35);
-  background: var(--ibms-surface);
+  border-color: rgba(47, 107, 79, 0.3);
+  background: #fafbfa;
 }
 
 .ibms-feat__icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--ibms-green-soft);
+  background: transparent;
+  border: 1px solid rgba(47, 107, 79, 0.22);
   color: var(--ibms-green);
   display: grid;
   place-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .ibms-feat__icon svg {
-  width: 18px;
-  height: 18px;
+  display: block;
+  width: 17px;
+  height: 17px;
+  margin: 0;
 }
 
 .ibms-feat h3 {
@@ -610,42 +632,50 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0.45rem;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.ibms-related__list li + li {
+  border-top: 1px solid var(--ibms-line);
 }
 
 .ibms-related__list a {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.75rem 0.7rem;
-  border: 1px solid var(--ibms-line);
-  border-radius: 14px;
-  background: #fafbfa;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  gap: 0.75rem;
+  padding: 0.9rem 0.15rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  transition: color 0.15s ease;
 }
 
 .ibms-related__list a:hover {
-  border-color: rgba(47, 107, 79, 0.4);
-  background: var(--ibms-surface);
-  transform: translateX(2px);
+  border: none;
+  background: transparent;
+  transform: none;
+  color: var(--ibms-green);
 }
 
 .ibms-related__icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--ibms-green-soft);
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: transparent;
   color: var(--ibms-green);
   display: grid;
   place-items: center;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .ibms-related__icon svg {
-  width: 16px;
-  height: 16px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
 }
 
 .ibms-related__list strong {
@@ -663,21 +693,24 @@
   opacity: 0.55;
 }
 
-/* ========== Specs architecture bar ========== */
-.ibms-arch {
-  margin-top: 1rem;
-  padding: 1.5rem 1.35rem 1.55rem;
+/* ========== Specs — open architecture rail ========== */
+.ibms-panel.ibms-arch {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-top: 1.25rem;
+  padding: 1.75rem 0.35rem 0.5rem;
   position: relative;
 }
 
 .ibms-arch__head {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .ibms-arch__head h2 {
   margin: 0.2rem 0 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -685,16 +718,16 @@
 .ibms-arch__track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem 1.25rem;
   position: relative;
 }
 
 .ibms-arch__track::before {
   content: "";
   position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 22px;
+  left: 10%;
+  right: 10%;
+  top: 4px;
   height: 1px;
   background: var(--ibms-green-line);
   z-index: 0;
@@ -704,31 +737,54 @@
   position: relative;
   z-index: 1;
   text-align: center;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .ibms-arch__dot {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   margin: 0 auto 0.85rem;
-  border-radius: 50%;
-  background: var(--ibms-surface);
-  border: 1px solid var(--ibms-line);
-  box-shadow: 0 2px 8px rgba(26, 31, 28, 0.05);
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: var(--ibms-green);
   display: grid;
   place-items: center;
+  overflow: visible;
+  position: relative;
+}
+
+.ibms-arch__dot::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ibms-green);
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  box-shadow: 0 0 0 3px var(--ibms-canvas);
+  z-index: 2;
 }
 
 .ibms-arch__dot svg {
-  width: 20px;
-  height: 20px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0.55rem 0 0;
 }
 
 .ibms-arch__col h3 {
   margin: 0 0 0.55rem;
-  font-size: 0.88rem;
-  font-weight: 650;
-  letter-spacing: -0.01em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ibms-ink);
 }
 
 .ibms-arch__col ul {
@@ -736,11 +792,11 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.28rem;
+  gap: 0.3rem;
 }
 
 .ibms-arch__col li {
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   line-height: 1.4;
   color: var(--ibms-muted);
 }

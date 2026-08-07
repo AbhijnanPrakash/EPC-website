@@ -111,27 +111,34 @@
   margin-top: 1.15rem;
 }
 
+/* Soften overview spec chips — light modules, not heavy cards */
 .cv-spec {
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 0.7rem;
   align-items: start;
-  padding: 0.7rem 0.75rem;
-  border: 1px solid var(--cv-line);
-  border-radius: var(--cv-radius-sm);
-  background: #fafbfa;
+  padding: 0.65rem 0;
+  border: none;
+  border-bottom: 1px solid var(--cv-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+.cv-spec:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .cv-spec__icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--cv-green-soft);
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  background: transparent;
   color: var(--cv-green);
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cv-spec__icon svg {
@@ -139,7 +146,6 @@
   width: 18px;
   height: 18px;
   margin: 0;
-  flex-shrink: 0;
 }
 
 .cv-spec strong {
@@ -444,20 +450,22 @@
   margin: 0 18%;
 }
 
-/* ========== Applications ========== */
-.cv-apps {
-  margin-top: 0.5rem;
-  padding: 1.35rem 1.25rem 1.4rem;
+/* ========== Applications — open row, no item cards ========== */
+.cv-panel.cv-apps {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 1.75rem 0.35rem 0.5rem;
 }
 
 .cv-apps__head {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .cv-apps__head h2 {
   margin: 0.2rem 0 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -465,53 +473,56 @@
 .cv-apps__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
+  gap: 1.5rem 1rem;
+  align-items: start;
 }
 
 .cv-app {
   text-align: center;
-  padding: 1rem 0.75rem;
-  border-radius: var(--cv-radius-sm);
-  border: 1px solid transparent;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
 }
 
 .cv-app:hover {
-  border-color: var(--cv-line);
-  background: #fafbfa;
+  border: none;
+  background: transparent;
 }
 
 .cv-app__icon {
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 0.7rem;
-  border-radius: 12px;
-  background: var(--cv-green-soft);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 0.75rem;
+  border-radius: 0;
+  background: transparent;
   color: var(--cv-green);
   display: grid;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cv-app__icon svg {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   margin: 0;
+  stroke-width: 1.5;
 }
 
 .cv-app h3 {
   margin: 0 0 0.35rem;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 650;
   letter-spacing: -0.01em;
 }
 
 .cv-app p {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   line-height: 1.45;
   color: var(--cv-muted);
+  font-style: normal;
 }
 
 /* ========== Mid: features + related ========== */
@@ -549,23 +560,24 @@
   grid-template-columns: 40px 1fr;
   gap: 0.75rem;
   align-items: start;
-  padding: 0.95rem 0.9rem;
+  padding: 0.85rem 0.75rem;
   border: 1px solid var(--cv-line);
-  border-radius: var(--cv-radius-sm);
-  background: #fafbfa;
+  border-radius: 14px;
+  background: transparent;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .cv-feat:hover {
-  border-color: rgba(47, 107, 79, 0.35);
-  background: var(--cv-surface);
+  border-color: rgba(47, 107, 79, 0.3);
+  background: #fafbfa;
 }
 
 .cv-feat__icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--cv-green-soft);
+  background: transparent;
+  border: 1px solid rgba(47, 107, 79, 0.22);
   color: var(--cv-green);
   display: grid;
   place-items: center;
@@ -575,8 +587,8 @@
 
 .cv-feat__icon svg {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   margin: 0;
 }
 
@@ -586,6 +598,7 @@
   font-weight: 650;
   letter-spacing: -0.01em;
   line-height: 1.25;
+  font-style: normal;
 }
 
 .cv-feat p {
@@ -593,6 +606,7 @@
   font-size: 0.76rem;
   line-height: 1.45;
   color: var(--cv-muted);
+  font-style: normal;
 }
 
 .cv-related {
@@ -602,7 +616,7 @@
 }
 
 .cv-related__head {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.5rem;
 }
 
 .cv-related__head h2 {
@@ -616,44 +630,49 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0.45rem;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+
+.cv-related__list li + li {
+  border-top: 1px solid var(--cv-line);
 }
 
 .cv-related__list a {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.75rem 0.7rem;
-  border: 1px solid var(--cv-line);
-  border-radius: 14px;
-  background: #fafbfa;
-  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  gap: 0.75rem;
+  padding: 0.9rem 0.15rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  transition: color 0.15s ease;
 }
 
 .cv-related__list a:hover {
-  border-color: rgba(47, 107, 79, 0.4);
-  background: var(--cv-surface);
-  transform: translateX(2px);
+  border: none;
+  background: transparent;
+  transform: none;
+  color: var(--cv-green);
 }
 
 .cv-related__icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--cv-green-soft);
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: transparent;
   color: var(--cv-green);
   display: grid !important;
   place-items: center;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cv-related__icon svg {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin: 0;
 }
 
@@ -662,6 +681,7 @@
   font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  font-style: normal;
 }
 
 .cv-related__list svg.chev {
@@ -672,21 +692,24 @@
   opacity: 0.55;
 }
 
-/* ========== Specs architecture bar ========== */
-.cv-arch {
-  margin-top: 1rem;
-  padding: 1.5rem 1.35rem 1.55rem;
+/* ========== Specs — open architecture rail, no column boxes ========== */
+.cv-panel.cv-arch {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-top: 1.25rem;
+  padding: 1.75rem 0.35rem 0.5rem;
   position: relative;
 }
 
 .cv-arch__head {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .cv-arch__head h2 {
   margin: 0.2rem 0 0;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
@@ -694,16 +717,16 @@
 .cv-arch__track {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem 1.25rem;
   position: relative;
 }
 
 .cv-arch__track::before {
   content: "";
   position: absolute;
-  left: 8%;
-  right: 8%;
-  top: 22px;
+  left: 10%;
+  right: 10%;
+  top: 4px;
   height: 1px;
   background: var(--cv-green-line);
   z-index: 0;
@@ -713,34 +736,55 @@
   position: relative;
   z-index: 1;
   text-align: center;
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .cv-arch__dot {
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   margin: 0 auto 0.85rem;
-  border-radius: 50%;
-  background: var(--cv-surface);
-  border: 1px solid var(--cv-line);
-  box-shadow: 0 2px 8px rgba(26, 31, 28, 0.05);
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   color: var(--cv-green);
   display: grid;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+}
+
+.cv-arch__dot::before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cv-green);
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  box-shadow: 0 0 0 3px var(--cv-canvas);
+  z-index: 2;
 }
 
 .cv-arch__dot svg {
   display: block;
-  width: 18px;
-  height: 18px;
-  margin: 0;
+  width: 22px;
+  height: 22px;
+  margin: 0.55rem 0 0;
 }
 
 .cv-arch__col h3 {
   margin: 0 0 0.55rem;
-  font-size: 0.88rem;
-  font-weight: 650;
-  letter-spacing: -0.01em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cv-ink);
+  font-style: normal;
 }
 
 .cv-arch__col ul {
@@ -748,13 +792,14 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.28rem;
+  gap: 0.3rem;
 }
 
 .cv-arch__col li {
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   line-height: 1.4;
   color: var(--cv-muted);
+  font-style: normal;
 }
 
 /* ========== FAQ + form on canvas ========== */
