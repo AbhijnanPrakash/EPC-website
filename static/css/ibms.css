@@ -151,13 +151,16 @@
 /* Central viz */
 .ibms-viz {
   position: relative;
-  min-height: 420px;
+  min-height: 440px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1.5rem 1rem 1.25rem;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 48%, rgba(232, 242, 236, 0.65) 0%, transparent 70%),
+    var(--ibms-surface);
 }
 
 .ibms-viz__field {
